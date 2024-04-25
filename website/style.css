@@ -1,0 +1,372 @@
+.macbook-air {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+}
+
+.macbook-air .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1280px;
+  height: 832px;
+  position: relative;
+}
+
+.macbook-air .overlap {
+  position: absolute;
+  width: 1301px;
+  height: 76px;
+  top: 140px;
+  left: -21px;
+}
+
+.macbook-air .rectangle {
+  position: absolute;
+  width: 1280px;
+  height: 76px;
+  top: 0;
+  left: 21px;
+  border-radius: 15px;
+  border: 2px solid;
+  border-color: #00000080;
+  background: linear-gradient(
+    180deg,
+    rgb(57, 183, 151) 0%,
+    rgb(107, 203, 179) 34.5%,
+    rgb(162, 223, 208) 70%,
+    rgb(211, 243, 235) 100%
+  );
+}
+
+.macbook-air .img {
+  position: absolute;
+  width: 164px;
+  height: 37px;
+  top: 20px;
+  left: 1101px;
+}
+
+.macbook-air .login {
+  position: absolute;
+  width: 70px;
+  height: 26px;
+  top: 28px;
+  left: 1148px;
+}
+
+.macbook-air .rectangle-2 {
+  position: absolute;
+  width: 165px;
+  height: 37px;
+  top: 20px;
+  left: 895px;
+}
+
+.macbook-air .fllwort {
+  position: absolute;
+  width: 106px;
+  height: 20px;
+  top: 28px;
+  left: 926px;
+}
+
+.macbook-air .rectangle-3 {
+  position: absolute;
+  width: 165px;
+  height: 37px;
+  top: 20px;
+  left: 673px;
+}
+
+.macbook-air .fllwort-2 {
+  position: absolute;
+  width: 106px;
+  height: 20px;
+  top: 28px;
+  left: 704px;
+}
+
+.macbook-air .rectangle-4 {
+  position: absolute;
+  width: 166px;
+  height: 37px;
+  top: 20px;
+  left: 451px;
+}
+
+.macbook-air .inserieren {
+  position: absolute;
+  width: 131px;
+  height: 21px;
+  top: 28px;
+  left: 470px;
+}
+
+.macbook-air .suchleiste {
+  position: absolute;
+  width: 415px;
+  height: 37px;
+  top: 20px;
+  left: 0;
+}
+
+.macbook-air .overlap-group {
+  position: relative;
+  width: 372px;
+  height: 37px;
+  left: 41px;
+  background-image: url(./img/rectangle-11.svg);
+  background-size: 100% 100%;
+}
+
+.macbook-air .suche {
+  position: absolute;
+  width: 81px;
+  height: 19px;
+  top: 9px;
+  left: 13px;
+}
+
+.macbook-air .image {
+  width: 27px;
+  height: 27px;
+  top: 5px;
+  left: 334px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-air .overlap-2 {
+  position: absolute;
+  width: 1280px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  background-image: url(./img/rectangle-4.svg);
+  background-size: 100% 100%;
+}
+
+.macbook-air .profil-zeichen {
+  position: absolute;
+  width: 70px;
+  height: 64px;
+  top: 36px;
+  left: 1174px;
+  background-color: #3bb899;
+  border-radius: 34.83px/32.11px;
+}
+
+.macbook-air .vector {
+  position: absolute;
+  width: 34px;
+  height: 15px;
+  top: 34px;
+  left: 18px;
+}
+
+.macbook-air .login-zeichen {
+  position: absolute;
+  width: 17px;
+  height: 19px;
+  top: 15px;
+  left: 26px;
+}
+
+.macbook-air .q-a-zeichen {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 38px;
+  left: 20px;
+  object-fit: cover;
+}
+
+.macbook-air .logo {
+  position: absolute;
+  width: 760px;
+  height: 122px;
+  top: 7px;
+  left: 245px;
+}
+
+.macbook-air .overlap-3 {
+  position: relative;
+  height: 122px;
+}
+
+.macbook-air .rectangle-5 {
+  position: absolute;
+  width: 760px;
+  height: 113px;
+  top: 2px;
+  left: 0;
+  background-color: #87bfb0;
+  border-radius: 15px;
+  opacity: 0.85;
+}
+
+.macbook-air .logo-2 {
+  position: absolute;
+  width: 476px;
+  height: 113px;
+  top: 2px;
+  left: 157px;
+  mix-blend-mode: exclusion;
+  object-fit: cover;
+}
+
+.macbook-air .image-2 {
+  width: 122px;
+  height: 122px;
+  top: 0;
+  left: 14px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-air .group {
+  position: absolute;
+  width: 85px;
+  height: 102px;
+  top: 8px;
+  left: 652px;
+}
+
+.macbook-air .footprint-dog {
+  height: 102px;
+  opacity: 0.4;
+}
+
+.macbook-air .overlap-group-2 {
+  position: relative;
+  width: 85px;
+  height: 102px;
+}
+
+.macbook-air .footprint-dog-2 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 67px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.macbook-air .footprint-dog-3 {
+  top: 37px;
+  left: 18px;
+  position: absolute;
+  width: 67px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.macbook-air .overlap-4 {
+  position: absolute;
+  width: 1280px;
+  height: 606px;
+  top: 226px;
+  left: 0;
+  background-image: url(./img/rectangle-6.svg);
+  background-size: 100% 100%;
+}
+
+.macbook-air .was-suchst-du {
+  position: absolute;
+  width: 187px;
+  height: 177px;
+  top: 201px;
+  left: 548px;
+}
+
+.macbook-air .div-wrapper {
+  position: relative;
+  width: 185px;
+  height: 177px;
+  background-color: #fbf0f0;
+  border-radius: 92.5px/88.5px;
+}
+
+.macbook-air .text-wrapper {
+  position: absolute;
+  width: 122px;
+  top: 43px;
+  left: 32px;
+  font-family: "Inter", Helvetica;
+  font-weight: 900;
+  color: #d86565;
+  font-size: 26px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.macbook-air .tierbesitzer-suchen {
+  position: absolute;
+  width: 332px;
+  height: 335px;
+  top: 121px;
+  left: 840px;
+}
+
+.macbook-air .overlap-5 {
+  position: relative;
+  width: 338px;
+  height: 343px;
+  left: -4px;
+  background-image: url(./img/rectangle-10-1.svg);
+  background-size: 100% 100%;
+}
+
+.macbook-air .ht-auftrge {
+  position: absolute;
+  width: 174px;
+  height: 26px;
+  top: 49px;
+  left: 83px;
+}
+
+.macbook-air .image-3 {
+  width: 189px;
+  height: 189px;
+  top: 96px;
+  left: 85px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-air .pet-sitter-suchen {
+  position: absolute;
+  width: 332px;
+  height: 335px;
+  top: 121px;
+  left: 110px;
+}
+
+.macbook-air .overlap-6 {
+  position: relative;
+  width: 338px;
+  height: 343px;
+  left: -4px;
+  background-image: url(./img/rectangle-7-1.png);
+  background-size: 100% 100%;
+}
+
+.macbook-air .tier-sitter {
+  position: absolute;
+  width: 137px;
+  height: 21px;
+  top: 49px;
+  left: 101px;
+}
+
+.macbook-air .image-4 {
+  width: 305px;
+  height: 228px;
+  top: 77px;
+  left: 17px;
+  position: absolute;
+  object-fit: cover;
+}

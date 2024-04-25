@@ -1,0 +1,37 @@
+html {
+  width: 1280px;
+  height: 832px;
+  background: #fff;
+}
+body {
+  width: 1280px;
+  height: 832px;
+  background: #fff;
+}
+
+.oberes-element-hintergrud {
+  width: 1280px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+.mittleres-element-hintergrund {
+  width: 1280px;
+  height: 76px;
+  flex-shrink: 0;
+}
+
+.unteres-element-hintergrund {
+  width: 1280px;
+  height: 606px;
+  flex-shrink: 0;
+}
+
+.qa-zeichen {
+  width: 60px;
+  height: 60px;
+  top: 38px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0.75px;
+}
