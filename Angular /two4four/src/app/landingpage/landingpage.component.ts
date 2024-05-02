@@ -7,11 +7,19 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <section class="hintergrund">
-      <div class="suchbox1"></div>
+      <div class="elemente-container">
+        <div class="suchbox1">
+          <img
+            class="tiersittersuchebox"
+            src="/assets/tier-sitter-suche.png"
+            alt="Box Tier Sitter Suche"
+          />
+        </div>
 
-      <div class="kreismitte"></div>
+        <div class="kreismitte"></div>
 
-      <div class="suchbox2"></div>
+        <div class="suchbox2"></div>
+      </div>
       <!--
         <img
           class="tiersittersuchebox"

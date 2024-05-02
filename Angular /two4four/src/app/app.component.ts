@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MittleresElementComponent } from './mittleres-element/mittleres-element.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MittleresElementComponent],
+  imports: [RouterOutlet, MittleresElementComponent, LandingpageComponent],
   template: `
     <main>
       <header class="hintergrund">
@@ -32,6 +33,9 @@ import { MittleresElementComponent } from './mittleres-element/mittleres-element
     </main>
     <section>
       <app-mittleres-element></app-mittleres-element>
+    </section>
+    <section>
+      <app-landingpage> </app-landingpage>
     </section>
   `,
 
