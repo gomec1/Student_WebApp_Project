@@ -1,46 +1,44 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MittleresElementComponent } from './mittleres-element/mittleres-element.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { RouterModule, Router } from '@angular/router';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { QaFensterComponent } from './qa-fenster/qa-fenster.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MittleresElementComponent, LandingpageComponent],
-  template: `
-    <main>
-      <header class="hintergrund">
-        <img class="qa-zeichen" src="/assets/qa-zeichen.png" alt="QA-Zeichen" />
-        <div class="logo-box">
-          <img
-            class="footprint-human"
-            src="/assets/footprint-human.png"
-            alt="footprint human"
-          />
-          <img class="brand-logo" src="/assets/logo.png" alt="logo" />
-          <img
-            class="footprint-dog"
-            src="/assets/footprint-dog.png"
-            alt="footprint dog"
-          />
-        </div>
-        <img
-          class="profil-zeichen"
-          src="/assets/profil-zeichen.png"
-          alt="Profil-Zeichen"
-        />
-      </header>
-    </main>
-    <section>
-      <app-mittleres-element></app-mittleres-element>
-    </section>
-    <section>
-      <app-landingpage> </app-landingpage>
-    </section>
-  `,
-
+  imports: [LandingpageComponent, RouterModule],
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'two4four';
+
+  constructor(public dialog: MatDialog, private router: Router) {}
+
+  /* Navigiert zur Landingpage */
+
+  navigateToLandingPage(): void {
+    this.router.navigate(['/']); // Navigiert zur Landingpage
+  }
+
+  /* QA Fenster */
+  dialogRef: MatDialogRef<QaFensterComponent> | null = null;
+
+  openDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.panelClass = 'custom-dialog-container';
+
+    dialogConfig.width = '700px';
+    dialogConfig.height = '500px';
+
+    this.dialogRef = this.dialog.open(QaFensterComponent, dialogConfig);
+  }
+  /* QA Fenster*/
 }
