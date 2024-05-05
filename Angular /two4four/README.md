@@ -1,27 +1,39 @@
-# Two4four
+<h1 align="center">Welcome to Two4Four 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+> Our project aims to develop a modern and user-friendly platform that will allow pet owners to find trustworthy and reliable caretakers for their pets. At the same time, it offers pet lovers the opportunity to care for animals while earning pocket money. The platform is designed to create a safe and satisfying environment for all users and to ensure that animals receive continuous care, even when the owner is unable to be present. By fostering a vibrant community, our solution enables users to share experiences and support each other. Our pet sharing platform focuses on making the connection between pet owners and pet lovers simple and effective, with a special emphasis on safety, trustworthiness and user satisfaction.
 
-## Development server
+### 🏠 [Homepage](Translated with DeepL.com (free version)https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+```sh
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+```sh
+npm run start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Run tests
 
-## Running unit tests
+```sh
+npm run test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Author
 
-## Running end-to-end tests
+👤 **Carlos Gomez, Silvan Schneider, Nelson Vidovic, Daniel Jacobs**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Github: [@gomec1, schns51, vidon1, jacod2](https://github.com/gomec1, schns51, vidon1, jacod2)
 
-## Further help
+## Show your support
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
