@@ -28,10 +28,13 @@ justify-content: z.b center (Mitte Horizonatl)
 }
 
 .logo-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   flex-shrink: 0;
   border-radius: 15px;
-  opacity: 0.85;
-  background: #87bfb0;
+  opacity: 1;
+  background: #90d5c6;
   cursor: pointer;
 
   /* BOX MODEL */
@@ -45,12 +48,12 @@ justify-content: z.b center (Mitte Horizonatl)
 .brand-logo {
   flex-shrink: 0;
   border-radius: 15px;
-  opacity: 0.5;
-  background: url(/assets/logo.png) lightgray 50% / cover no-repeat;
-  mix-blend-mode: exclusion;
+  opacity: 1; /*
+  background: url(/assets/logo.png) lightgray 5% / cover no-repeat;
+  mix-blend-mode: exclusion;*/
   /* BOX MODEL */
-  width: 476px;
-  height: 113px;
+  width: 470px;
+  height: 100px;
   margin: auto;
 }
 
