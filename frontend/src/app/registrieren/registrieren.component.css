@@ -1,0 +1,66 @@
+.hintergrundunten {
+  flex-shrink: 0;
+  background-color: #ebfffa;
+  border-radius: 15px;
+  stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.5);
+  /* BOX MODEL */
+  border: 1px solid;
+  height: 100vh;
+  margin: 0;
+}
+
+.überschrift {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  /* BOX MODEL */
+  display: flex;
+  width: 310px;
+  height: 60px;
+  flex-direction: center;
+  margin: 12px auto auto 20px;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.eingabefelder-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.schrift {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  /* BOX MODEL */
+  display: flex;
+  width: 197px;
+  height: 21px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 5px;
+}
+
+.eingabefelder {
+  width: 372px;
+  height: 35px;
+  flex-shrink: 0;
+  border: 1px #39b797 solid;
+  border-radius: 8px;
+}

@@ -1,0 +1,79 @@
+<main>
+  <header class="hintergrundoben">
+    <img
+      class="qa-zeichen"
+      src="/assets/qa-zeichen.png"
+      alt="QA-Zeichen"
+      (click)="openDialog()"
+    />
+    <div class="logo-box" (click)="navigateToLandingPage()">
+      <img
+        class="footprint-human"
+        src="/assets/footprint-human.png"
+        alt="footprint human"
+      />
+      <img class="brand-logo" src="/assets/logo.png" alt="logo" />
+      <img
+        class="footprint-dog"
+        src="/assets/footprint-dog.png"
+        alt="footprint dog"
+      />
+    </div>
+    <img
+      class="profil-zeichen"
+      src="/assets/profil-zeichen.png"
+      alt="Profil-Zeichen"
+    />
+  </header>
+
+  <section>
+    <div class="hintergrundmitte">
+      <div class="such-container">
+        <input type="text" placeholder="Suche..." />
+        <button type="button" class="such-button"></button>
+      </div>
+      <div class="button-container">
+        <button
+          routerLink="inserieren-vorseite"
+          type="button"
+          class="buttons-mittleres-element"
+        >
+          Inserieren
+        </button>
+        <button
+          routerLink="feedback"
+          type="button"
+          class="buttons-mittleres-element"
+        >
+          Feedback
+        </button>
+        <button
+          routerLink="nachrichtenchat"
+          type="button"
+          class="buttons-mittleres-element"
+        >
+          Nachrichten
+        </button>
+        <button
+          routerLink="login"
+          type="button"
+          class="buttons-mittleres-element"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+  <footer class="site-footer">
+    <p>
+      &copy; 2024 Two4Four. Alle Rechte vorbehalten. Made by
+      <a href="https://gitlab.ti.bfh.ch/gomec1">&#64;gomec1</a> |
+      <a href="https://gitlab.ti.bfh.ch/jacod2">&#64;jacod2</a> |
+      <a href="https://gitlab.ti.bfh.ch/schns51">&#64;schns51</a> |
+      <a href="https://gitlab.ti.bfh.ch/vidon1">&#64;vidon1</a>
+    </p>
+  </footer>
+</main>
