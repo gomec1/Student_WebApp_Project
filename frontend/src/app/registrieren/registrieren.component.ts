@@ -1,99 +1,153 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { NgIf } from "@angular/common";
 
 @Component({
-  selector: 'app-registrieren',
+  selector: "app-registrieren",
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, NgIf],
   template: `
     <section class="hintergrundunten">
       <h1 class="überschrift">Registrieren</h1>
+      <div
+        class="fotohochladenkreis"
+        [style.backgroundImage]="'url(' + backgroundImage + ')'"
+      >
+        <img
+          class="profilzeichen"
+          src="/assets/profil-zeichen.png"
+          alt="Profil Zeichen"
+          *ngIf="!backgroundImage"
+        />
+        <h1 class="schriftfotohochladen" *ngIf="!backgroundImage">
+          Profilfoto hinzufügen
+        </h1>
+      </div>
+
+      <input class="inputfoto" type="file" (change)="handleFileInput($event)" />
+
       <form class="form-container">
         <div class="eingabefelder-container">
-          <h1 class="schrift">Name</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="name" class="schrift">Name</label>
+          <input class="eingabefelder" name="name" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Vorname</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="username" class="schrift">Username</label>
+          <input class="eingabefelder" name="username" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Strasse + Nr</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="ausweis" class="schrift">Ausweis</label>
+          <input class="eingabefeldausweis" name="ausweis" type="file" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Postleitzahl</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="vorname" class="schrift">Vorname</label>
+          <input class="eingabefelder" name="vorname" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Ort</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="phone" class="schrift">Telefonnummer</label>
+          <input
+            class="eingabefelder"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+00 77 123 45 67"
+            pattern="[+1-100]-[1-9]{3}-[1-9]{3}-[1-9]{1}-[1-9]{2}"
+          />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Geburtsdatum</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="geburtsdatum" class="schrift">Geburtstdatum</label>
+          <input class="eingabefelder" name="geburtsdatum" type="date" />
+        </div>
+
+        <div class="eingabefelder-container">
+          <label for="strasse+nr" class="schrift">Strasse + Nr</label>
+          <input class="eingabefelder" name="strasse+nr" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Email</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="email" class="schrift">Email</label>
+          <input class="eingabefelder" name="email" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Email wiederholen</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="passwort" class="schrift">Passwort</label>
+          <input class="eingabefelder" name="passwort" type="password" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Telefonnummer</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="postleitzahl" class="schrift">Postleitzahl</label>
+          <input class="eingabefelder" name="postleitzahl" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Ausweis hochladen</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="emailWiederholen" class="schrift"
+            >Email wiederholen</label
+          >
+          <input class="eingabefelder" name="emailWiederholen" type="email" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">weiss noch nicht</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="passwortWiederholen" class="schrift"
+            >Passwort wiederholen</label
+          >
+          <input
+            class="eingabefelder"
+            name="passwortWiederholen"
+            type="password"
+          />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Passwort</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="ort" class="schrift">Ort</label>
+          <input class="eingabefelder" name="ort" type="text" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Passwort wiederholen</h1>
-          <input class="eingabefelder" type="text" />
+          <label for="ichSucheTiersitter" class="schrift"
+            >Ich suche Tiersitter</label
+          >
+          <input type="checkbox" name="ichSucheTiersitter" />
         </div>
         <div class="eingabefelder-container">
-          <h1 class="schrift">Ich suche Tiersitter</h1>
-          <input type="checkbox" />
+          <label for="ichBinTierhütter" class="schrift"
+            >Ich bin Tierhütter</label
+          >
+          <input type="checkbox" name="ichBinTierhütter" />
         </div>
-        <div class="eingabefelder-container">
-          <h1 class="schrift">Ich bin Tierhütter</h1>
-          <input type="checkbox" />
-        </div>
+        <input class="submit" type="submit" />
       </form>
     </section>
   `,
-  styleUrl: './registrieren.component.css',
+  styleUrl: "./registrieren.component.css",
 })
 export class RegistrierenComponent implements OnInit {
   /* Login/Registraed function */
   signupUsers: any[] = [];
   sigupObj: any = {
-    userName: '',
-    name: '',
-    vorname: '',
-    strasseNr: '',
-    postleitzahl: '',
-    ort: '',
-    geburtstdatum: '',
-    email: '',
-    emailWiederholen: '',
-    telefonnummer: '',
-    ausweisHochladen: '',
-    passwort: '',
-    passwortWiederholen: '',
+    userName: "",
+    name: "",
+    vorname: "",
+    strasseNr: "",
+    postleitzahl: "",
+    ort: "",
+    geburtstdatum: "",
+    email: "",
+    emailWiederholen: "",
+    telefonnummer: "",
+    ausweisHochladen: "",
+    passwort: "",
+    passwortWiederholen: "",
   };
+
+  backgroundImage: string = ""; // Declare the 'backgroundImage' property
 
   constructor() {}
   ngOnInit(): void {}
+
+  /* Foto hochladen Funktion */
+  handleFileInput(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        this.backgroundImage = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 }

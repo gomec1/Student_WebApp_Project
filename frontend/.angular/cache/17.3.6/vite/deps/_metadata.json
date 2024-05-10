@@ -1,0 +1,67 @@
+{
+  "hash": "7893dcdf",
+  "configHash": "0d306797",
+  "lockfileHash": "a87c9f1c",
+  "browserHash": "d7b931e4",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "289f666a",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "7db89cbd",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "994c6142",
+      "needsInterop": false
+    },
+    "@angular/material/dialog": {
+      "src": "../../../../../node_modules/@angular/material/fesm2022/dialog.mjs",
+      "file": "@angular_material_dialog.js",
+      "fileHash": "839d3bfb",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "c20bea81",
+      "needsInterop": false
+    },
+    "@angular/platform-browser/animations/async": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
+      "file": "@angular_platform-browser_animations_async.js",
+      "fileHash": "e94114c6",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "1bb3a145",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-O5DNNWVV": {
+      "file": "chunk-O5DNNWVV.js"
+    },
+    "browser-VS6SVGI3": {
+      "file": "browser-VS6SVGI3.js"
+    },
+    "chunk-FXOHRYLF": {
+      "file": "chunk-FXOHRYLF.js"
+    },
+    "chunk-5QZTDWL6": {
+      "file": "chunk-5QZTDWL6.js"
+    },
+    "chunk-LIIZP52Z": {
+      "file": "chunk-LIIZP52Z.js"
+    }
+  }
+}
