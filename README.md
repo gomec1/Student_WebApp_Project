@@ -1,93 +1,68 @@
-# 4o-Passionsfrucht
+<h1 align="center">Welcome to Two4Four 👋</h1>
+<p>
+<img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://komarev.com/ghpvc/?username=gomec1&label=Profile%20views&color=0e75b6&style=flat" alt="gomec1">
+</p>
+ 
+### Project Descriptin
+
+> Our project aims to develop a modern and user-friendly platform that will allow pet owners to find trustworthy and reliable caretakers for their pets. At the same time, it offers pet lovers the opportunity to care for animals while earning pocket money. The platform is designed to create a safe and satisfying environment for all users and to ensure that animals receive continuous care, even when the owner is unable to be present. By fostering a vibrant community, our solution enables users to share experiences and support each other. Our pet sharing platform focuses on making the connection between pet owners and pet lovers simple and effective, with a special emphasis on safety, trustworthiness and user satisfaction.
+
+## Languages and Tools
+
+<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+
+### 🏠 [Homepage]https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
 
 
+## Install
 
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+```sh
+npm install
 ```
-cd existing_repo
-git remote add origin https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht.git
-git branch -M master
-git push -uf origin master
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```sh
+npm run start
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## Run tests
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```sh
+npm run test
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## How to Use the Project
+<p>TEXT </p>
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## What was our motivation?
+>We initiated this project as part of a school assignment in our Software Engineering module. The goal was to apply theoretical knowledge in a practical setting, enhancing our understanding of real-world software development processes and challenges.
+## Why did we build this project?
+>We chose to develop this type of website because it offered us the flexibility to incorporate a variety of elements and features, allowing us to explore and implement a wide range of functionalities. This project not only enabled us to address specific user needs effectively but also provided us with a rich learning environment. By integrating diverse technologies and tools, we were able to gain hands-on experience in multiple aspects of web development, from user interface design to complex backend processing. Additionally, this approach allowed us to creatively solve problems and innovate, enhancing our skills in designing scalable and robust software solutions.
+## What problem does it solve?
+>This project addresses the issue of loneliness among pets by providing a platform where pet owners can find trustworthy caretakers for their animals. Additionally, it offers an opportunity for animal lovers to earn some extra money while spending quality time with pets. This not only helps pets receive the care and attention they need but also assists people in finding flexible, enjoyable employment.
+## What did we learn?
+>Throughout the project, we gained substantial knowledge and experience. We learned about the integration of various technologies to build a comprehensive application. This includes front-end development with Angular, HTML, CSS, and TypeScript, which taught us about creating interactive and user-friendly web interfaces. On the backend, we explored using Strapi and Insomnia for API development and management, and we deepened our understanding of databases through SQL. This project was a significant opportunity to see how different layers of technology interact within a software ecosystem.
+## What makes our project stand out?
+>What distinguishes our project is its design and user-friendliness. We focused on creating an intuitive interface that is both aesthetically pleasing and easy to navigate, which significantly enhances the user experience. This attention to design details ensures that our platform is not only functional but also enjoyable to use, setting it apart from other pet care platforms.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## Authors
 
-## License
-For open source projects, say how it is licensed.
+👤 **Carlos Gomez | Silvan Schneider | Nelson Vidovic | Daniel Jacobs**
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+* Github: [@gomec1, @schns51, @vidon1, @jacod2]
+
+  * <p>https://github.com/gomec1</p>
+  * <p>https://github.com/schns51</p> 
+  * <p>https://github.com/vidon1</p> 
+  * <p>https://github.com/jacod2</p>  
+
+
+
+
+## Show your support
+
+Give a ⭐️ if you like this project !
+
+***
