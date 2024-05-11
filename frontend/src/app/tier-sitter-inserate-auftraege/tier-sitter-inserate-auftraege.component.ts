@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { TierSitterInseratAuftraegeDaten } from '../tier-sitter-inserat-auftraege-daten';
+import { Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
 @Component({
-  selector: 'app-tier-sitter-inserate-auftraege',
+  selector: "app-tier-sitter-inserate-auftraege",
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
@@ -47,7 +47,7 @@ import { TierSitterInseratAuftraegeDaten } from '../tier-sitter-inserat-auftraeg
       </div>
     </section>
   `,
-  styleUrl: './tier-sitter-inserate-auftraege.component.css',
+  styleUrl: "./tier-sitter-inserate-auftraege.component.css",
 })
 export class TierSitterInserateAuftraegeComponent {
   @Input() TierSitterInseratAuftraegeDaten!: TierSitterInseratAuftraegeDaten;
@@ -55,73 +55,87 @@ export class TierSitterInserateAuftraegeComponent {
   TierSitterInseratAuftraegeDatenList: TierSitterInseratAuftraegeDaten[] = [
     {
       id: 0,
-      titel: 'Spazieren mit Sayra',
-      tiername: 'Sayra',
-      tierart: 'Hund',
-      tierrasse: 'Golden Retriever',
-      alter: '4 Jahre',
-      Zeitdauer_von_bis: 'Jeden Montag, Nachmittag',
+      titel: "Spazieren mit Sayra",
+      tiername: "Sayra",
+      tierart: "Hund",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
       beschreibung_wichtiger_infos:
-        'Geimpft, sehr freundlich, liebt es zu spielen',
-      ort: 'Bern',
-      totalbetrag_CHF: '50 CHF',
-      photo: '/assets/Hund-sayra.png',
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Bern",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/sayrahund.JPG",
     },
     {
       id: 1,
-      titel: 'Spazieren mit Sayra',
-      tiername: 'Sayra',
-      tierart: 'Hund',
-      tierrasse: 'Golden Retriever',
-      alter: '4 Jahre',
-      Zeitdauer_von_bis: 'Jeden Montag, Nachmittag',
+      titel: "Spielen mit Sayra",
+      tiername: "Sayra",
+      tierart: "Hund",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
       beschreibung_wichtiger_infos:
-        'Geimpft, sehr freundlich, liebt es zu spielen',
-      ort: 'Bern',
-      totalbetrag_CHF: '50 CHF',
-      photo: '/assets/Hund-sayra.png',
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Belp",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/sayrahund.JPG",
     },
     {
       id: 2,
-      titel: 'Spazieren mit Sayra',
-      tiername: 'Sayra',
-      tierart: 'Hund',
-      tierrasse: 'Golden Retriever',
-      alter: '4 Jahre',
-      Zeitdauer_von_bis: 'Jeden Montag, Nachmittag',
+      titel: "Gassi gehen mit Sayra",
+      tiername: "Sayra",
+      tierart: "Hund",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
       beschreibung_wichtiger_infos:
-        'Geimpft, sehr freundlich, liebt es zu spielen',
-      ort: 'Bern',
-      totalbetrag_CHF: '50 CHF',
-      photo: '/assets/Hund-sayra.png',
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Spiez",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/sayrahund.JPG",
     },
     {
       id: 3,
-      titel: 'Spazieren mit Sayra',
-      tiername: 'Sayra',
-      tierart: 'Hund',
-      tierrasse: 'Golden Retriever',
-      alter: '4 Jahre',
-      Zeitdauer_von_bis: 'Jeden Montag, Nachmittag',
+      titel: "Sayra zum arzt bringen",
+      tiername: "Sayra",
+      tierart: "Hund",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
       beschreibung_wichtiger_infos:
-        'Geimpft, sehr freundlich, liebt es zu spielen',
-      ort: 'Bern',
-      totalbetrag_CHF: '50 CHF',
-      photo: '/assets/Hund-sayra.png',
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Muri",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/sayrahund.JPG",
     },
     {
       id: 4,
-      titel: 'Spazieren mit Sayra',
-      tiername: 'Sayra',
-      tierart: 'Hund',
-      tierrasse: 'Golden Retriever',
-      alter: '4 Jahre',
-      Zeitdauer_von_bis: 'Jeden Montag, Nachmittag',
+      titel: "Spazieren mit Sayra",
+      tiername: "Sayra",
+      tierart: "Hund",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
       beschreibung_wichtiger_infos:
-        'Geimpft, sehr freundlich, liebt es zu spielen',
-      ort: 'Bern',
-      totalbetrag_CHF: '50 CHF',
-      photo: '/assets/Hund-sayra.png',
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Bern",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/sayrahund.JPG",
+    },
+    {
+      id: 5,
+      titel: "kuscheln mit Luna",
+      tiername: "Luna",
+      tierart: "Katze",
+      tierrasse: "Golden Retriever",
+      alter: "4 Jahre",
+      Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
+      beschreibung_wichtiger_infos:
+        "Geimpft, sehr freundlich, liebt es zu spielen",
+      ort: "Amsterdam",
+      totalbetrag_CHF: "50 CHF",
+      photo: "/assets/Luna.JPG",
     },
   ];
 }

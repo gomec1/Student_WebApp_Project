@@ -104,7 +104,7 @@ import { NgIf } from "@angular/common";
         </div>
         <div class="eingabefelder-container">
           <label for="ichBinTierhütter" class="schrift"
-            >Ich bin Tierhütter</label
+            >Ich bin Tierhüter</label
           >
           <input type="checkbox" name="ichBinTierhütter" />
         </div>
