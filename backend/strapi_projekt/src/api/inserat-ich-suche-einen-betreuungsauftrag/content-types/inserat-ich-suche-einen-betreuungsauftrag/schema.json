@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inserat_ich_suche_einen_betreuungsauftrags",
+  "info": {
+    "singularName": "inserat-ich-suche-einen-betreuungsauftrag",
+    "pluralName": "inserat-ich-suche-einen-betreuungsauftrags",
+    "displayName": "Inserat: Ich suche einen Betreuungsauftrag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "persoenliche_beschreibung": {
+      "type": "string",
+      "required": true
+    },
+    "verfuegbarkeit_infos": {
+      "type": "string",
+      "required": true
+    },
+    "verfuegbarkeit_von": {
+      "type": "datetime"
+    },
+    "verfuegbarkeit_bis": {
+      "type": "datetime"
+    },
+    "kosten": {
+      "type": "string",
+      "required": true
+    },
+    "profilfoto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "account": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::account.account",
+      "inversedBy": "betreuungsSuchInserat"
+    }
+  }
+}

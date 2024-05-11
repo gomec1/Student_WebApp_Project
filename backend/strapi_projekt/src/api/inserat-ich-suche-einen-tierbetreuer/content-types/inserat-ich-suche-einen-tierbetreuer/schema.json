@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inserat_ich_suche_einen_tierbetreuers",
+  "info": {
+    "singularName": "inserat-ich-suche-einen-tierbetreuer",
+    "pluralName": "inserat-ich-suche-einen-tierbetreuers",
+    "displayName": "Inserat: Ich suche einen Tierbetreuer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "tierart": {
+      "type": "string",
+      "required": true
+    },
+    "tierrasse": {
+      "type": "string",
+      "required": true
+    },
+    "tiername": {
+      "type": "string",
+      "required": true
+    },
+    "alter": {
+      "type": "string",
+      "required": false
+    },
+    "beschreibung_wichtiger_infos": {
+      "type": "text"
+    },
+    "von": {
+      "type": "datetime",
+      "required": false
+    },
+    "bis": {
+      "type": "datetime"
+    },
+    "verguetung": {
+      "type": "string",
+      "required": true
+    },
+    "foto_des_tieres": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "account": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::account.account",
+      "inversedBy": "betreuerSuchInserat"
+    }
+  }
+}

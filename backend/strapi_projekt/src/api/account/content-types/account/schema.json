@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "singularName": "account",
+    "pluralName": "accounts",
+    "displayName": "account",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vorname": {
+      "type": "string"
+    },
+    "nachname": {
+      "type": "string"
+    },
+    "strasse": {
+      "type": "string"
+    },
+    "postleizahl": {
+      "type": "integer"
+    },
+    "ort": {
+      "type": "string"
+    },
+    "geburtstag": {
+      "type": "date"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefonnummer": {
+      "type": "biginteger"
+    },
+    "ausweisdokument": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "profilfoto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "accountNummer": {
+      "type": "uid",
+      "targetField": "nachname"
+    },
+    "rolle": {
+      "type": "enumeration",
+      "enum": [
+        "Tierbesitzer",
+        "Tierhüter",
+        "beides"
+      ]
+    },
+    "bewertungen": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bewertung.bewertung",
+      "mappedBy": "accountBewertung"
+    },
+    "betreuungsSuchInserat": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag",
+      "mappedBy": "account"
+    },
+    "betreuerSuchInserat": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer",
+      "mappedBy": "account"
+    }
+  }
+}

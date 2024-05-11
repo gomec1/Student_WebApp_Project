@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bewertungs",
+  "info": {
+    "singularName": "bewertung",
+    "pluralName": "bewertungs",
+    "displayName": "Bewertung",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bewertungstext": {
+      "type": "string"
+    },
+    "bewertungsscore": {
+      "type": "integer",
+      "required": true,
+      "max": 6,
+      "min": 1
+    },
+    "accountBewertung": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::account.account",
+      "inversedBy": "bewertungen"
+    }
+  }
+}
