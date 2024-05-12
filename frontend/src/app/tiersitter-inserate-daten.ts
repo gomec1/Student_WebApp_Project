@@ -3,9 +3,9 @@ export interface TiersitterInserateDaten {
   titel: string;
   vorname: string;
   name: string;
-  verfügbarkeit: string;
+  verfuegbarkeit: string;
   ort: string;
   lohnkosten: string;
-  persönliche_beschreibung: string;
+  persoenliche_beschreibung: string;
   photo: string;
 }

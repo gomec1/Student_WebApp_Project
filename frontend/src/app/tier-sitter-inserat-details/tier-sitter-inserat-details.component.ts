@@ -10,21 +10,39 @@ import { TiersitterInserateDaten } from "../tiersitter-inserate-daten";
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <article>
-      <img
-        class="listing-fotoTiersitter"
-        [src]="tierSitterInserateDaten?.photo"
-        alt="Foto"
-      />
-
-      <section class="listing-beschreibung">
-        <h2 class="listing-titel">
+    <article class="hintergrundunten">
+      <section class="listing-beschreibung1">
+        <img
+          class="listing-fotoTiersitter"
+          [src]="tierSitterInserateDaten?.photo"
+          alt="Foto"
+        />
+        <h2 class="listing-haupttitel">
           {{ tierSitterInserateDaten?.titel }}
         </h2>
+        <h2 class="listing-titel">Vorname / Name:</h2>
+        <p class="beschreibung1">
+          {{ tierSitterInserateDaten?.vorname }}
+          {{ tierSitterInserateDaten?.name }}
+        </p>
+        <h2 class="listing-titel">Ort:</h2>
+        <p class="beschreibung1">
+          {{ tierSitterInserateDaten?.ort }}
+        </p>
       </section>
 
-      <section class="listing-apply">
-        <h2 class="section-heading">
+      <section class="listing-beschreibung2">
+        <h2 class="listing-titel">Persönliche Beschreibung:</h2>
+        <p class="beschreibung2">
+          {{ tierSitterInserateDaten?.persoenliche_beschreibung }}
+        </p>
+        <h2 class="listing-titel">Verfügbarkeit:</h2>
+        <p class="beschreibung2">
+          {{ tierSitterInserateDaten?.verfuegbarkeit }}
+        </p>
+        <h2 class="listing-titel">Lohnkosten:</h2>
+        <p class="beschreibung2">{{ tierSitterInserateDaten?.lohnkosten }}</p>
+        <h2 class="listing-applytitel">
           Kontaktiere {{ tierSitterInserateDaten?.vorname }} um auf dein Tier
           aufzupassen!
         </h2>
