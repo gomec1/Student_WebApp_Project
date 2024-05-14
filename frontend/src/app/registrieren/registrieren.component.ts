@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { NgIf } from "@angular/common";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-registrieren",
@@ -116,29 +117,42 @@ import { NgIf } from "@angular/common";
 })
 export class RegistrierenComponent implements OnInit {
   /* Login/Registraed function */
-  signupUsers: any[] = [];
-  sigupObj: any = {
-    userName: "",
-    name: "",
-    vorname: "",
-    strasseNr: "",
-    postleitzahl: "",
-    ort: "",
-    geburtstdatum: "",
-    email: "",
-    emailWiederholen: "",
-    telefonnummer: "",
-    ausweisHochladen: "",
-    passwort: "",
-    passwortWiederholen: "",
-  };
-
-  backgroundImage: string = ""; // Declare the 'backgroundImage' property
+  // username: string = "";
+  // name: string = "";
+  // vorname: string = "";
+  // strasseNr: string = "";
+  // postleitzahl: string = "";
+  // ort: string = "";
+  // telefonnummer: number = "";
+  // geburtsdatum: date = "";
+  // email: string = "";
+  // password: string = "";
+  //ichSucheTiersitter: boolean = false;
+  //ichBinTierhütter: boolean = false;
+  //ausweis: file = "";
+  //profilfoto: file = "";
 
   constructor() {}
+  // constructor(private http: HttpClient) {}
+
   ngOnInit(): void {}
 
+  // onSubmit() {
+  //   const data = {
+  //     username: this.username,
+  //     email: this.email,
+  //     password: this.password,
+  //   };
+
+  //   this.http
+  //     .post("https://localhost:1337/api/auth/local/register", data)
+  //     .subscribe((response) => {
+  //       console.log(response);
+  //     });
+  // }
+
   /* Foto hochladen Funktion */
+  backgroundImage: string = ""; // Declare the 'backgroundImage' property
   handleFileInput(event: Event) {
     const fileInput = event.target as HTMLInputElement;
     if (fileInput.files && fileInput.files.length > 0) {

@@ -13,33 +13,43 @@
   "pluginOptions": {},
   "attributes": {
     "vorname": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "nachname": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true
     },
-    "strasse": {
-      "type": "string"
+    "strasseNr": {
+      "type": "string",
+      "required": true
     },
-    "postleizahl": {
-      "type": "integer"
+    "postleitzahl": {
+      "type": "integer",
+      "required": true
     },
     "ort": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "geburtstag": {
-      "type": "date"
+    "geburtsdatum": {
+      "type": "date",
+      "required": true
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true,
+      "unique": true
     },
     "telefonnummer": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true,
+      "unique": true
     },
-    "ausweisdokument": {
+    "ausweis": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -52,17 +62,17 @@
         "images"
       ]
     },
-    "accountNummer": {
-      "type": "uid",
-      "targetField": "nachname"
+    "accountID": {
+      "type": "uid"
     },
     "rolle": {
       "type": "enumeration",
       "enum": [
-        "Tierbesitzer",
-        "Tierhüter",
+        "Ich suche Tiersitter",
+        "Ich bin Tierhüter",
         "beides"
-      ]
+      ],
+      "required": true
     },
     "bewertungen": {
       "type": "relation",

@@ -800,18 +800,21 @@ export interface ApiAccountAccount extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    vorname: Attribute.String;
-    nachname: Attribute.String;
-    strasse: Attribute.String;
-    postleizahl: Attribute.Integer;
-    ort: Attribute.String;
-    geburtstag: Attribute.Date;
-    email: Attribute.Email;
-    telefonnummer: Attribute.BigInteger;
-    ausweisdokument: Attribute.Media;
+    vorname: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    strasseNr: Attribute.String & Attribute.Required;
+    postleitzahl: Attribute.Integer & Attribute.Required;
+    ort: Attribute.String & Attribute.Required;
+    geburtsdatum: Attribute.Date & Attribute.Required;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    telefonnummer: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    ausweis: Attribute.Media & Attribute.Required;
     profilfoto: Attribute.Media;
-    accountNummer: Attribute.UID<'api::account.account', 'nachname'>;
-    rolle: Attribute.Enumeration<['Tierbesitzer', 'Tierh\u00FCter', 'beides']>;
+    accountID: Attribute.UID;
+    rolle: Attribute.Enumeration<
+      ['Ich suche Tiersitter', 'Ich bin Tierh\u00FCter', 'beides']
+    > &
+      Attribute.Required;
     bewertungen: Attribute.Relation<
       'api::account.account',
       'oneToMany',

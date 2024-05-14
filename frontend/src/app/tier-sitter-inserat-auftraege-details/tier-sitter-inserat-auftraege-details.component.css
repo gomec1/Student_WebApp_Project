@@ -1,0 +1,119 @@
+.hintergrundunten {
+  flex-shrink: 0;
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #ebfffa;
+  border-radius: 15px;
+  stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.5);
+  /* BOX MODEL */
+  border: 1px solid;
+  height: 100%;
+  margin: 0;
+}
+
+.listing-beschreibung1 {
+  width: 550px;
+  height: 800px;
+  border: #39b797 solid 1px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px;
+  padding: 20px;
+}
+
+.listing-beschreibung1 > * {
+  margin-bottom: 5px;
+}
+
+.listing-fotoTier {
+  width: 300px;
+  height: 350px;
+  border-radius: 15px;
+  stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.5);
+  /* BOX MODEL */
+  border: 1px solid;
+  margin: 0px;
+  align-self: center;
+}
+
+.listing-haupttitel {
+  display: flex;
+  margin: 10px auto 20px auto;
+  text-align: center;
+  /* Typography */
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.listing-titel {
+  display: flex;
+  font-size: 25px;
+}
+
+.beschreibung1 {
+  width: 500px;
+  height: 40px;
+  display: flex;
+  margin: 0px;
+  border-radius: 5px;
+  /* Typography */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+.beschreibung2 {
+  width: 500px;
+  height: 100px;
+  display: flex;
+  border: #39b797 1px solid;
+  background-color: white;
+  border-radius: 5px;
+  /* Typography */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+.listing-beschreibung2 {
+  width: 550px;
+  height: 800px;
+  border: #39b797 solid 1px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px;
+  padding: 20px;
+}
+
+.listing-beschreibung2 > * {
+  margin-bottom: 5px;
+}
+
+.listing-applytitel {
+  display: flex;
+  font-size: 25px;
+  text-align: center;
+}
+.primary {
+  background-color: #39b797;
+  width: 20vh;
+  height: 5vh;
+  border-radius: 15px;
+  stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  /* BOX MODEL */
+  border: 1px solid;
+  margin: 0;
+  align-self: center;
+}
