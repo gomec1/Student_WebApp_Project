@@ -742,7 +742,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -771,6 +770,18 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    vorname: Attribute.String;
+    name: Attribute.String;
+    geburtsdatum: Attribute.String;
+    strasseNr: Attribute.String;
+    ort: Attribute.String;
+    ausweis: Attribute.Media;
+    profilfoto: Attribute.Media;
+    rolle: Attribute.Enumeration<
+      ['Ich bin Tiersitter', 'Ich bin Tierbesitzer', 'beides']
+    >;
+    telefonnummer: Attribute.BigInteger;
+    postleitzahl: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -800,17 +811,30 @@ export interface ApiAccountAccount extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    vorname: Attribute.String & Attribute.Required;
-    name: Attribute.String & Attribute.Required;
-    strasseNr: Attribute.String & Attribute.Required;
-    postleitzahl: Attribute.Integer & Attribute.Required;
-    ort: Attribute.String & Attribute.Required;
-    geburtsdatum: Attribute.Date & Attribute.Required;
-    email: Attribute.Email & Attribute.Required & Attribute.Unique;
-    telefonnummer: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
-    ausweis: Attribute.Media & Attribute.Required;
+    vorname: Attribute.String;
+    name: Attribute.String;
+    strasseNr: Attribute.String;
+    postleitzahl: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: '9999';
+        },
+        string
+      >;
+    ort: Attribute.String;
+    email: Attribute.Email & Attribute.Unique;
+    telefonnummer: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMax<
+        {
+          max: '9999999999';
+        },
+        string
+      >;
+    ausweis: Attribute.Media;
     profilfoto: Attribute.Media;
-    accountID: Attribute.UID;
     rolle: Attribute.Enumeration<
       ['Ich suche Tiersitter', 'Ich bin Tierh\u00FCter', 'beides']
     > &
@@ -830,6 +854,8 @@ export interface ApiAccountAccount extends Schema.CollectionType {
       'oneToMany',
       'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer'
     >;
+    geburtsdatum: Attribute.String;
+    username: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -3,11 +3,12 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { NgIf } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 @Component({
   selector: "app-registrieren",
   standalone: true,
-  imports: [RouterModule, NgIf],
+  imports: [RouterModule, NgIf, FormsModule, HttpClientModule],
   template: `
     <section class="hintergrundunten">
       <h1 class="überschrift">Registrieren</h1>
@@ -25,133 +26,234 @@ import { HttpClient } from "@angular/common/http";
           Profilfoto hinzufügen
         </h1>
       </div>
+      <!-- <input
+        class="inputfoto"
+        type="file"
+        (change)="handleFileInput($event)"
+        (change)="onFileSelected($event, 'profilfoto')"
+        [(ngModel)]="profilfoto"
+      /> -->
 
-      <input class="inputfoto" type="file" (change)="handleFileInput($event)" />
-
-      <form class="form-container">
-        <div class="eingabefelder-container">
+      <form class="form-container" (ngSubmit)="onSubmit()">
+        <!-- Add ngSubmit event -->
+        <!-- <div class="eingabefelder-container">
           <label for="name" class="schrift">Name</label>
-          <input class="eingabefelder" name="name" type="text" />
-        </div>
+          <input
+            class="eingabefelder"
+            name="name"
+            type="text"
+            [(ngModel)]="name"
+          />
+        </div> -->
+
         <div class="eingabefelder-container">
           <label for="username" class="schrift">Username</label>
-          <input class="eingabefelder" name="username" type="text" />
+          <input
+            class="eingabefelder"
+            name="username"
+            type="text"
+            [(ngModel)]="username"
+          />
         </div>
-        <div class="eingabefelder-container">
+
+        <!-- <div class="eingabefelder-container">
           <label for="ausweis" class="schrift">Ausweis</label>
-          <input class="eingabefeldausweis" name="ausweis" type="file" />
-        </div>
-        <div class="eingabefelder-container">
+          <input
+            class="eingabefeldausweis"
+            name="ausweis"
+            type="file"
+            [(ngModel)]="ausweis"
+            (change)="onFileSelected($event, 'ausweis')"
+          />
+        </div> -->
+
+        <!-- <div class="eingabefelder-container">
           <label for="vorname" class="schrift">Vorname</label>
-          <input class="eingabefelder" name="vorname" type="text" />
-        </div>
-        <div class="eingabefelder-container">
+          <input
+            class="eingabefelder"
+            name="vorname"
+            type="text"
+            [(ngModel)]="vorname"
+          />
+        </div> -->
+
+        <!-- <div class="eingabefelder-container">
           <label for="phone" class="schrift">Telefonnummer</label>
           <input
             class="eingabefelder"
-            type="tel"
+            type="text"
             id="phone"
             name="phone"
-            placeholder="+00 77 123 45 67"
-            pattern="[+1-100]-[1-9]{3}-[1-9]{3}-[1-9]{1}-[1-9]{2}"
+            placeholder="077 123 45 67"
+            [(ngModel)]="telefonnummer"
           />
-        </div>
-        <div class="eingabefelder-container">
+        </div> -->
+
+        <!-- <div class="eingabefelder-container">
           <label for="geburtsdatum" class="schrift">Geburtstdatum</label>
-          <input class="eingabefelder" name="geburtsdatum" type="date" />
+          <input
+            class="eingabefelder"
+            name="geburtsdatum"
+            type="text"
+            [(ngModel)]="geburtsdatum"
+          />
+        </div> -->
+
+        <!-- <div class="eingabefelder-container">
+          <label for="strasse+nr" class="schrift">Strasse + Nr</label>
+          <input
+            class="eingabefelder"
+            name="strasse+nr"
+            type="text"
+            [(ngModel)]="strasseNr"
+          />
+        </div> -->
+
+        <div class="eingabefelder-container">
+          <label for="email" class="schrift">Email</label>
+          <input
+            class="eingabefelder"
+            name="email"
+            type="email"
+            [(ngModel)]="email"
+          />
         </div>
 
         <div class="eingabefelder-container">
-          <label for="strasse+nr" class="schrift">Strasse + Nr</label>
-          <input class="eingabefelder" name="strasse+nr" type="text" />
-        </div>
-        <div class="eingabefelder-container">
-          <label for="email" class="schrift">Email</label>
-          <input class="eingabefelder" name="email" type="text" />
-        </div>
-        <div class="eingabefelder-container">
-          <label for="passwort" class="schrift">Passwort</label>
-          <input class="eingabefelder" name="passwort" type="password" />
-        </div>
-        <div class="eingabefelder-container">
-          <label for="postleitzahl" class="schrift">Postleitzahl</label>
-          <input class="eingabefelder" name="postleitzahl" type="text" />
-        </div>
-        <div class="eingabefelder-container">
-          <label for="emailWiederholen" class="schrift"
-            >Email wiederholen</label
-          >
-          <input class="eingabefelder" name="emailWiederholen" type="email" />
-        </div>
-        <div class="eingabefelder-container">
-          <label for="passwortWiederholen" class="schrift"
-            >Passwort wiederholen</label
-          >
+          <label for="password" class="schrift">Passwort</label>
           <input
             class="eingabefelder"
-            name="passwortWiederholen"
+            name="password"
             type="password"
+            [(ngModel)]="password"
           />
         </div>
-        <div class="eingabefelder-container">
+
+        <!-- <div class="eingabefelder-container">
+          <label for="postleitzahl" class="schrift">Postleitzahl</label>
+          <input
+            class="eingabefelder"
+            name="postleitzahl"
+            type="text"
+            [(ngModel)]="postleitzahl"
+          />
+        </div> -->
+
+        <!-- <div class="eingabefelder-container">
           <label for="ort" class="schrift">Ort</label>
-          <input class="eingabefelder" name="ort" type="text" />
-        </div>
+          <input
+            class="eingabefelder"
+            name="ort"
+            type="text"
+            [(ngModel)]="ort"
+          />
+        </div> -->
+
         <div class="eingabefelder-container">
-          <label for="ichSucheTiersitter" class="schrift"
-            >Ich suche Tiersitter</label
-          >
-          <input type="checkbox" name="ichSucheTiersitter" />
+          <label for="rolle" class="schrift">Rolle</label>
+          <input list="rolle" name="rolle" [(ngModel)]="rolle" />
+          <datalist id="rolle">
+            <option value="Ich bin Tiersitter"></option>
+            <option value="Ich bin Tierbesitzer"></option>
+            <option value="beides"></option>
+          </datalist>
         </div>
-        <div class="eingabefelder-container">
-          <label for="ichBinTierhütter" class="schrift"
-            >Ich bin Tierhüter</label
-          >
-          <input type="checkbox" name="ichBinTierhütter" />
-        </div>
-        <input class="submit" type="submit" />
+
+        <input class="submit" type="submit" value="Submit" />
+        <!-- Change to input type="submit" -->
       </form>
     </section>
   `,
   styleUrl: "./registrieren.component.css",
 })
 export class RegistrierenComponent implements OnInit {
-  /* Login/Registraed function */
-  // username: string = "";
-  // name: string = "";
-  // vorname: string = "";
-  // strasseNr: string = "";
-  // postleitzahl: string = "";
-  // ort: string = "";
-  // telefonnummer: number = "";
-  // geburtsdatum: date = "";
-  // email: string = "";
-  // password: string = "";
-  //ichSucheTiersitter: boolean = false;
-  //ichBinTierhütter: boolean = false;
-  //ausweis: file = "";
-  //profilfoto: file = "";
+  /* Register function */
+  username: string = "";
+  vorname: string = "";
+  ort: string = "";
+  email: string = "";
+  password: string = "";
+  telefonnummer: string = "";
+  rolle: string = "";
+  name: string = "";
+  strasseNr: string = "";
+  postleitzahl: string = "";
+  geburtsdatum: string = "";
+  profilfoto: File | null = null;
+  ausweis: File | null = null;
 
-  constructor() {}
-  // constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
-  // onSubmit() {
-  //   const data = {
-  //     username: this.username,
-  //     email: this.email,
-  //     password: this.password,
-  //   };
+  // Diese Methode wird aufgerufen, wenn der Benutzer ein Profilbild oder ausweis hochlädt
+  onFileSelected(event: Event, type: string) {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      const file = target.files[0];
+      const fileType = file.type;
+      const validImageTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "image/svg+xml",
+        "image/tiff",
+        "image/vnd.microsoft.icon",
+        "image/vnd.djvu",
+        "application/zip",
+        "application/pdf",
+        "application/json",
+      ];
 
-  //   this.http
-  //     .post("https://localhost:1337/api/auth/local/register", data)
-  //     .subscribe((response) => {
-  //       console.log(response);
-  //     });
-  // }
+      if (validImageTypes.includes(fileType)) {
+        if (type === "profilfoto") {
+          this.profilfoto = file;
+        } else if (type === "ausweis") {
+          this.ausweis = file;
+        }
+      } else {
+        alert("Bitte laden Sie eine Datei im unterstützten Format hoch.");
+      }
+    }
+  }
 
-  /* Foto hochladen Funktion */
+  onSubmit() {
+    debugger;
+
+    const formData = new FormData();
+    formData.append(
+      "data",
+      JSON.stringify({
+        username: this.username,
+        vorname: this.vorname,
+        ort: this.ort,
+        email: this.email,
+        password: this.password,
+        telefonnummer: this.telefonnummer,
+        rolle: this.rolle,
+        name: this.name,
+        strasseNr: this.strasseNr,
+        postleitzahl: this.postleitzahl,
+        geburtsdatum: this.geburtsdatum,
+      })
+    );
+
+    if (this.profilfoto) {
+      formData.append("files.profilfoto", this.profilfoto);
+    }
+
+    if (this.ausweis) {
+      formData.append("files.ausweis", this.ausweis);
+    }
+
+    this.http
+      .post("http://localhost:1337/api/auth/local/register", formData)
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
+
+  /* Foto hochladen und wird ersetzt Funktion */
   backgroundImage: string = ""; // Declare the 'backgroundImage' property
   handleFileInput(event: Event) {
     const fileInput = event.target as HTMLInputElement;

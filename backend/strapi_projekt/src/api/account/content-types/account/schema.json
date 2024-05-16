@@ -14,42 +14,40 @@
   "attributes": {
     "vorname": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "strasseNr": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "postleitzahl": {
-      "type": "integer",
-      "required": true
+      "type": "biginteger",
+      "required": true,
+      "max": "9999"
     },
     "ort": {
       "type": "string",
-      "required": true
-    },
-    "geburtsdatum": {
-      "type": "date",
-      "required": true
+      "required": false
     },
     "email": {
       "type": "email",
-      "required": true,
+      "required": false,
       "unique": true
     },
     "telefonnummer": {
       "type": "biginteger",
       "required": true,
-      "unique": true
+      "unique": true,
+      "max": "9999999999"
     },
     "ausweis": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -61,9 +59,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "accountID": {
-      "type": "uid"
     },
     "rolle": {
       "type": "enumeration",
@@ -91,6 +86,12 @@
       "relation": "oneToMany",
       "target": "api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer",
       "mappedBy": "account"
+    },
+    "geburtsdatum": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
     }
   }
 }
