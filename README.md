@@ -4,7 +4,7 @@
   <img src="https://komarev.com/ghpvc/?username=gomec1&label=Profile%20views&color=0e75b6&style=flat" alt="gomec1">
 </p>
  
-### Project Descriptin
+### Project Description
 
 > Our project aims to develop a modern and user-friendly platform that will allow pet owners to find trustworthy and reliable caretakers for their pets. At the same time, it offers pet lovers the opportunity to care for animals while earning pocket money. The platform is designed to create a safe and satisfying environment for all users and to ensure that animals receive continuous care, even when the owner is unable to be present. By fostering a vibrant community, our solution enables users to share experiences and support each other. Our pet sharing platform focuses on making the connection between pet owners and pet lovers simple and effective, with a special emphasis on safety, trustworthiness and user satisfaction.
 
@@ -68,9 +68,19 @@ npm install strapi@latest -g
 
 Follow these steps to install the application:
 
+1. Clone the repository
+
 ```sh
 clone https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht.git
 ```
+
+2. Navigate into the project directory:
+
+```sh
+cd 4o-Passionsfrucht
+```
+
+3. Install the dependencies:
 
 ```sh
 npm install
@@ -78,19 +88,33 @@ npm install
 
 ## Usage
 
-```sh
-npm run start
-```
-
-## Run tests
+1. navigate to the fronted directory and Start the frontend:
 
 ```sh
-npm run test
+cd frontend
+ng serve
 ```
+
+```sh
+ng serve
+```
+
+2. In a separate terminal, navigate to the backend directory and start the backend:
+
+```sh
+cd backend
+npm run develop
+```
+
+Now, you can open and use the application in your web browser. Have fun! 😄
 
 ## How to Use the Project
 
-<p>TEXT </p>
+> This project is designed to be a user-friendly platform for pet owners and pet caretakers. Here's how to use it:
+
+1. **For Pet Owners**: If you're a pet owner looking for a trustworthy caretaker, simply navigate to our website, browse through the list of available caretakers, and choose the one that best fits your needs. You can view their profiles, check their availability, and book their services directly through the platform.
+
+2. **For Pet Caretakers**: If you're an animal lover looking to earn some extra money, you can sign up as a caretaker. Once your profile is set up, pet owners can view your profile and book your services. You'll receive notifications when you have a booking, and you can manage your schedule directly through the platform.
 
 ## What was our motivation?
 
