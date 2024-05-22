@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Two4Four 👋</h1>
 <p>
-<img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+<img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://komarev.com/ghpvc/?username=gomec1&label=Profile%20views&color=0e75b6&style=flat" alt="gomec1">
 </p>
  
@@ -92,10 +92,6 @@ npm install
 
 ```sh
 cd frontend
-ng serve
-```
-
-```sh
 ng serve
 ```
 
