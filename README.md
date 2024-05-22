@@ -8,6 +8,25 @@
 
 > Our project aims to develop a modern and user-friendly platform that will allow pet owners to find trustworthy and reliable caretakers for their pets. At the same time, it offers pet lovers the opportunity to care for animals while earning pocket money. The platform is designed to create a safe and satisfying environment for all users and to ensure that animals receive continuous care, even when the owner is unable to be present. By fostering a vibrant community, our solution enables users to share experiences and support each other. Our pet sharing platform focuses on making the connection between pet owners and pet lovers simple and effective, with a special emphasis on safety, trustworthiness and user satisfaction.
 
+## Table of Contents
+
+- [Languages and Tools](#languages-and-tools)
+- [Homepage](#homepage)
+- [How to use our Application?](#how-to-use-our-application)
+  - [Prerequisites](#prerequisites)
+    - [For macOS](#for-macos)
+    - [For Windows](#for-windows)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [How to Use the Project](#how-to-use-the-project)
+- [What was our motivation?](#what-was-our-motivation)
+- [Why did we build this project?](#why-did-we-build-this-project)
+- [What problem does it solve?](#what-problem-does-it-solve)
+- [What did we learn?](#what-did-we-learn)
+- [What makes our project stand out?](#what-makes-our-project-stand-out)
+- [Authors](#authors)
+- [Show your support](#show-your-support)
+
 ## Languages and Tools
 
 <p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
@@ -64,7 +83,7 @@ npm install strapi@latest -g
 
 - Git: Download and install it from [here](https://git-scm.com/download/win).
 
-## installation
+## Installation
 
 Follow these steps to install the application:
 
