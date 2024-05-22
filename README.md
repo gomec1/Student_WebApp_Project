@@ -1,7 +1,10 @@
 <h1 align="center">Welcome to Two4Four 👋</h1>
 <p>
-<img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://komarev.com/ghpvc/?username=gomec1&label=Profile%20views&color=0e75b6&style=flat" alt="gomec1">
+  <img alt="Forks" src="https://img.shields.io/badge/forks-3-orange.svg" />
+  <img alt="Contributors" src="https://img.shields.io/badge/contributors-4-green.svg" />
+  <img alt="Open Issues" src="https://img.shields.io/badge/open%20issues-2-red.svg" />
 </p>
  
 ### Project Description
@@ -12,7 +15,7 @@
 
 - [Languages and Tools](#languages-and-tools)
 - [Homepage](#homepage)
-- [How to use our Application?](#how-to-use-our-application)
+- [How to install and run our Application?](#how-to-install-and-run-our-application)
   - [Prerequisites](#prerequisites)
     - [For macOS](#for-macos)
     - [For Windows](#for-windows)
@@ -24,6 +27,9 @@
 - [What problem does it solve?](#what-problem-does-it-solve)
 - [What did we learn?](#what-did-we-learn)
 - [What makes our project stand out?](#what-makes-our-project-stand-out)
+- [Contributing] (#contributing)
+- [Code of Conduct] (#code-of-conduct)
+- [License] (#license)
 - [Authors](#authors)
 - [Show your support](#show-your-support)
 
@@ -31,9 +37,9 @@
 
 <p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
 
-### 🏠 [Homepage]https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
+### 🏠 [Homepage](https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
 
-## How to use our Application?
+## How to install and run our Application?
 
 ## Prerequisites
 
@@ -56,7 +62,7 @@ npm install -g @angular/cli
 - Strapi: Install it by running the following command in your terminal:
 
 ```sh
- npm install strapi@latest -g
+npm install strapi@latest -g
 ```
 
 - Git: Install it by running the following command in your terminal:
@@ -151,19 +157,81 @@ Now, you can open and use the application in your web browser. Have fun! 😄
 
 > What distinguishes our project is its design and user-friendliness. We focused on creating an intuitive interface that is both aesthetically pleasing and easy to navigate, which significantly enhances the user experience. This attention to design details ensures that our platform is not only functional but also enjoyable to use, setting it apart from other pet care platforms.
 
+## Contributing
+
+We welcome contributions to this project! Here's how you can contribute:
+
+1. **Fork the Repository**: Start by forking this repository to your own GitHub account. This creates a copy of the repository that you can modify without affecting the original project.
+
+2. **Clone the Repository**: Next, clone the repository to your local machine so you can make changes.
+
+3. **Create a New Branch**: It's best practice to create a new branch for each set of changes you make. This keeps your contributions organized and easier to understand.
+
+4. **Make Your Changes**: Now you're ready to make your changes! Open the project in your favorite editor and get coding.
+
+5. **Commit Your Changes**: Once you've made your changes, commit them with a clear, concise commit message. This helps others understand what you've done.
+
+6. **Push Your Changes**: Push your changes to your forked repository on GitHub.
+
+7. **Submit a Pull Request**: Finally, submit a pull request from your forked repository to our original repository. We'll review your changes and, if everything looks good, merge them into the main project.
+
+Please note that this project is released with a code of conduct. By participating in this project you agree to abide by its terms.
+
+## Code of Conduct
+
+We are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+
+We believe in the power of a diverse, inclusive community. We do not tolerate harassment of participants in any form. Harassment includes offensive comments related to gender, sexual orientation, race, religion, disability; inappropriate use of nudity and/or sexual images; deliberate intimidation, stalking or following; sustained disruption of talks or other events; inappropriate physical contact, and unwelcome sexual attention.
+
+If a participant engages in harassing behavior, the project maintainers may take any action they deem appropriate, including warning the offender or expulsion from the project.
+
+If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of project leadership immediately.
+
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
+
+We expect participants to follow these rules at all project spaces and project-related events.
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+```markdown
+MIT License
+
+Copyright (c) [2024] [Two4Four]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ## Authors
 
-👤 **Carlos Gomez | Silvan Schneider | Nelson Vidovic | Daniel Jacobs**
-
-- Github: [@gomec1, @schns51, @vidon1, @jacod2]
-
-  - <p>https://github.com/gomec1</p>
-  - <p>https://github.com/schns51</p>
-  - <p>https://github.com/vidon1</p>
-  - <p>https://github.com/jacod2</p>
+- Carlos Gomez 😎
+  - [GitHub](https://github.com/gomec1)
+- Silvan Schneider 😊
+  - [GitHub](https://github.com/schns51)
+- Nelson Vidovic 😃
+  - [GitHub](https://github.com/vidon1)
+- Daniel Jacobs 🙂
+  - [GitHub](https://github.com/jacod2)
 
 ## Show your support
 
 Give a ⭐️ if you like this project !
 
 ---
+```
