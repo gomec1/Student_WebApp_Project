@@ -16,6 +16,7 @@ Here you will find links to all our deliverables for this semester:
 - [deliverable 2](docs/Deliverables/Deliverable 2/Deliverable2-Blog.md)
 - [deliverable 3](docs/Deliverables/Deliverable 3/Two4Four – Zwischenpräsentation.pptx)
 - [deliverable 4](docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.md)
+
   -[Website with readme.md](https://dsl-student-projects.pages.ti.bfh.ch/wseg-24-fs/4o-Passionsfrucht/)
  
 ### Project Description
