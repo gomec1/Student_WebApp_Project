@@ -4,23 +4,23 @@ stages:
 - deploy
 
 text-converter:
-stage: build
-# The Docker image that will be used to build your app
-image: node:lts
-# Functions that should be executed before the build script is run
-before_script:
-  - "- npm i markdown-to-html-cli -g"
-script:
-  - mkdir -p public
-  - mkdir -p public/docs
-  - cp docs/*.png public/docs
-  # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
-  # Ohne Parameter --source wird die Datei README.md verwendet
-  - markdown-to-html --output public/index.html
-  - markdown-to-html --source docs/text.md --output public/text.html
-artifacts:
+  stage: build
+  # The Docker image that will be used to build your app
+  image: node:lts
+  before_script:
+  - npm i markdown-to-html-cli -g
+  script:
+    - mkdir -p public
+    - mkdir -p public/docs
+    - cp docs/*.png public/docs
+    # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
+    # Ohne Parameter --source wird die Datei README.md verwendet
+    - markdown-to-html --output public/index.html
+    - markdown-to-html --source docs/text.md --output public/text.html
+  artifacts:
     paths:
       - public
+
 # https://gitlab.com/pipeline-components/markdown-spellcheck
 md-spellcheck:
   stage: test
@@ -30,8 +30,10 @@ md-spellcheck:
     - mdspell --report 'docs/**/*-en.md'
     - mdspell --dictionary 'docs/hunspell/de-ch' --report 'docs/**/*-de.md'
   allow_failure: true
+
 pages:
   stage: deploy
+  # Functions that should be executed before the build script is run
   script:
     - echo "publishing artifacts"
   artifacts:
@@ -42,3 +44,4 @@ pages:
     # This ensures that only pushes to the default branch will trigger
     # a pages deploy
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
