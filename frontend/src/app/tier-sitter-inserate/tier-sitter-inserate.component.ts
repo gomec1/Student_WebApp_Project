@@ -2,7 +2,7 @@ import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { TiersitterInserateDaten } from "../tiersitter-inserate-daten";
-import { ServiceTiersitterInserateService } from "../service-tiersitter-inserate.service";
+import { ServiceTiersitterInserateService } from "../services/service-tiersitter-inserate.service";
 
 @Component({
   selector: "app-tier-sitter-inserate",

@@ -1,0 +1,145 @@
+<section class="hintergrundunten">
+  <h1 class="überschrift">Registrieren</h1>
+  <div
+    class="fotohochladenkreis"
+    [style.backgroundImage]="'url(' + backgroundImage + ')'"
+  >
+    <img
+      class="profilzeichen"
+      src="/assets/profil-zeichen.png"
+      alt="Profil Zeichen"
+      *ngIf="!backgroundImage"
+    />
+    <h1 class="schriftfotohochladen" *ngIf="!backgroundImage">
+      Profilfoto hinzufügen
+    </h1>
+  </div>
+  <input
+    class="profilfoto"
+    id="profilfoto"
+    type="file"
+    (change)="onFileSelected($event, 'profilfoto')"
+  />
+
+  <form class="form-container" (ngSubmit)="onSubmit()">
+    <!-- Add ngSubmit event -->
+    <div class="eingabefelder-container">
+      <label for="name" class="schrift">Name</label>
+      <input class="eingabefelder" name="name" type="text" [(ngModel)]="name" />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="username" class="schrift">Username</label>
+      <input
+        class="eingabefelder"
+        id="username"
+        name="username"
+        type="text"
+        [(ngModel)]="username"
+      />
+    </div>
+
+    <!-- <div class="eingabefelder-container">
+        <label for="ausweis" class="schrift">Ausweis</label>
+        <input
+          class="eingabefeldausweis"
+          name="ausweis"
+          type="file"
+          [(ngModel)]="ausweis"
+          (change)="onFileSelected($event, 'ausweis')"
+        />
+      </div> -->
+
+    <div class="eingabefelder-container">
+      <label for="vorname" class="schrift">Vorname</label>
+      <input
+        class="eingabefelder"
+        name="vorname"
+        type="text"
+        [(ngModel)]="vorname"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="phone" class="schrift">Telefonnummer</label>
+      <input
+        class="eingabefelder"
+        type="text"
+        id="phone"
+        name="phone"
+        placeholder="077 123 45 67"
+        [(ngModel)]="telefonnummer"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="geburtsdatum" class="schrift">Geburtstdatum</label>
+      <input
+        class="eingabefelder"
+        name="geburtsdatum"
+        type="text"
+        [(ngModel)]="geburtsdatum"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="strasse+nr" class="schrift">Strasse + Nr</label>
+      <input
+        class="eingabefelder"
+        name="strasse+nr"
+        type="text"
+        [(ngModel)]="strasseNr"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="email" class="schrift">Email</label>
+      <input
+        class="eingabefelder"
+        id="email"
+        name="email"
+        type="email"
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="password" class="schrift">Passwort</label>
+      <input
+        class="eingabefelder"
+        id="password"
+        name="password"
+        type="password"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="postleitzahl" class="schrift">Postleitzahl</label>
+      <input
+        class="eingabefelder"
+        name="postleitzahl"
+        type="text"
+        [(ngModel)]="postleitzahl"
+      />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="ort" class="schrift">Ort</label>
+      <input class="eingabefelder" name="ort" type="text" [(ngModel)]="ort" />
+    </div>
+
+    <div class="eingabefelder-container">
+      <label for="rolle" class="schrift">Rolle</label>
+      <input list="rolle" name="rolle" [(ngModel)]="rolle" />
+      <datalist id="rolle">
+        <option value="Ich bin Tiersitter"></option>
+        <option value="Ich bin Tierbesitzer"></option>
+        <option value="beides"></option>
+      </datalist>
+    </div>
+
+    <input class="submit" type="submit" value="Submit" />
+    <!-- Change to input type="submit" -->
+  </form>
+</section>

@@ -1,78 +1,84 @@
-import { Routes } from '@angular/router';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { TierSitterInserateComponent } from './tier-sitter-inserate/tier-sitter-inserate.component';
-import { TierSitterInserateAuftraegeComponent } from './tier-sitter-inserate-auftraege/tier-sitter-inserate-auftraege.component';
-import { TierSitterInseratDetailsComponent } from './tier-sitter-inserat-details/tier-sitter-inserat-details.component';
-import { TierSitterInseratAuftraegeDetailsComponent } from './tier-sitter-inserat-auftraege-details/tier-sitter-inserat-auftraege-details.component';
-import { LoginComponent } from './login/login.component';
-import { NachrichtenchatComponent } from './nachrichtenchat/nachrichtenchat.component';
-import { InserierenComponent } from './inserieren-vorseite/inserieren.component';
-import { RegistrierenComponent } from './registrieren/registrieren.component';
-import { IchBinTiersitterInserierenComponent } from './ich-bin-tiersitter-inserieren/ich-bin-tiersitter-inserieren.component';
-import { IchBinTierbesitzerInserierenComponent } from './ich-bin-tierbesitzer-inserieren/ich-bin-tierbesitzer-inserieren.component';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { Routes } from "@angular/router";
+import { LandingpageComponent } from "./landingpage/landingpage.component";
+import { TierSitterInserateComponent } from "./tier-sitter-inserate/tier-sitter-inserate.component";
+import { TierSitterInserateAuftraegeComponent } from "./tier-sitter-inserate-auftraege/tier-sitter-inserate-auftraege.component";
+import { TierSitterInseratDetailsComponent } from "./tier-sitter-inserat-details/tier-sitter-inserat-details.component";
+import { TierSitterInseratAuftraegeDetailsComponent } from "./tier-sitter-inserat-auftraege-details/tier-sitter-inserat-auftraege-details.component";
+import { LoginComponent } from "./login/login.component";
+import { NachrichtenchatComponent } from "./nachrichtenchat/nachrichtenchat.component";
+import { InserierenComponent } from "./inserieren-vorseite/inserieren.component";
+import { RegistrierenComponent } from "./registrieren/registrieren.component";
+import { IchBinTiersitterInserierenComponent } from "./ich-bin-tiersitter-inserieren/ich-bin-tiersitter-inserieren.component";
+import { IchBinTierbesitzerInserierenComponent } from "./ich-bin-tierbesitzer-inserieren/ich-bin-tierbesitzer-inserieren.component";
+import { FeedbackComponent } from "./feedback/feedback.component";
+import { ProfilComponent } from "./profil/profil.component";
 const routeConfig: Routes = [
   {
-    path: '',
+    path: "",
     component: LandingpageComponent,
-    title: 'Two4Four',
+    title: "Two4Four",
   },
   {
-    path: 'inserieren-vorseite',
+    path: "inserieren-vorseite",
     component: InserierenComponent,
-    title: 'Inserieren',
+    title: "Inserieren",
   },
   {
-    path: 'ich-bin-tiersitter-inserieren',
+    path: "ich-bin-tiersitter-inserieren",
     component: IchBinTiersitterInserierenComponent,
-    title: 'Ich bin Tiersitter Inserieren',
+    title: "Ich bin Tiersitter Inserieren",
   },
   {
-    path: 'ich-bin-tierbesitzer-inserieren',
+    path: "ich-bin-tierbesitzer-inserieren",
     component: IchBinTierbesitzerInserierenComponent,
     title: 'Ich bin Tier"besitzer Inserieren',
   },
   {
-    path: 'feedback',
+    path: "feedback",
     component: FeedbackComponent,
-    title: 'Feedback',
+    title: "Feedback",
   },
   {
-    path: 'nachrichtenchat',
+    path: "nachrichtenchat",
     component: NachrichtenchatComponent,
-    title: 'Nachrichtenchat',
+    title: "Nachrichtenchat",
   },
   {
-    path: 'login',
+    path: "profil",
+    component: ProfilComponent,
+    title: "Profil",
+  },
+  {
+    path: "login",
     component: LoginComponent,
-    title: 'Login',
+    title: "Login",
   },
   {
-    path: 'registrieren',
+    path: "registrieren",
     component: RegistrierenComponent,
-    title: 'Registrieren',
+    title: "Registrieren",
   },
   {
-    path: 'Tiersitter-Inserate',
+    path: "Tiersitter-Inserate",
     component: TierSitterInserateComponent,
-    title: 'Tiersitter Inserate',
+    title: "Tiersitter Inserate",
   },
   {
-    path: 'tiersitter-Inserat-details/:id', // :id is a route parameter
+    path: "tiersitter-Inserat-details/:id", // :id is a route parameter
     component: TierSitterInseratDetailsComponent,
-    title: 'Tiersitter Inserat Details',
+    title: "Tiersitter Inserat Details",
   },
 
   {
-    path: 'Tiersitter-Inserate-Aufträge',
+    path: "Tiersitter-Inserate-Aufträge",
     component: TierSitterInserateAuftraegeComponent,
-    title: 'Tiersitter Inserate Aufträge',
+    title: "Tiersitter Inserate Aufträge",
   },
 
   {
-    path: 'Tiersitter-Inserat-Aufträge-details/:id', // :id is a route parameter
+    path: "Tiersitter-Inserat-Aufträge-details/:id", // :id is a route parameter
     component: TierSitterInseratAuftraegeDetailsComponent,
-    title: 'Tiersitter Inserat Aufträge Details',
+    title: "Tiersitter Inserat Aufträge Details",
   },
 ];
 

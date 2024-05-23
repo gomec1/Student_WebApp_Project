@@ -2,7 +2,7 @@ import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
-import { ServiceTiersitterInserateAuftraegeService } from "../service-tiersitter-inserate-auftraege.service";
+import { ServiceTiersitterInserateAuftraegeService } from "../services/service-tiersitter-inserate-auftraege.service";
 import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
 
 @Component({

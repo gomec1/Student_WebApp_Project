@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { TierSitterInseratAuftraegeDaten } from "./tier-sitter-inserat-auftraege-daten";
+import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
 
 @Injectable({
   providedIn: "root",

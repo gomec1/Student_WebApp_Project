@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { RouterModule, Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-login',
+  selector: "app-login",
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, FormsModule, HttpClientModule],
+  providers: [MatSnackBar, HttpClient],
   template: `
     <section class="hintergrundunten">
       <div class="maincontainer">
@@ -14,7 +19,11 @@ import { RouterModule } from '@angular/router';
           alt="Profil Zeichen"
         />
         <div class="username-container">
-          <input class="usernameBalken" placeholder="Username" />
+          <input
+            class="usernameBalken"
+            placeholder="Username"
+            [(ngModel)]="username"
+          />
           <img
             class="profilzeichenklein"
             src="assets/Profil Zeichen-klein.png"
@@ -26,6 +35,7 @@ import { RouterModule } from '@angular/router';
             type="password"
             class="passwortBalken"
             placeholder="Passwort"
+            [(ngModel)]="password"
           />
           <img
             class="schlosszeichen"
@@ -41,7 +51,7 @@ import { RouterModule } from '@angular/router';
           />
           <label for="eingeloggtbleiben">Eingeloggt bleiben</label>
         </div>
-        <button class="buttons">
+        <button class="buttons" (click)="login()">
           <h1 class="schriftbuttons">Login</h1>
         </button>
         <button class="buttons" routerLink="/registrieren">
@@ -50,14 +60,60 @@ import { RouterModule } from '@angular/router';
       </div>
     </section>
   `,
-  styleUrl: './login.component.css',
+  styleUrl: "./login.component.css",
 })
 export class LoginComponent implements OnInit {
-  loginobj: any = {
-    userName: '',
-    passwort: '',
-  };
+  username: string = "";
+  password: string = "";
 
-  constructor() {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
+
   ngOnInit(): void {}
+
+  login() {
+    debugger;
+    const loginData = {
+      identifier: this.username,
+      password: this.password,
+    };
+
+    this.http
+      .post("http://localhost:1337/api/auth/local", loginData)
+      .subscribe({
+        next: (response: any) => {
+          console.log(response);
+          if (response.jwt) {
+            // Der Login war erfolgreich und wir haben ein JWT erhalten
+            // Sie können das Token im Local Storage speichern oder es anderweitig verwenden
+            localStorage.setItem("token", response.jwt);
+            // Bei Erfolg zur Hauptseite umleiten
+            this.router.navigate(["/"]);
+            console.log("Login erfolgreich");
+            this.snackBar.open("Login erfolgreich", "Schließen", {
+              duration: 5000,
+            });
+          } else {
+            // Es gab ein Problem mit dem Login
+            console.log("Username oder Passwort ist falsch");
+            this.snackBar.open(
+              "Username oder Passwort ist falsch",
+              "Schließen",
+              {
+                duration: 5000,
+              }
+            );
+          }
+        },
+        error: (error: any) => {
+          console.log(error);
+          this.snackBar.open("Ein Fehler ist aufgetreten", "Schließen", {
+            duration: 5000,
+          });
+        },
+      });
+  }
 }
