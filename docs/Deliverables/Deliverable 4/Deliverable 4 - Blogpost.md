@@ -4,7 +4,7 @@
 
 Wir sind insgesamt mit unserem bisherigen Fortschritt zufrieden. Einige der geplanten Funktionen, wie die Registration und Login Funktion, sind bereits implementiert und funktionieren bereits. Durch unsere Arbeit an diesem Projekt konnten wir unseren Wissensstand erheblich erweitern und neue Fähigkeiten erlernen, die wir erfolgreich angewendet haben. Das Design unserer Webseite entspricht genau unseren Vorstellungen. Das User Interface ist sehr einfach und benutzerfreundlich gestaltet, was uns besonders wichtig war.
 
-![Landingpage Two4Four](docs/Deliverables/Deliverable 4/Landingpage Two4Four)
+![Landingpage Two4Four](docs/Deliverables/Deliverable 4/Landingpage Two4Four.png)
 
 Bei den Funktionen mussten wir jedoch einige Elemente streichen (genauer im nächsten Abschnitt), da sich diese als zu aufwendig herausstellten und wir unsere Kapazitäten überschätzt hatten. Wir werden diese Funktionen nur dann ergänzen, wenn vor der Abgabe noch genügend Zeit und Ressourcen zur Verfügung stehen.
 
