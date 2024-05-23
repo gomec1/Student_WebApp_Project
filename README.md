@@ -27,9 +27,9 @@
 - [What problem does it solve?](#what-problem-does-it-solve)
 - [What did we learn?](#what-did-we-learn)
 - [What makes our project stand out?](#what-makes-our-project-stand-out)
-- [Contributing] (#contributing)
-- [Code of Conduct] (#code-of-conduct)
-- [License] (#license)
+- [Contributing](#contributing)
+- [Code of Conduct](#code-of-conduct)
+- [License](#license)
 - [Authors](#authors)
 - [Show your support](#show-your-support)
 
@@ -217,6 +217,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+```
 
 ## Authors
 
