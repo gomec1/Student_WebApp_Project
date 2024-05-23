@@ -16,7 +16,7 @@ text-converter:
     # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
     # Ohne Parameter --source wird die Datei README.md verwendet
     - markdown-to-html --output public/index.html
-    - markdown-to-html --source docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.md --output public/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.html
+    - markdown-to-html --source docs/Deliverables/Deliverable_4/Deliverable_4_Blogpost.md --output public/Deliverables/Deliverable_4/Deliverable_4_Blogpost.html
   artifacts:
     paths:
       - public
