@@ -1,14 +1,14 @@
 stages:
-- build
-- test
-- deploy
+  - build
+  - test
+  - deploy
 
 text-converter:
   stage: build
   # The Docker image that will be used to build your app
   image: node:lts
   before_script:
-  - npm i markdown-to-html-cli -g
+    - npm i markdown-to-html-cli -g
   script:
     - mkdir -p public
     - mkdir -p public/docs
@@ -16,8 +16,7 @@ text-converter:
     # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
     # Ohne Parameter --source wird die Datei README.md verwendet
     - markdown-to-html --output public/index.html
-    - markdown-to-html --source docs/text.md --output public/text.html
-    - markdown-to-html --source docs/Deliverables/Deliverable4/Deliverable4 - Blogpost.md --output docs/Deliverables/Deliverable4/Deliverable4 - Blogpost.html
+    - markdown-to-html --source docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.md --output public/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.html
   artifacts:
     paths:
       - public
@@ -45,4 +44,3 @@ pages:
     # This ensures that only pushes to the default branch will trigger
     # a pages deploy
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-
