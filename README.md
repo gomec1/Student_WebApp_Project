@@ -219,8 +219,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-```
-
 ## Authors
 
 - Carlos Gomez 😎
@@ -237,4 +235,3 @@ SOFTWARE.
 Give a ⭐️ if you like this project !
 
 ---
-```
