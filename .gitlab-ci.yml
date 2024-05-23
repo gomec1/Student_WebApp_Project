@@ -12,6 +12,7 @@ text-converter:
   script:
     - mkdir -p public
     - mkdir -p public/docs
+    - mkdir -p public/Deliverables/Deliverable_4
     # - cp docs/*.png public/docs
     # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
     # Ohne Parameter --source wird die Datei README.md verwendet
