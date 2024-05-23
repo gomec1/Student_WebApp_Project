@@ -20,7 +20,7 @@ Here you will find links to all our deliverables for this semester:
 
   -[Website with readme.md](https://dsl-student-projects.pages.ti.bfh.ch/wseg-24-fs/4o-Passionsfrucht/) 
   
-  -["Blogbeitrag 2, Deliverable 4"](Deliverable_4_Blogpost.html)
+  -[Blogbeitrag 2, Deliverable 4](Deliverable_4_Blogpost.html)
 
 ### Project Description
 
