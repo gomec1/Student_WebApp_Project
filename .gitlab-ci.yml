@@ -17,6 +17,7 @@ text-converter:
     # Ohne Parameter --source wird die Datei README.md verwendet
     - markdown-to-html --output public/index.html
     - markdown-to-html --source docs/text.md --output public/text.html
+    - markdown-to-html --source docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.md --output docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.html
   artifacts:
     paths:
       - public
