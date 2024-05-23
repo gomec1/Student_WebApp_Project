@@ -12,12 +12,12 @@ text-converter:
   script:
     - mkdir -p public
     - mkdir -p public/docs
-    - mkdir -p public/Deliverables/Deliverable_4
+    # - mkdir -p public/Deliverables/Deliverable_4
     # - cp docs/*.png public/docs
     # Beim ersten Durchlauf existiert der Ordner noch nicht; falls bereits vorhanden unterdrückt "-p" Fehler
     # Ohne Parameter --source wird die Datei README.md verwendet
     - markdown-to-html --output public/index.html
-    - markdown-to-html --source docs/Deliverables/Deliverable_4/Deliverable_4_Blogpost.md --output public/Deliverables/Deliverable_4/Deliverable_4_Blogpost.html
+    - markdown-to-html --source docs/Deliverable_4_Blogpost.md --output public/Deliverable_4_Blogpost.html
   artifacts:
     paths:
       - public
