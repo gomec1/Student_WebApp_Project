@@ -6,6 +6,17 @@
   <img alt="Contributors" src="https://img.shields.io/badge/contributors-4-green.svg" />
   <img alt="Open Issues" src="https://img.shields.io/badge/open%20issues-2-red.svg" />
 </p>
+
+### Deliverables
+@Lecturers (Jörg and Markus)🇩🇪🇨🇭🤙🏼
+
+Here you will find links to all our deliverables for this semester:
+
+- [deliverable 1](docs/Deliverables/Deliverable 1/WSEG_Pitch_Two4Four.pdf)
+- [deliverable 2](docs/Deliverables/Deliverable 2/Deliverable2-Blog.md)
+- [deliverable 3](docs/Deliverables/Deliverable 3/Two4Four – Zwischenpräsentation.pptx)
+- [deliverable 4](docs/Deliverables/Deliverable 4/Deliverable 4 - Blogpost.md)
+  -[Website with readme.md](https://dsl-student-projects.pages.ti.bfh.ch/wseg-24-fs/4o-Passionsfrucht/)
  
 ### Project Description
 
@@ -14,7 +25,7 @@
 ## Table of Contents
 
 - [Languages and Tools](#languages-and-tools)
-- [Homepage](#homepage)
+- [Homepage🏠](#homepage)
 - [How to install and run our Application?](#how-to-install-and-run-our-application)
   - [Prerequisites](#prerequisites)
     - [For macOS](#for-macos)
@@ -37,7 +48,9 @@
 
 <p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
 
-### 🏠 [Homepage](https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
+### 🏠 
+
+[Homepage](https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
 
 ## How to install and run our Application?
 
