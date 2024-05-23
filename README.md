@@ -7,7 +7,7 @@
   <img alt="Open Issues" src="https://img.shields.io/badge/open%20issues-2-red.svg" />
 </p>
 
-### Deliverables
+## Deliverables
 
 @Lecturers (Jörg and Markus)🇩🇪🇨🇭🤙🏼
 
@@ -24,7 +24,7 @@ Relative Link to Blogpost:
 2. [Open the Blogpost 2 Page](Deliverable_4_Blogpost.html)
   
 
-### Project Description
+## Project Description
 
 > Our project aims to develop a modern and user-friendly platform that will allow pet owners to find trustworthy and reliable caretakers for their pets. At the same time, it offers pet lovers the opportunity to care for animals while earning pocket money. The platform is designed to create a safe and satisfying environment for all users and to ensure that animals receive continuous care, even when the owner is unable to be present. By fostering a vibrant community, our solution enables users to share experiences and support each other. Our pet sharing platform focuses on making the connection between pet owners and pet lovers simple and effective, with a special emphasis on safety, trustworthiness and user satisfaction.
 
