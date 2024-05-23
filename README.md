@@ -110,7 +110,7 @@ Follow these steps to install the application:
 1. Clone the repository
 
 ```sh
-clone https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht.git
+git clone https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht.git
 ```
 
 2. Navigate into the project directory:
