@@ -84,6 +84,7 @@
   text-align: center;
   /* BOX MODEL */
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .kreismitte {
