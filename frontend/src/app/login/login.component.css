@@ -138,3 +138,8 @@ input {
   justify-content: left;
   margin: 11px 0 11px 0;
 }
+
+.custom-snackbar {
+  background-color: #39b797 !important;
+  color: #000000 !important;
+}

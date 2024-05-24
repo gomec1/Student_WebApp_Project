@@ -6,7 +6,7 @@
       alt="QA-Zeichen"
       (click)="openDialog()"
     />
-    <div class="logo-box" (click)="navigateToLandingPage()">
+    <div class="logo-box" routerLink="/">
       <img
         class="footprint-human"
         src="/assets/footprint-human.png"
@@ -19,12 +19,15 @@
         alt="footprint dog"
       />
     </div>
-    <img
-      class="profil-zeichen"
-      src="/assets/profil-zeichen.png"
-      alt="Profil-Zeichen"
-      routerLink="profil"
-    />
+    <div class="profil-container">
+      <img
+        class="profil-zeichen"
+        src="/assets/profil-zeichen.png"
+        alt="Profil-Zeichen"
+        routerLink="profil"
+      />
+      <p class="profil-schrift">Profil</p>
+    </div>
   </header>
 
   <section>
@@ -56,11 +59,20 @@
           Nachrichten
         </button>
         <button
+          *ngIf="!authService.isLoggedIn"
           routerLink="login"
           type="button"
           class="buttons-mittleres-element"
         >
           Login
+        </button>
+        <button
+          *ngIf="authService.isLoggedIn"
+          type="button"
+          class="buttons-mittleres-element"
+          (click)="logout()"
+        >
+          Logout
         </button>
       </div>
     </div>

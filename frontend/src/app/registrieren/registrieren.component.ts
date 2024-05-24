@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { NgIf } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { HttpClientModule } from "@angular/common/http";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-registrieren",
@@ -29,7 +30,11 @@ export class RegistrierenComponent implements OnInit {
   ausweis: File | null = null;
   backgroundImage: string = "";
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {}
 
@@ -100,7 +105,11 @@ export class RegistrierenComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log(response);
-          // Bei Erfolg zur Anmeldeseite umleiten
+          this.snackBar.open("Registrierung erfolgreich", "OK", {
+            duration: 3000,
+            verticalPosition: "top",
+            horizontalPosition: "center",
+          });
           this.router.navigate(["/login"]);
         },
         (error: any) => {

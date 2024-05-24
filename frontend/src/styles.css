@@ -8,7 +8,7 @@ body {
   height: 100%;
 }
 body {
-  margin: 5px;
+  margin: 0px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 /* Für QA uns sonstige Popups */
@@ -24,6 +24,3 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

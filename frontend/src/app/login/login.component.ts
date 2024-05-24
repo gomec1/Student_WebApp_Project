@@ -4,12 +4,12 @@ import { HttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: "app-login",
   standalone: true,
   imports: [RouterModule, FormsModule, HttpClientModule],
-  providers: [MatSnackBar, HttpClient],
   template: `
     <section class="hintergrundunten">
       <div class="maincontainer">
@@ -69,13 +69,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {}
 
-  login() {
-    debugger;
+  login(): void {
     const loginData = {
       identifier: this.username,
       password: this.password,
@@ -89,30 +89,33 @@ export class LoginComponent implements OnInit {
           if (response.jwt) {
             // Der Login war erfolgreich und wir haben ein JWT erhalten
             // Sie können das Token im Local Storage speichern oder es anderweitig verwenden
+            // Setzt den Login Status auf true
+
+            this.authService.login("token");
             localStorage.setItem("token", response.jwt);
             // Bei Erfolg zur Hauptseite umleiten
             this.router.navigate(["/"]);
             console.log("Login erfolgreich");
-            this.snackBar.open("Login erfolgreich", "Schließen", {
+            this.snackBar.open("Login erfolgreich", "Schliessen", {
               duration: 5000,
+              panelClass: ["custom-snackbar"],
+              horizontalPosition: "center",
+              verticalPosition: "top",
             });
-          } else {
-            // Es gab ein Problem mit dem Login
-            console.log("Username oder Passwort ist falsch");
-            this.snackBar.open(
-              "Username oder Passwort ist falsch",
-              "Schließen",
-              {
-                duration: 5000,
-              }
-            );
           }
         },
         error: (error: any) => {
           console.log(error);
-          this.snackBar.open("Ein Fehler ist aufgetreten", "Schließen", {
-            duration: 5000,
-          });
+          this.snackBar.open(
+            "Username oder Passwort ist falsch",
+            "Schliessen",
+            {
+              duration: 5000,
+              panelClass: ["custom-snackbar"],
+              horizontalPosition: "center",
+              verticalPosition: "top",
+            }
+          );
         },
       });
   }
