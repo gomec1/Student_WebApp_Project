@@ -799,81 +799,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAccountAccount extends Schema.CollectionType {
-  collectionName: 'accounts';
-  info: {
-    singularName: 'account';
-    pluralName: 'accounts';
-    displayName: 'account';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    vorname: Attribute.String;
-    name: Attribute.String;
-    strasseNr: Attribute.String;
-    postleitzahl: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          max: '9999';
-        },
-        string
-      >;
-    ort: Attribute.String;
-    email: Attribute.Email & Attribute.Unique;
-    telefonnummer: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMax<
-        {
-          max: '9999999999';
-        },
-        string
-      >;
-    ausweis: Attribute.Media;
-    profilfoto: Attribute.Media;
-    rolle: Attribute.Enumeration<
-      ['Ich suche Tiersitter', 'Ich bin Tierh\u00FCter', 'beides']
-    > &
-      Attribute.Required;
-    bewertungen: Attribute.Relation<
-      'api::account.account',
-      'oneToMany',
-      'api::bewertung.bewertung'
-    >;
-    betreuungsSuchInserat: Attribute.Relation<
-      'api::account.account',
-      'oneToMany',
-      'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag'
-    >;
-    betreuerSuchInserat: Attribute.Relation<
-      'api::account.account',
-      'oneToMany',
-      'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer'
-    >;
-    geburtsdatum: Attribute.String;
-    username: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::account.account',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::account.account',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiBewertungBewertung extends Schema.CollectionType {
   collectionName: 'bewertungs';
   info: {
@@ -896,11 +821,6 @@ export interface ApiBewertungBewertung extends Schema.CollectionType {
         },
         number
       >;
-    accountBewertung: Attribute.Relation<
-      'api::bewertung.bewertung',
-      'manyToOne',
-      'api::account.account'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1002,11 +922,6 @@ export interface ApiInseratIchSucheEinenBetreuungsauftragInseratIchSucheEinenBet
     verfuegbarkeit_bis: Attribute.DateTime;
     kosten: Attribute.String & Attribute.Required;
     profilfoto: Attribute.Media;
-    account: Attribute.Relation<
-      'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag',
-      'manyToOne',
-      'api::account.account'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1048,11 +963,6 @@ export interface ApiInseratIchSucheEinenTierbetreuerInseratIchSucheEinenTierbetr
     bis: Attribute.DateTime;
     verguetung: Attribute.String & Attribute.Required;
     foto_des_tieres: Attribute.Media;
-    account: Attribute.Relation<
-      'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer',
-      'manyToOne',
-      'api::account.account'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1089,7 +999,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::account.account': ApiAccountAccount;
       'api::bewertung.bewertung': ApiBewertungBewertung;
       'api::buchungen.buchungen': ApiBuchungenBuchungen;
       'api::homepage.homepage': ApiHomepageHomepage;
