@@ -41,12 +41,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "account": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::account.account",
-      "inversedBy": "betreuungsSuchInserat"
     }
   }
 }

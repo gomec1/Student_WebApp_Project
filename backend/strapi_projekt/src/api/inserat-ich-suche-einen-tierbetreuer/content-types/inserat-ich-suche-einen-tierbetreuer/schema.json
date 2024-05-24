@@ -56,12 +56,6 @@
         "videos",
         "audios"
       ]
-    },
-    "account": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::account.account",
-      "inversedBy": "betreuerSuchInserat"
     }
   }
 }

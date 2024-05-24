@@ -20,12 +20,6 @@
       "required": true,
       "max": 6,
       "min": 1
-    },
-    "accountBewertung": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::account.account",
-      "inversedBy": "bewertungen"
     }
   }
 }
