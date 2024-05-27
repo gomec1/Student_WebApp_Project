@@ -86,14 +86,13 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response: any) => {
           console.log(response);
+          // Der Login war erfolgreich und der JWT token wurde erhalten
           if (response.jwt) {
-            // Der Login war erfolgreich und wir haben ein JWT erhalten
-            // Sie können das Token im Local Storage speichern oder es anderweitig verwenden
-            // Setzt den Login Status auf true
-
-            this.authService.login("token");
+            // das Token und die user id werden im LocalStorage gespeichert
+            // Und  es setzt den Login Status auf true
+            this.authService.login(response.jwt, response.user.id);
             localStorage.setItem("token", response.jwt);
-            // Bei Erfolg zur Hauptseite umleiten
+            // Bei Erfolg wird man zur Hauptseite umgeleitet
             this.router.navigate(["/"]);
             console.log("Login erfolgreich");
             this.snackBar.open("Login erfolgreich", "Schliessen", {

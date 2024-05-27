@@ -1,9 +1,5 @@
 import { Injectable } from "@angular/core";
-import {
-  MatSnackBar,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
-} from "@angular/material/snack-bar";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: "root",
@@ -15,13 +11,15 @@ export class AuthService {
     this.isLoggedIn = !!localStorage.getItem("token");
   }
   // Login Funktion
-  login(token: string): void {
+  login(token: string, id: string): void {
     localStorage.setItem("token", token);
+    localStorage.setItem("id", id);
     this.isLoggedIn = true;
   }
   // Logout Funktion
   logout(): void {
     localStorage.removeItem("token");
+    localStorage.removeItem("id");
     this.isLoggedIn = false;
     this.snackBar
       .open("Sie wurden erfolgreich ausgeloggt", "OK", {

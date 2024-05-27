@@ -117,6 +117,12 @@
     },
     "postleitzahl": {
       "type": "biginteger"
+    },
+    "inserat_ich_bin_tiersitters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter",
+      "mappedBy": "user"
     }
   }
 }

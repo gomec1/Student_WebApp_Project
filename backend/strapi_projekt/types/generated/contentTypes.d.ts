@@ -782,6 +782,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     telefonnummer: Attribute.BigInteger;
     postleitzahl: Attribute.BigInteger;
+    inserat_ich_bin_tiersitters: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -902,6 +907,46 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
+export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
+  extends Schema.CollectionType {
+  collectionName: 'inserat_ich_bin_tiersitters';
+  info: {
+    singularName: 'inserat-ich-bin-tiersitter';
+    pluralName: 'inserat-ich-bin-tiersitters';
+    displayName: 'Inserat: Ich bin Tiersitter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titel: Attribute.Text;
+    persoenliche_beschreibung: Attribute.Text;
+    verfuegbarkeit: Attribute.Text;
+    lohnkosten: Attribute.Text;
+    bild: Attribute.Media;
+    user: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInseratIchSucheEinenBetreuungsauftragInseratIchSucheEinenBetreuungsauftrag
   extends Schema.CollectionType {
   collectionName: 'inserat_ich_suche_einen_betreuungsauftrags';
@@ -1002,6 +1047,7 @@ declare module '@strapi/types' {
       'api::bewertung.bewertung': ApiBewertungBewertung;
       'api::buchungen.buchungen': ApiBuchungenBuchungen;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter': ApiInseratIchBinTiersitterInseratIchBinTiersitter;
       'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag': ApiInseratIchSucheEinenBetreuungsauftragInseratIchSucheEinenBetreuungsauftrag;
       'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer': ApiInseratIchSucheEinenTierbetreuerInseratIchSucheEinenTierbetreuer;
     }
