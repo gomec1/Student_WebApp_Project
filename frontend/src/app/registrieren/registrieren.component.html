@@ -1,18 +1,12 @@
 <section class="hintergrundunten">
   <h1 class="überschrift">Registrieren</h1>
-  <div
-    class="fotohochladenkreis"
-    [style.backgroundImage]="'url(' + backgroundImage + ')'"
-  >
+  <div class="fotohochladenkreis">
     <img
       class="profilzeichen"
       src="/assets/profil-zeichen.png"
       alt="Profil Zeichen"
-      *ngIf="!backgroundImage"
     />
-    <h1 class="schriftfotohochladen" *ngIf="!backgroundImage">
-      Profilfoto hinzufügen
-    </h1>
+    <h1 class="schriftfotohochladen">Profilfoto hinzufügen</h1>
   </div>
   <input
     class="profilfoto"
@@ -39,16 +33,16 @@
       />
     </div>
 
-    <!-- <div class="eingabefelder-container">
-        <label for="ausweis" class="schrift">Ausweis</label>
-        <input
-          class="eingabefeldausweis"
-          name="ausweis"
-          type="file"
-          [(ngModel)]="ausweis"
-          (change)="onFileSelected($event, 'ausweis')"
-        />
-      </div> -->
+    <div class="eingabefelder-container">
+      <label for="ausweis" class="schrift">Ausweis</label>
+      <input
+        class="eingabefeldausweis"
+        name="ausweis"
+        type="file"
+        [(ngModel)]="ausweis"
+        (change)="onFileSelected($event, 'ausweis')"
+      />
+    </div>
 
     <div class="eingabefelder-container">
       <label for="vorname" class="schrift">Vorname</label>
