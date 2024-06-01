@@ -20,7 +20,10 @@ import { RouterModule } from "@angular/router";
             'http://localhost:1337' +
             tierSitterInserateDaten.attributes.bild.data[0].attributes.url
           "
-          alt="Foto"
+          [alt]="
+            'http://localhost:1337' +
+            tierSitterInserateDaten.attributes.bild.data[0].attributes.url
+          "
         />
         <h2 class="listing-haupttitel">
           {{ tierSitterInserateDaten.attributes.titel }}
@@ -83,14 +86,3 @@ export class TierSitterInseratDetailsComponent implements OnInit {
       );
   }
 }
-
-// route: ActivatedRoute = inject(ActivatedRoute);
-// serviceTiersitterInserateService = inject(ServiceTiersitterInserateService);
-// tierSitterInserateDaten: TiersitterInserateDaten | undefined;
-// constructor() {
-//   const tiersitterInserateId = Number(this.route.snapshot.params["id"]);
-//   this.tierSitterInserateDaten =
-//     this.serviceTiersitterInserateService.getTiersitterInserateById(
-//       tiersitterInserateId
-//     );
-// }

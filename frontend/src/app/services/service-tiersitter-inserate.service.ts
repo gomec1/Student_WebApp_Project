@@ -25,7 +25,3 @@ export class ServiceTiersitterInserateService {
       .pipe(map((response) => response.data));
   }
 }
-
-// getUserById(id: number): Observable<any> {
-//   return this.http.get(`http://localhost:1337/api/users/${id}`);
-// }

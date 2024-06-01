@@ -787,6 +787,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter'
     >;
+    inserat_ich_bin_tierbesitzers: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -907,6 +912,51 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
+export interface ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer
+  extends Schema.CollectionType {
+  collectionName: 'inserat_ich_bin_tierbesitzers';
+  info: {
+    singularName: 'inserat-ich-bin-tierbesitzer';
+    pluralName: 'inserat-ich-bin-tierbesitzers';
+    displayName: 'Inserat: Ich bin Tierbesitzer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titel: Attribute.Text;
+    tierart: Attribute.String;
+    alter: Attribute.String;
+    zeitdauer_von_bis: Attribute.Text;
+    beschreibung_wichtiger_infos: Attribute.Text;
+    totalbetrag_chf: Attribute.String;
+    bild: Attribute.Media;
+    users_permissions_user: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    tierrasse: Attribute.String;
+    tiername: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
   extends Schema.CollectionType {
   collectionName: 'inserat_ich_bin_tiersitters';
@@ -948,85 +998,6 @@ export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
   };
 }
 
-export interface ApiInseratIchSucheEinenBetreuungsauftragInseratIchSucheEinenBetreuungsauftrag
-  extends Schema.CollectionType {
-  collectionName: 'inserat_ich_suche_einen_betreuungsauftrags';
-  info: {
-    singularName: 'inserat-ich-suche-einen-betreuungsauftrag';
-    pluralName: 'inserat-ich-suche-einen-betreuungsauftrags';
-    displayName: 'Inserat: Ich suche einen Betreuungsauftrag';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    titel: Attribute.String & Attribute.Required;
-    persoenliche_beschreibung: Attribute.String & Attribute.Required;
-    verfuegbarkeit_infos: Attribute.String & Attribute.Required;
-    verfuegbarkeit_von: Attribute.DateTime;
-    verfuegbarkeit_bis: Attribute.DateTime;
-    kosten: Attribute.String & Attribute.Required;
-    profilfoto: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiInseratIchSucheEinenTierbetreuerInseratIchSucheEinenTierbetreuer
-  extends Schema.CollectionType {
-  collectionName: 'inserat_ich_suche_einen_tierbetreuers';
-  info: {
-    singularName: 'inserat-ich-suche-einen-tierbetreuer';
-    pluralName: 'inserat-ich-suche-einen-tierbetreuers';
-    displayName: 'Inserat: Ich suche einen Tierbetreuer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    titel: Attribute.String & Attribute.Required;
-    tierart: Attribute.String & Attribute.Required;
-    tierrasse: Attribute.String & Attribute.Required;
-    tiername: Attribute.String & Attribute.Required;
-    alter: Attribute.String;
-    beschreibung_wichtiger_infos: Attribute.Text;
-    von: Attribute.DateTime;
-    bis: Attribute.DateTime;
-    verguetung: Attribute.String & Attribute.Required;
-    foto_des_tieres: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1048,9 +1019,8 @@ declare module '@strapi/types' {
       'api::bewertung.bewertung': ApiBewertungBewertung;
       'api::buchungen.buchungen': ApiBuchungenBuchungen;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer': ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer;
       'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter': ApiInseratIchBinTiersitterInseratIchBinTiersitter;
-      'api::inserat-ich-suche-einen-betreuungsauftrag.inserat-ich-suche-einen-betreuungsauftrag': ApiInseratIchSucheEinenBetreuungsauftragInseratIchSucheEinenBetreuungsauftrag;
-      'api::inserat-ich-suche-einen-tierbetreuer.inserat-ich-suche-einen-tierbetreuer': ApiInseratIchSucheEinenTierbetreuerInseratIchSucheEinenTierbetreuer;
     }
   }
 }

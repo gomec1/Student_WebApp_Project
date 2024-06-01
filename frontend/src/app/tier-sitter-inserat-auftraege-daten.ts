@@ -1,13 +1,80 @@
 export interface TierSitterInseratAuftraegeDaten {
   id: number;
-  titel: string;
-  tiername: string;
-  tierart: string;
-  tierrasse: string;
-  alter: string;
-  Zeitdauer_von_bis: string;
-  beschreibung_wichtiger_infos: string;
-  ort: string;
-  totalbetrag_CHF: string;
-  photo: string;
+  attributes: {
+    titel: string;
+    tierart: string;
+    alter: string;
+    zeitdauer_von_bis: string;
+    beschreibung_wichtiger_infos: string;
+    totalbetrag_chf: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    tierrasse: string;
+    tiername: string;
+    bild: {
+      data: BildDaten[];
+    };
+    users_permissions_user: {
+      data: UserDaten;
+    };
+  };
+}
+
+interface BildDaten {
+  id: number;
+  attributes: {
+    name: string;
+    alternativeText: string;
+    caption: string;
+    width: number;
+    height: number;
+    formats: {
+      thumbnail: BildFormat;
+    };
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl: string;
+    provider: string;
+    provider_metadata: any;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+interface BildFormat {
+  name: string;
+  hash: string;
+  ext: string;
+  mime: string;
+  path: string;
+  width: number;
+  height: number;
+  size: number;
+  sizeInBytes: number;
+  url: string;
+}
+
+interface UserDaten {
+  id: number;
+  attributes: {
+    username: string;
+    email: string;
+    provider: string;
+    confirmed: boolean;
+    blocked: boolean;
+    createdAt: string;
+    updatedAt: string;
+    vorname: string;
+    name: string;
+    geburtsdatum: string;
+    strasseNr: string;
+    ort: string;
+    rolle: string;
+    telefonnummer: string;
+    postleitzahl: string;
+  };
 }

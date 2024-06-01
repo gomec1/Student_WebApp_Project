@@ -1,13 +1,15 @@
-import { Component, inject } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
 import { ServiceTiersitterInserateAuftraegeService } from "../services/service-tiersitter-inserate-auftraege.service";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-tier-sitter-inserate-auftraege",
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
+  providers: [HttpClient, ServiceTiersitterInserateAuftraegeService],
   template: `
     <section class="hintergrundunten">
       <button class="filterbutton">
@@ -20,28 +22,30 @@ import { ServiceTiersitterInserateAuftraegeService } from "../services/service-t
 
       <div class="inseratebox-container">
         <section
-          *ngFor="
-            let TierSitterInseratAuftraegeDaten of TierSitterInseratAuftraegeDatenList
-          "
           class="inseratBoxen"
+          *ngFor="let inserat of tierSitterInseratAuftraegeDatenList"
         >
           <img
             class="InseratFoto"
-            [src]="TierSitterInseratAuftraegeDaten.photo"
-            alt="Foto von {{ TierSitterInseratAuftraegeDaten.tiername }}"
+            [src]="
+              'http://localhost:1337' +
+              inserat.attributes.bild.data[0].attributes.url
+            "
+            [alt]="
+              'http://localhost:1337' +
+              inserat.attributes.bild.data[0].attributes.url
+            "
           />
           <h1 class="inserateBoxenÜberschrift">
-            Titel: {{ TierSitterInseratAuftraegeDaten.titel }}
+            Titel: {{ inserat.attributes.titel }}
           </h1>
           <p class="inserateBoxenOrt">
-            Ort: {{ TierSitterInseratAuftraegeDaten.ort }}
+            Ort:
+            {{ inserat.attributes.users_permissions_user.data.attributes.ort }}
           </p>
           <a
             class="MehrErfahrenButton"
-            [routerLink]="[
-              '/Tiersitter-Inserat-Aufträge-details',
-              TierSitterInseratAuftraegeDaten.id
-            ]"
+            [routerLink]="'/Tiersitter-Inserat-Aufträge-details/' + inserat.id"
           >
             Mehr erfahren...
           </a>
@@ -51,13 +55,24 @@ import { ServiceTiersitterInserateAuftraegeService } from "../services/service-t
   `,
   styleUrl: "./tier-sitter-inserate-auftraege.component.css",
 })
-export class TierSitterInserateAuftraegeComponent {
-  TierSitterInseratAuftraegeDatenList: TierSitterInseratAuftraegeDaten[] = [];
-  ServiceTiersitterInserateAuftraegeService: ServiceTiersitterInserateAuftraegeService =
-    inject(ServiceTiersitterInserateAuftraegeService);
+export class TierSitterInserateAuftraegeComponent implements OnInit {
+  tierSitterInseratAuftraegeDatenList: TierSitterInseratAuftraegeDaten[] = [];
 
-  constructor() {
-    this.TierSitterInseratAuftraegeDatenList =
-      this.ServiceTiersitterInserateAuftraegeService.getAllTiersitterInserateAuftraege();
+  constructor(
+    private serviceTiersitterInserateAuftraegeService: ServiceTiersitterInserateAuftraegeService,
+    private http: HttpClient
+  ) {}
+
+  ngOnInit(): void {
+    this.serviceTiersitterInserateAuftraegeService
+      .getAllTierSitterInseratAuftraege()
+      .subscribe(
+        (data) => {
+          this.tierSitterInseratAuftraegeDatenList = data;
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
   }
 }

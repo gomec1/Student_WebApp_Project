@@ -19,14 +19,19 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
           alt="Filter Zeichen"
         />
       </button>
+
       <div class="inseratebox-container">
         <section
-          class="inseratboxen"
+          class="inseratBoxen"
           *ngFor="let inserat of tierSitterInserateDatenList"
         >
           <img
             class="InseratFoto"
             [src]="
+              'http://localhost:1337' +
+              inserat.attributes.bild.data[0].attributes.url
+            "
+            [alt]="
               'http://localhost:1337' +
               inserat.attributes.bild.data[0].attributes.url
             "
@@ -46,36 +51,6 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
         </section>
       </div>
     </section>
-
-    <!-- <section class="hintergrundunten">
-      <button class="filterbutton">
-        <img
-          class="filterzeichen"
-          src="/assets/filterzeichen.png"
-          alt="Filter Zeichen"
-        />
-      </button>
-
-      <div class="inseratebox-container">
-        <section
-          class="inseratBoxen"
-          *ngFor="let inserat of TiersitterInserateDatenList"
-        >
-          <img class="InseratFoto" [src]="inserat.user.profilbild" />
-          alt="Foto von {{ inserat.user.vorname }}" />
-          <h1 class="inserateBoxenÜberschrift">
-            Titel: {{ inserat.data.attributes.titel }}
-          </h1>
-          <p class="inserateBoxenOrt">Ort: {{ inserat.user.ort }}</p>
-          <a
-            class="MehrErfahrenButton"
-            [routerLink]="['/tiersitter-Inserat-details', inserat.user.id]"
-          >
-            Mehr erfahren...
-          </a>
-        </section>
-      </div>
-    </section> -->
   `,
   styleUrl: "./tier-sitter-inserate.component.css",
 })

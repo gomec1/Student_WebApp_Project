@@ -24,16 +24,3 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.hintergrundunten {
-  flex-shrink: 0;
-  background-color: #ebfffa;
-  border-radius: 15px;
-  stroke-width: 2px;
-  stroke: rgba(0, 0, 0, 0.5);
-  /* BOX MODEL */
-  border: 1px solid;
-  min-height: 50vh;
-  margin: 0;
-  padding: 12px;
-}

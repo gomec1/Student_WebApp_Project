@@ -10,28 +10,33 @@ import { AuthService } from "../services/auth.service";
   standalone: true,
   imports: [RouterModule, HttpClientModule, NgIf, CommonModule],
   template: `
-    <div *ngIf="authService.isLoggedIn; else notLoggedIn">
-      <div *ngIf="user">
-        <!-- <p>{{ user.profilfoto }}</p> -->
-        <h1>Username: {{ user.username }}</h1>
-        <p>Email: {{ user.email }}</p>
-        <p>Telefonnummer: 0{{ user.telefonnummer }}</p>
-        <p>Vorname: {{ user.vorname }}</p>
-        <p>Name: {{ user.name }}</p>
-        <p>Geburtsdatum: {{ user.geburtsdatum }}</p>
-        <p>Strasse + Nr: {{ user.strasseNr }}</p>
-        <p>Postleitzahl: {{ user.postleitzahl }}</p>
-        <p>Ort: {{ user.ort }}</p>
-        <p>Rolle: {{ user.rolle }}</p>
-        <!-- <p>{{ user.ausweis }}</p> -->
+    <section class="hintergrundunten">
+      <div *ngIf="authService.isLoggedIn; else notLoggedIn">
+        <div *ngIf="user">
+          <!-- <p>{{ user.profilfoto }}</p> -->
+          <h1>Username: {{ user.username }}</h1>
+          <p>Email: {{ user.email }}</p>
+          <p>Telefonnummer: 0{{ user.telefonnummer }}</p>
+          <p>Vorname: {{ user.vorname }}</p>
+          <p>Name: {{ user.name }}</p>
+          <p>Geburtsdatum: {{ user.geburtsdatum }}</p>
+          <p>Strasse + Nr: {{ user.strasseNr }}</p>
+          <p>Postleitzahl: {{ user.postleitzahl }}</p>
+          <p>Ort: {{ user.ort }}</p>
+          <p>Rolle: {{ user.rolle }}</p>
+          <!-- <p>{{ user.ausweis }}</p> -->
+        </div>
+        <button class="buttonEditProfil" routerLink="/edit-profil">
+          <p>Daten aktualisieren</p>
+        </button>
       </div>
-      <button class="buttonEditProfil" routerLink="/edit-profil">
-        <p>Daten aktualisieren</p>
-      </button>
-    </div>
+    </section>
     <!-- Alternativer Inhalt, wenn der Benutzer nicht eingeloggt ist: -->
+
     <ng-template #notLoggedIn>
-      <p>Nicht eingeloggt</p>
+      <section class="hintergrundunten">
+        <p>Nicht eingeloggt</p>
+      </section>
     </ng-template>
   `,
   styleUrl: "./profil.component.css",

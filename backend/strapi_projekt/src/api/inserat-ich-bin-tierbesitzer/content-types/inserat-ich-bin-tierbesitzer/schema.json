@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inserat_ich_bin_tierbesitzers",
+  "info": {
+    "singularName": "inserat-ich-bin-tierbesitzer",
+    "pluralName": "inserat-ich-bin-tierbesitzers",
+    "displayName": "Inserat: Ich bin Tierbesitzer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "text"
+    },
+    "tierart": {
+      "type": "string"
+    },
+    "alter": {
+      "type": "string"
+    },
+    "zeitdauer_von_bis": {
+      "type": "text"
+    },
+    "beschreibung_wichtiger_infos": {
+      "type": "text"
+    },
+    "totalbetrag_chf": {
+      "type": "string"
+    },
+    "bild": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "inserat_ich_bin_tierbesitzers"
+    },
+    "tierrasse": {
+      "type": "string"
+    },
+    "tiername": {
+      "type": "string"
+    }
+  }
+}

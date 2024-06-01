@@ -1,109 +1,31 @@
 import { Injectable } from "@angular/core";
 import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
+import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
 })
 export class ServiceTiersitterInserateAuftraegeService {
-  protected TiersitterInserateAuftraegeDatenList: TierSitterInseratAuftraegeDaten[] =
-    [
-      {
-        id: 0,
-        titel: "Spazieren mit Sayra",
-        tiername: "Sayra",
-        tierart: "Hund",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Bern",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/sayrahund.JPG",
-      },
-      {
-        id: 1,
-        titel: "Spielen mit Sayra",
-        tiername: "Sayra",
-        tierart: "Hund",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Belp",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/sayrahund.JPG",
-      },
-      {
-        id: 2,
-        titel: "Gassi gehen mit Sayra",
-        tiername: "Sayra",
-        tierart: "Hund",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Spiez",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/sayrahund.JPG",
-      },
-      {
-        id: 3,
-        titel: "Sayra zum arzt bringen",
-        tiername: "Sayra",
-        tierart: "Hund",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Muri",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/sayrahund.JPG",
-      },
-      {
-        id: 4,
-        titel: "Spazieren mit Sayra",
-        tiername: "Sayra",
-        tierart: "Hund",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Bern",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/sayrahund.JPG",
-      },
-      {
-        id: 5,
-        titel: "kuscheln mit Luna",
-        tiername: "Luna",
-        tierart: "Katze",
-        tierrasse: "Golden Retriever",
-        alter: "4 Jahre",
-        Zeitdauer_von_bis: "Jeden Montag, Nachmittag",
-        beschreibung_wichtiger_infos:
-          "Geimpft, sehr freundlich, liebt es zu spielen",
-        ort: "Amsterdam",
-        totalbetrag_CHF: "50 CHF",
-        photo: "/assets/Luna.JPG",
-      },
-    ];
+  constructor(public http: HttpClient) {}
 
-  constructor() {}
-
-  getAllTiersitterInserateAuftraege(): TierSitterInseratAuftraegeDaten[] {
-    return this.TiersitterInserateAuftraegeDatenList;
+  getAllTierSitterInseratAuftraege(): Observable<
+    TierSitterInseratAuftraegeDaten[]
+  > {
+    return this.http
+      .get<{ data: TierSitterInseratAuftraegeDaten[] }>(
+        "http://localhost:1337/api/inserat-ich-bin-tierbesitzers?populate=*"
+      )
+      .pipe(map((response) => response.data));
   }
-  getTiersitterInserateAuftraegeById(
+
+  getTierSitterInseratAuftraegeById(
     id: number
-  ): TierSitterInseratAuftraegeDaten | undefined {
-    return this.TiersitterInserateAuftraegeDatenList.find(
-      (tiersitterInserateAuftraegeDaten) =>
-        tiersitterInserateAuftraegeDaten.id === id
-    );
+  ): Observable<TierSitterInseratAuftraegeDaten> {
+    const url = `http://localhost:1337/api/inserat-ich-bin-tierbesitzers/${id}?populate=*`;
+    return this.http
+      .get<{ data: TierSitterInseratAuftraegeDaten }>(url)
+      .pipe(map((response) => response.data));
   }
 }
