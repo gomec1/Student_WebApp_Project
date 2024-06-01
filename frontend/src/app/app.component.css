@@ -170,7 +170,7 @@ input {
 .buttons-mittleres-element {
   border-radius: 15px;
   border: none;
-  width: 166px;
+  min-width: 166px;
   height: 37px;
   background-color: #39b797;
   cursor: pointer;

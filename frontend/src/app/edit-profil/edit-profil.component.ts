@@ -18,47 +18,144 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   ],
 
   template: `
-    <div *ngIf="user">
+    <div class="hintergrundunten" *ngIf="user">
       <form [formGroup]="userForm" (ngSubmit)="updateUser()">
-        <label for="username">Username: </label>
-        <input id="username" type="text" formControlName="username" />
+        <table>
+          <tr>
+            <td><label class="form_label" for="username">Username: </label></td>
+            <td>
+              <input
+                class="form_input"
+                id="username"
+                type="text"
+                formControlName="username"
+              />
+            </td>
+          </tr>
 
-        <label for="email">Email: </label>
-        <input type="email" type="text" formControlName="email" />
+          <tr>
+            <td><label class="form_label" for="email">Email: </label></td>
+            <td>
+              <input
+                class="form_input"
+                type="email"
+                type="text"
+                formControlName="email"
+              />
+            </td>
+          </tr>
 
-        <label for="password">Passwort: </label>
-        <input id="password" type="password" formControlName="password" />
+          <tr>
+            <td><label class="form_label" for="password">Passwort: </label></td>
+            <td>
+              <input
+                class="form_input"
+                id="password"
+                type="password"
+                formControlName="password"
+              />
+            </td>
+          </tr>
 
-        <label for="telefonnummer">Telefonnummer: 0</label>
-        <input type="number" formControlName="telefonnummer" />
+          <tr>
+            <td>
+              <label class="form_label" for="telefonnummer"
+                >Telefonnummer: 0</label
+              >
+            </td>
+            <td>
+              <input
+                class="form_input"
+                type="number"
+                formControlName="telefonnummer"
+              />
+            </td>
+          </tr>
 
-        <label for="vorname">Vorname: </label>
-        <input type="text" formControlName="vorname" />
+          <tr>
+            <td><label class="form_label" for="vorname">Vorname: </label></td>
+            <td>
+              <input class="form_input" type="text" formControlName="vorname" />
+            </td>
+          </tr>
 
-        <label for="name">Name: </label>
-        <input type="text" formControlName="name" />
+          <tr>
+            <td><label class="form_label" for="name">Name: </label></td>
+            <td>
+              <input class="form_input" type="text" formControlName="name" />
+            </td>
+          </tr>
 
-        <label for="geburtsdatum">Geburtsdatum: </label>
-        <input type="text" formControlName="geburtsdatum" />
+          <tr>
+            <td>
+              <label class="form_label" for="geburtsdatum"
+                >Geburtsdatum:
+              </label>
+            </td>
+            <td>
+              <input
+                class="form_input"
+                type="text"
+                formControlName="geburtsdatum"
+              />
+            </td>
+          </tr>
 
-        <label for="strasseNr">Strasse + Nr: </label>
-        <input type="text" formControlName="strasseNr" />
+          <tr>
+            <td>
+              <label class="form_label" for="strasseNr">Strasse + Nr: </label>
+            </td>
+            <td>
+              <input
+                class="form_input"
+                type="text"
+                formControlName="strasseNr"
+              />
+            </td>
+          </tr>
 
-        <label for="postleitzahl">Postleitzahl: </label>
-        <input type="number" formControlName="postleitzahl" />
+          <tr>
+            <td>
+              <label class="form_label" for="postleitzahl"
+                >Postleitzahl:
+              </label>
+            </td>
+            <td>
+              <input
+                class="form_input"
+                type="number"
+                formControlName="postleitzahl"
+              />
+            </td>
+          </tr>
 
-        <label for="ort">Ort: </label>
-        <input type="text" formControlName="ort" />
+          <tr>
+            <td><label class="form_label" for="ort">Ort: </label></td>
+            <td>
+              <input class="form_input" type="text" formControlName="ort" />
+            </td>
+          </tr>
 
-        <label for="rolle">Rolle: </label>
-        <select formControlName="rolle">
-          <option value="Ich bin Tiersitter">Ich bin Tiersitter</option>
-          <option value="Ich bin Tierbesitzer">Ich bin Tierbesitzer</option>
-          <option value="beides">beides</option>
-        </select>
+          <tr>
+            <td><label class="form_label" for="rolle">Rolle: </label></td>
+            <td>
+              <select id="rolle_dropdown" formControlName="rolle">
+                <option value="Ich bin Tiersitter">Ich bin Tiersitter</option>
+                <option value="Ich bin Tierbesitzer">
+                  Ich bin Tierbesitzer
+                </option>
+                <option value="beides">beides</option>
+              </select>
+            </td>
+          </tr>
 
-        <button type="submit">Update</button>
-        <button class="backToProfil" routerLink="/profil">Zurück</button>
+          <tr>
+            <td><button id="button_submit" type="submit">Update</button></td>
+            <td>
+              <button class="backToProfil" routerLink="/profil">Zurück</button>
+            </td>
+          </tr>
+        </table>
       </form>
     </div>
   `,

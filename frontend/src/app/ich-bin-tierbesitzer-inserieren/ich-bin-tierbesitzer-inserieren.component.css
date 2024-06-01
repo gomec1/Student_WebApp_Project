@@ -1,0 +1,36 @@
+.form_label {
+    font-size: 20px;
+  }
+  .form_input {
+    font-size: 20px;
+    border-color: #39b797;
+    border-width: 3px;
+    height: 100px;
+    width: 350px;
+    border-radius: 10px;
+    border-style: solid;
+  }
+  
+  #button_submit {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  td {
+    padding-bottom: 15px;
+  }
+  
+  #insert_bild {
+    background-color: #39b797;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+  }
+  
+  #maintitle {
+    font-weight: bold;
+    font-size: 40px;

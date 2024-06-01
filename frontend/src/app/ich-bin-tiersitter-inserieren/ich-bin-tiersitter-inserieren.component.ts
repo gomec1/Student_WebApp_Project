@@ -12,53 +12,83 @@ import { AuthService } from "../services/auth.service";
   imports: [CommonModule, RouterModule, HttpClientModule, FormsModule],
   template: `
     <section class="hintergrundunten">
-      <h1 class="maintitel">
-        Inserieren - Ich bin ein Tiersitter und suche ein Tier zum hüten
-      </h1>
+      <div>
+        <h1 id="maintitle">
+          Inserieren - Ich bin ein Tiersitter und suche ein Tier zum hüten
+        </h1>
+      </div>
+      <div>
+        <form class="form-container" (ngSubmit)="onSubmit()">
+          <table>
+            <tr class="spalten_inserieren">
+              <td>
+                <label for="titel" class="form_label"
+                  >Titel (Ich suche...)</label
+                >
+              </td>
+              <td>
+                <input
+                  class="form_input"
+                  name="titel"
+                  type="text"
+                  [(ngModel)]="titel"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="verfuegbarkeit" class="form_label"
+                  >Verfügbarkeit</label
+                >
+              </td>
+              <td>
+                <input
+                  class="form_input"
+                  name="verfuegbarkeit"
+                  type="text"
+                  [(ngModel)]="verfuegbarkeit"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Lohnkosten" class="form_label">Lohnkosten</label>
+              </td>
+              <td>
+                <input
+                  class="form_input"
+                  name="Lohnkosten"
+                  type="text"
+                  [(ngModel)]="lohnkosten"
+                />
+              </td>
+            </tr>
+            <tr class="spalten_inserieren">
+              <td>
+                <label for="persoenlicheBeschreibung" class="form_label"
+                  >Persönliche Beschreibung</label
+                >
+              </td>
+              <td>
+                <input
+                  class="form_input"
+                  name="persoenlicheBeschreibung"
+                  type="text"
+                  [(ngModel)]="persoenliche_beschreibung"
+                />
+              </td>
+            </tr>
+            <tr class="spalten_inserieren">
+              <td>
+                <button id="insert_bild">Bild einfügen</button>
+              </td>
+              <td></td>
+            </tr>
+          </table>
 
-      <form class="form-container" (ngSubmit)="onSubmit()">
-        <section class="column1">
-          <label for="titel" class="schrift">Titel (Ich suche...)</label>
-          <input
-            class="eingabefelder"
-            name="titel"
-            type="text"
-            [(ngModel)]="titel"
-          />
-
-          <label for="persoenlicheBeschreibung" class="schrift"
-            >Persönliche Beschreibung</label
-          >
-          <input
-            class="eingabefelder"
-            name="persoenlicheBeschreibung"
-            type="text"
-            [(ngModel)]="persoenliche_beschreibung"
-          />
-        </section>
-        <section class="column2">
-          <label for="verfuegbarkeit" class="schrift">Verfügbarkeit</label>
-          <input
-            class="eingabefelder"
-            name="verfuegbarkeit"
-            type="text"
-            [(ngModel)]="verfuegbarkeit"
-          />
-
-          <label for="Lohnkosten" class="schrift">Lohnkosten</label>
-          <input
-            class="eingabefelder"
-            name="Lohnkosten"
-            type="text"
-            [(ngModel)]="lohnkosten"
-          />
-        </section>
-
-        <section class="column3">
-          <p>Platzhalter, später Bild einfügen</p>
-        </section>
-        <input class="submit" type="submit" value="Submit" />
-      </form>
+          <input id="button_submit" type="submit" value="Submit" />
+        </form>
+      </div>
     </section>
   `,
   styleUrl: "./ich-bin-tiersitter-inserieren.component.css",
