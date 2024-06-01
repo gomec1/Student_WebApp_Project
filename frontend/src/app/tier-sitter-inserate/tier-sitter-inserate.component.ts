@@ -1,15 +1,53 @@
-import { Component, inject } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { TiersitterInserateDaten } from "../tiersitter-inserate-daten";
 import { ServiceTiersitterInserateService } from "../services/service-tiersitter-inserate.service";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-tier-sitter-inserate",
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
+  providers: [HttpClient, ServiceTiersitterInserateService],
   template: `
     <section class="hintergrundunten">
+      <button class="filterbutton">
+        <img
+          class="filterzeichen"
+          src="/assets/filterzeichen.png"
+          alt="Filter Zeichen"
+        />
+      </button>
+      <div class="inseratebox-container">
+        <section
+          class="inseratboxen"
+          *ngFor="let inserat of tierSitterInserateDatenList"
+        >
+          <img
+            class="InseratFoto"
+            [src]="
+              'http://localhost:1337' +
+              inserat.attributes.bild.data[0].attributes.url
+            "
+          />
+          <h1 class="inserateBoxenÜberschrift">
+            Titel: {{ inserat.attributes.titel }}
+          </h1>
+          <p class="inserateBoxenOrt">
+            Ort: {{ inserat.attributes.user.data.attributes.ort }}
+          </p>
+          <a
+            class="MehrErfahrenButton"
+            [routerLink]="'/tiersitter-Inserat-details/' + inserat.id"
+          >
+            Mehr erfahren...
+          </a>
+        </section>
+      </div>
+    </section>
+
+    <!-- <section class="hintergrundunten">
       <button class="filterbutton">
         <img
           class="filterzeichen"
@@ -20,41 +58,43 @@ import { ServiceTiersitterInserateService } from "../services/service-tiersitter
 
       <div class="inseratebox-container">
         <section
-          *ngFor="let TiersitterInserateDaten of TiersitterInserateDatenList"
           class="inseratBoxen"
+          *ngFor="let inserat of TiersitterInserateDatenList"
         >
-          <img
-            class="InseratFoto"
-            [src]="TiersitterInserateDaten.photo"
-            alt="Foto von {{ TiersitterInserateDaten.vorname }}"
-          />
+          <img class="InseratFoto" [src]="inserat.user.profilbild" />
+          alt="Foto von {{ inserat.user.vorname }}" />
           <h1 class="inserateBoxenÜberschrift">
-            Titel: {{ TiersitterInserateDaten.titel }}
+            Titel: {{ inserat.data.attributes.titel }}
           </h1>
-          <p class="inserateBoxenOrt">Ort: {{ TiersitterInserateDaten.ort }}</p>
+          <p class="inserateBoxenOrt">Ort: {{ inserat.user.ort }}</p>
           <a
             class="MehrErfahrenButton"
-            [routerLink]="[
-              '/tiersitter-Inserat-details',
-              TiersitterInserateDaten.id
-            ]"
+            [routerLink]="['/tiersitter-Inserat-details', inserat.user.id]"
           >
             Mehr erfahren...
           </a>
         </section>
       </div>
-    </section>
+    </section> -->
   `,
   styleUrl: "./tier-sitter-inserate.component.css",
 })
-export class TierSitterInserateComponent {
-  TiersitterInserateDatenList: TiersitterInserateDaten[] = [];
-  ServiceTiersitterInserateService: ServiceTiersitterInserateService = inject(
-    ServiceTiersitterInserateService
-  );
+export class TierSitterInserateComponent implements OnInit {
+  tierSitterInserateDatenList: TiersitterInserateDaten[] = [];
 
-  constructor() {
-    this.TiersitterInserateDatenList =
-      this.ServiceTiersitterInserateService.getAllTiersitterInserate();
+  constructor(
+    private serviceTiersitterInserateService: ServiceTiersitterInserateService,
+    private http: HttpClient
+  ) {}
+
+  ngOnInit() {
+    this.serviceTiersitterInserateService.getAllTiersitterInserate().subscribe(
+      (data) => {
+        this.tierSitterInserateDatenList = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

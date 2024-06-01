@@ -914,6 +914,7 @@ export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
     singularName: 'inserat-ich-bin-tiersitter';
     pluralName: 'inserat-ich-bin-tiersitters';
     displayName: 'Inserat: Ich bin Tiersitter';
+    description: '';
   };
   options: {
     draftAndPublish: true;

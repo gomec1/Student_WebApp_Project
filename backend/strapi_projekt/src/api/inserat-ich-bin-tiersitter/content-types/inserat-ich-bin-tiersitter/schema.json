@@ -4,7 +4,8 @@
   "info": {
     "singularName": "inserat-ich-bin-tiersitter",
     "pluralName": "inserat-ich-bin-tiersitters",
-    "displayName": "Inserat: Ich bin Tiersitter"
+    "displayName": "Inserat: Ich bin Tiersitter",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,15 @@
       "type": "text"
     },
     "bild": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "user": {
       "type": "relation",
