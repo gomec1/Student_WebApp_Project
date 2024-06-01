@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  selector: 'app-landingpage',
+  selector: "app-landingpage",
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
@@ -33,6 +33,6 @@ import { RouterModule } from '@angular/router';
       </div>
     </section>
   `,
-  styleUrl: './landingpage.component.css',
+  styleUrl: "./landingpage.component.css",
 })
 export class LandingpageComponent {}

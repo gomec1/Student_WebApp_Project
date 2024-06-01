@@ -12,23 +12,22 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   imports: [RouterModule, NgIf, FormsModule, HttpClientModule],
   template: `
     <section class="hintergrundunten">
-      <form class="form-container" (ngSubmit)="onSubmit()">
-        <h1 class="überschrift">Registrieren</h1>
-        <div class="fotohochladenkreis">
-          <img
-            class="profilzeichen"
-            src="/assets/profil-zeichen.png"
-            alt="Profil Zeichen"
-          />
-          <h1 class="schriftfotohochladen">Profilfoto hinzufügen</h1>
-        </div>
-        <input
-          class="profilfoto"
-          id="profilfoto"
-          type="file"
-          (change)="onFileSelected($event, 'profilfoto')"
+      <h1 class="überschrift">Registrieren</h1>
+      <div class="fotohochladenkreis">
+        <img
+          class="profilzeichen"
+          src="/assets/profil-zeichen.png"
+          alt="Profil Zeichen"
         />
-
+        <h1 class="schriftfotohochladen">Profilfoto hinzufügen</h1>
+      </div>
+      <input
+        class="profilfoto"
+        id="profilfoto"
+        type="file"
+        (change)="onFileSelected($event, 'profilfoto')"
+      />
+      <form class="form-container" (ngSubmit)="onSubmit()">
         <!-- Add ngSubmit event -->
         <div class="eingabefelder-container">
           <label for="name" class="schrift">Name</label>
@@ -221,12 +220,21 @@ export class RegistrierenComponent implements OnInit {
       } else {
         console.log("Ungültiger Dateityp");
         alert("Bitte laden Sie eine Datei im unterstützten Format hoch.");
+        this.snackBar.open(
+          "Ungültiger Dateityp, bitte lade eine Datei im unterstützten Format hoch",
+          "OK",
+          {
+            duration: 5000,
+            verticalPosition: "top",
+            horizontalPosition: "center",
+          }
+        );
       }
     } else {
       console.log("Keine Datei ausgewählt");
     }
   }
-
+  // Registrierung des Benutzers
   onSubmit() {
     debugger;
     const formData = new FormData();
@@ -252,21 +260,23 @@ export class RegistrierenComponent implements OnInit {
             verticalPosition: "top",
             horizontalPosition: "center",
           });
-          // Save JWT token and user ID
+          // JWT token und user ID werde gespeichert
           const jwtToken = response.jwt;
           const userId = response.user.id;
           console.log("JWT token:", jwtToken);
           console.log("User ID:", userId);
-          // Use the token and user ID as needed
-          // ...
 
+          // Mit der gepeicherten JWT token und user ID wird das Profilfoto und der Ausweis hochgeladen
           const profilfotoFormData = new FormData();
+          const ausweisFormData = new FormData();
           if (this.profilfoto) {
             profilfotoFormData.append("files", this.profilfoto);
-            profilfotoFormData.append("ref", "User"); // the name of your content type
+            profilfotoFormData.append("ref", "plugin::users-permissions.user"); // the name of your content type
             profilfotoFormData.append("refId", userId); // the id of the entry
             profilfotoFormData.append("field", "profilfoto"); // the name of your field
           }
+
+          // Upload Profilfoto
           this.http
             .post("http://localhost:1337/api/upload", profilfotoFormData, {
               headers: new HttpHeaders({
@@ -274,7 +284,30 @@ export class RegistrierenComponent implements OnInit {
               }),
             })
             .subscribe(
-              (response) => console.log(response),
+              (response) => {
+                console.log(response);
+
+                if (this.ausweis) {
+                  ausweisFormData.append("files", this.ausweis);
+                  ausweisFormData.append(
+                    "ref",
+                    "plugin::users-permissions.user"
+                  ); // the name of your content type
+                  ausweisFormData.append("refId", userId); // the id of the entry
+                  ausweisFormData.append("field", "ausweis"); // the name of your field
+                }
+                // Upload Ausweis
+                this.http
+                  .post("http://localhost:1337/api/upload", ausweisFormData, {
+                    headers: new HttpHeaders({
+                      Authorization: `Bearer ${jwtToken}`,
+                    }),
+                  })
+                  .subscribe(
+                    (response) => console.log(response),
+                    (error) => console.log(error)
+                  );
+              },
               (error) => console.log(error)
             );
           this.router.navigate(["/login"]);

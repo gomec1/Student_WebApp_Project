@@ -10,7 +10,8 @@ import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraeg
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <article class="hintergrundunten">
+    <p>kommt noch</p>
+    <!-- <article class="hintergrundunten">
       <section class="listing-beschreibung1">
         <img
           class="listing-fotoTier"
@@ -62,25 +63,24 @@ import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraeg
         </h2>
         <button class="primary" type="button">Buchen</button>
       </section>
-    </article>
+    </article> -->
   `,
   styleUrl: "./tier-sitter-inserat-auftraege-details.component.css",
 })
 export class TierSitterInseratAuftraegeDetailsComponent {
-  route: ActivatedRoute = inject(ActivatedRoute);
-  serviceTiersitterInserateAuftraegeService = inject(
-    ServiceTiersitterInserateAuftraegeService
-  );
-  tierSitterInseratAuftraegeDaten: TierSitterInseratAuftraegeDaten | undefined;
-  grimacingFaceEmoji: any;
-
-  constructor() {
-    const tierSitterInseratAuftraegeId = Number(
-      this.route.snapshot.params["id"]
-    );
-    this.tierSitterInseratAuftraegeDaten =
-      this.serviceTiersitterInserateAuftraegeService.getTiersitterInserateAuftraegeById(
-        tierSitterInseratAuftraegeId
-      );
-  }
+  // route: ActivatedRoute = inject(ActivatedRoute);
+  // serviceTiersitterInserateAuftraegeService = inject(
+  //   ServiceTiersitterInserateAuftraegeService
+  // );
+  // tierSitterInseratAuftraegeDaten: TierSitterInseratAuftraegeDaten | undefined;
+  // grimacingFaceEmoji: any;
+  // constructor() {
+  //   const tierSitterInseratAuftraegeId = Number(
+  //     this.route.snapshot.params["id"]
+  //   );
+  //   this.tierSitterInseratAuftraegeDaten =
+  //     this.serviceTiersitterInserateAuftraegeService.getTiersitterInserateAuftraegeById(
+  //       tierSitterInseratAuftraegeId
+  //     );
+  // }
 }
