@@ -15,3 +15,6 @@
 venv
 node_modules
 .sass-cache
+
+./frontend/.angular
+./frontend/node_modules
