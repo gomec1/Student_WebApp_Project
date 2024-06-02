@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  selector: 'app-inserieren-vorseite',
+  selector: "app-inserieren-vorseite",
   standalone: true,
   imports: [RouterModule],
   template: `
     <section class="hintergrundunten">
       <div class="elemente-container">
         <button class="suchbox" routerLink="/ich-bin-tiersitter-inserieren">
-          <h1 class="überschrift">
+          <h1 class="überschrift1">
             Ich bin ein Tiersitter und suche ein Tier zum hüten
           </h1>
           <img
@@ -24,7 +24,7 @@ import { RouterModule } from '@angular/router';
         </div>
 
         <button class="suchbox" routerLink="/ich-bin-tierbesitzer-inserieren">
-          <h1 class="überschrift">
+          <h1 class="überschrift2">
             Ich bin Tierbesitzer und suche einen Tiersitter
           </h1>
           <img
@@ -36,6 +36,6 @@ import { RouterModule } from '@angular/router';
       </div>
     </section>
   `,
-  styleUrl: './inserieren.component.css',
+  styleUrl: "./inserieren.component.css",
 })
 export class InserierenComponent {}

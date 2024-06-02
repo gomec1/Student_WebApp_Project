@@ -11,85 +11,78 @@ import { AuthService } from "../services/auth.service";
   standalone: true,
   imports: [CommonModule, RouterModule, HttpClientModule, FormsModule],
   template: `
-    <section class="hintergrundunten">
-      <div>
-        <h1 id="maintitle">
-          Inserieren - Ich bin ein Tiersitter und suche ein Tier zum hüten
-        </h1>
-      </div>
-      <div>
-        <form class="form-container" (ngSubmit)="onSubmit()">
-          <table>
-            <tr class="spalten_inserieren">
-              <td>
-                <label for="titel" class="form_label"
-                  >Titel (Ich suche...)</label
-                >
-              </td>
-              <td>
-                <input
+    <div *ngIf="authService.isLoggedIn; else notLoggedIn">
+      <section class="hintergrundunten">
+        <div>
+          <h1 id="maintitle">
+            Inserieren - Ich bin ein Tiersitter und suche ein Tier zum Hüten
+          </h1>
+        </div>
+
+        <form (ngSubmit)="onSubmit()">
+          <div class="table-container">
+            <table>
+              <div class="eingabefelder-container">
+                <label for="titel" class="form_label">Titel </label>
+                <textarea
                   class="form_input"
                   name="titel"
                   type="text"
+                  placeholder="z.B. Verlässlicher Katzensitter in Bern am start! 🐱🐾🏡"
                   [(ngModel)]="titel"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
+                ></textarea>
                 <label for="verfuegbarkeit" class="form_label"
                   >Verfügbarkeit</label
                 >
-              </td>
-              <td>
-                <input
+                <textarea
                   class="form_input"
                   name="verfuegbarkeit"
                   type="text"
                   [(ngModel)]="verfuegbarkeit"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
+                  placeholder="z.B. Jeden Freitag Nachmittag und Samstag ganztags 📅🕒"
+                ></textarea>
+              </div>
+            </table>
+            <table>
+              <div class="eingabefelder-container">
                 <label for="Lohnkosten" class="form_label">Lohnkosten</label>
-              </td>
-              <td>
-                <input
+                <textarea
                   class="form_input"
                   name="Lohnkosten"
                   type="text"
                   [(ngModel)]="lohnkosten"
-                />
-              </td>
-            </tr>
-            <tr class="spalten_inserieren">
-              <td>
+                  placeholder="z.B. 10 CHF pro Stunde oder 50 CHF pro Tag 🤑🐾🐱"
+                ></textarea>
                 <label for="persoenlicheBeschreibung" class="form_label"
                   >Persönliche Beschreibung</label
                 >
-              </td>
-              <td>
-                <input
+                <textarea
                   class="form_input"
                   name="persoenlicheBeschreibung"
                   type="text"
                   [(ngModel)]="persoenliche_beschreibung"
-                />
-              </td>
-            </tr>
-            <tr class="spalten_inserieren">
-              <td>
-                <button id="insert_bild">Bild einfügen</button>
-              </td>
-              <td></td>
-            </tr>
-          </table>
-
-          <input id="button_submit" type="submit" value="Submit" />
+                  placeholder="z.B. Ich bin ein grosser Katzenliebhaber, kann aber wegen meiner Arbeit keine eigene haben 😔🐱"
+                ></textarea>
+              </div>
+            </table>
+            <table>
+              <div class="buttons-container">
+                <button id="insert_bild" type="button">Bild einfügen</button>
+                <input id="button_submit" type="submit" value="Inserieren" />
+              </div>
+            </table>
+          </div>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
+    <!-- Alternativer Inhalt, wenn der Benutzer nicht eingeloggt ist: -->
+    <ng-template #notLoggedIn>
+      <section class="hintergrundunten">
+        <p class="nichteigeloggt">
+          Du musst eingeloggt sein um ein Inserate aufzuschalten 😉
+        </p>
+        <section></section></section
+    ></ng-template>
   `,
   styleUrl: "./ich-bin-tiersitter-inserieren.component.css",
 })
@@ -103,7 +96,7 @@ export class IchBinTiersitterInserierenComponent {
     private router: Router,
     private http: HttpClient,
     private snackBar: MatSnackBar,
-    private authService: AuthService
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {}
