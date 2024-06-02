@@ -780,7 +780,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     rolle: Attribute.Enumeration<
       ['Ich bin Tiersitter', 'Ich bin Tierbesitzer', 'beides']
     >;
-    telefonnummer: Attribute.BigInteger;
     postleitzahl: Attribute.BigInteger;
     inserat_ich_bin_tiersitters: Attribute.Relation<
       'plugin::users-permissions.user',
@@ -792,6 +791,13 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
     >;
+    telefonnummer: Attribute.String &
+      Attribute.CustomField<
+        'plugin::strapi-phone-validator.phone',
+        {
+          country: 'ch';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

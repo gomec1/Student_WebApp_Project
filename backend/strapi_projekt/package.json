@@ -20,6 +20,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "strapi-location-field-plugin": "^1.2.3",
+    "strapi-phone-validator": "^0.3.2",
     "styled-components": "5.3.3",
     "tar": "^7.1.0"
   },

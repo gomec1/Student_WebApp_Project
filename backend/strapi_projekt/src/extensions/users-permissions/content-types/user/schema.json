@@ -114,10 +114,6 @@
       ],
       "required": false
     },
-    "telefonnummer": {
-      "type": "biginteger",
-      "required": false
-    },
     "postleitzahl": {
       "type": "biginteger"
     },
@@ -132,6 +128,13 @@
       "relation": "oneToMany",
       "target": "api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer",
       "mappedBy": "users_permissions_user"
+    },
+    "telefonnummer": {
+      "type": "customField",
+      "options": {
+        "country": "ch"
+      },
+      "customField": "plugin::strapi-phone-validator.phone"
     }
   }
 }
