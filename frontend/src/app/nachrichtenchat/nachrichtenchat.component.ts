@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-nachrichtenchat',
+  selector: "app-nachrichtenchat",
   standalone: true,
   imports: [],
   template: `
-    <p>
-      nachrichtenchat works!
-    </p>
+    <section class="hintergrundunten">
+      <p class="inProgress">In progress</p>
+      <Img class="bild" src="/assets/Group.png" alt="Icon Mensch am malen" />
+    </section>
   `,
-  styleUrl: './nachrichtenchat.component.css'
+  styleUrl: "./nachrichtenchat.component.css",
 })
-export class NachrichtenchatComponent {
-
-}
+export class NachrichtenchatComponent {}
