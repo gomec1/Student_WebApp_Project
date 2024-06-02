@@ -125,14 +125,13 @@
 
     <div class="eingabefelder-container">
       <label for="rolle" class="schrift">Rolle</label>
-      <input list="rolle" name="rolle" [(ngModel)]="rolle" />
-      <datalist id="rolle">
+      <input class="eingabefelder" [(ngModel)]="rolle" />
+      <datalist>
         <option value="Ich bin Tiersitter"></option>
         <option value="Ich bin Tierbesitzer"></option>
         <option value="beides"></option>
       </datalist>
+      <input id="button_submit" type="submit" value="Inserieren" />
     </div>
-
-    <input class="submit" type="submit" value="Submit" />
   </form>
 </section>

@@ -12,8 +12,9 @@
   stroke: rgba(0, 0, 0, 0.5);
   /* BOX MODEL */
   border: 1px solid;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
+  overflow-y: auto;
 }
 
 .elemente-container {

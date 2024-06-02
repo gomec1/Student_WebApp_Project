@@ -28,7 +28,6 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         (change)="onFileSelected($event, 'profilfoto')"
       />
       <form class="form-container" (ngSubmit)="onSubmit()">
-        <!-- Add ngSubmit event -->
         <div class="eingabefelder-container">
           <label for="name" class="schrift">Name</label>
           <input
@@ -153,9 +152,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             <option value="beides"></option>
           </datalist>
         </div>
-
-        <input class="submit" type="submit" value="Submit" />
       </form>
+      <input id="button_submit" type="submit" value="Registrieren" />
     </section>
   `,
   styleUrl: "./registrieren.component.css",

@@ -11,7 +11,6 @@ import { RegistrierenComponent } from "./registrieren/registrieren.component";
 import { IchBinTiersitterInserierenComponent } from "./ich-bin-tiersitter-inserieren/ich-bin-tiersitter-inserieren.component";
 import { IchBinTierbesitzerInserierenComponent } from "./ich-bin-tierbesitzer-inserieren/ich-bin-tierbesitzer-inserieren.component";
 import { FeedbackComponent } from "./feedback/feedback.component";
-import { ProfilComponent } from "./profil/profil.component";
 import { EditProfilComponent } from "./edit-profil/edit-profil.component";
 const routeConfig: Routes = [
   {
@@ -44,11 +43,7 @@ const routeConfig: Routes = [
     component: NachrichtenchatComponent,
     title: "Nachrichtenchat",
   },
-  {
-    path: "profil",
-    component: ProfilComponent,
-    title: "Profil",
-  },
+
   {
     path: "edit-profil",
     component: EditProfilComponent,
