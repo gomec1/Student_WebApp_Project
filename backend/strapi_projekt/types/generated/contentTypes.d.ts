@@ -786,11 +786,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter'
     >;
-    inserat_ich_bin_tierbesitzers: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
-    >;
     telefonnummer: Attribute.String &
       Attribute.CustomField<
         'plugin::strapi-phone-validator.phone',
@@ -798,6 +793,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
           country: 'ch';
         }
       >;
+    inserat_ich_bin_tierbesitzers: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -938,7 +938,7 @@ export interface ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer
     beschreibung_wichtiger_infos: Attribute.Text;
     totalbetrag_chf: Attribute.String;
     bild: Attribute.Media;
-    users_permissions_user: Attribute.Relation<
+    user: Attribute.Relation<
       'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
       'manyToOne',
       'plugin::users-permissions.user'

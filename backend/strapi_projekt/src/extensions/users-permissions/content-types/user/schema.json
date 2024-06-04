@@ -123,18 +123,18 @@
       "target": "api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter",
       "mappedBy": "user"
     },
-    "inserat_ich_bin_tierbesitzers": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer",
-      "mappedBy": "users_permissions_user"
-    },
     "telefonnummer": {
       "type": "customField",
       "options": {
         "country": "ch"
       },
       "customField": "plugin::strapi-phone-validator.phone"
+    },
+    "inserat_ich_bin_tierbesitzers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer",
+      "mappedBy": "user"
     }
   }
 }
