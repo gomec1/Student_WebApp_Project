@@ -57,7 +57,7 @@ import { RouterModule } from "@angular/router";
           {{ tierSitterInserateDaten.attributes.user.data.attributes.vorname }}
           um auf dein Tier aufzupassen!
         </h2>
-        <button class="primary" type="button">Buchen</button>
+        <button class="primary" type="button">Anfragen</button>
       </section>
     </article>
   `,

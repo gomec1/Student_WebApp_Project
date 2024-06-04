@@ -11,24 +11,10 @@
   padding: 20px;
 }
 
-/* .table-container {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  gap: 50px;
+#maintitle {
+  font-weight: bold;
+  font-size: 40px;
 }
-.form_label {
-  font-size: 20px;
-}
-.form_input {
-  font-size: 20px;
-  border-color: #39b797;
-  border-width: 3px;
-  height: 100px;
-  width: 350px;
-  border-radius: 10px;
-  border-style: solid;
-} */
 
 .table-container {
   display: flex;
@@ -71,13 +57,19 @@ td {
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.input_bild {
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
 #insert_bild {
   background-color: #39b797;
+  border: 2px solid #000000;
   color: black;
   font-size: 20px;
   font-weight: bold;
@@ -86,6 +78,9 @@ td {
   border-radius: 15px;
   cursor: pointer;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #button_submit {
@@ -94,12 +89,8 @@ td {
   cursor: pointer;
   border-radius: 15px;
   background-color: #39b797;
+  border: 2px solid #000000;
   margin: 20px auto;
-}
-
-#maintitle {
-  font-weight: bold;
-  font-size: 40px;
 }
 
 .nichteigeloggt {

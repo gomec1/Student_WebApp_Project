@@ -41,7 +41,7 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
           </h1>
           <p class="inserateBoxenOrt">
             Ort:
-            {{ inserat.attributes.users_permissions_user.data.attributes.ort }}
+            {{ inserat.attributes.user.data.attributes.ort }}
           </p>
           <a
             class="MehrErfahrenButton"

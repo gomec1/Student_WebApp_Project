@@ -10,7 +10,8 @@ import { RouterModule } from "@angular/router";
       <div class="elemente-container">
         <button class="suchbox" routerLink="/ich-bin-tiersitter-inserieren">
           <h1 class="überschrift1">
-            Ich bin ein Tiersitter und suche ein Tier zum hüten
+            Ich bin ein <span style="color: green">Tiersitter</span> und suche
+            ein Tier zum hüten
           </h1>
           <img
             class="bild1"
@@ -25,7 +26,8 @@ import { RouterModule } from "@angular/router";
 
         <button class="suchbox" routerLink="/ich-bin-tierbesitzer-inserieren">
           <h1 class="überschrift2">
-            Ich bin Tierbesitzer und suche einen Tiersitter
+            Ich bin <span style="color: green">Tierbesitzer</span> und suche
+            einen Tiersitter
           </h1>
           <img
             class="bild2"

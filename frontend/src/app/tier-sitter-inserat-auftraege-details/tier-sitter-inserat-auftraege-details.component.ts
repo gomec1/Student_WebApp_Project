@@ -49,8 +49,7 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
         <h2 class="listing-titel">Ort</h2>
         <p class="bescheibung1">
           {{
-            tierSitterInseratAuftraegeDaten.attributes.users_permissions_user
-              .data.attributes.ort
+            tierSitterInseratAuftraegeDaten.attributes.user.data.attributes.ort
           }}
         </p>
       </section>

@@ -6,45 +6,119 @@
   stroke: rgba(0, 0, 0, 0.5);
   /* BOX MODEL */
   border: 1px solid;
-  min-height: 50vh;
+  min-height: 73vh;
+  max-height: 100%;
   margin: 0;
-  padding: 12px;
+  padding: 20px;
 }
 
+#maintitle {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 50px;
+  margin-top: 25px;
+}
+.eingabefelder-container1 {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: fit-content;
+  height: fit-content;
+  gap: 10px;
+}
+.eingabefelder-container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: fit-content;
+  height: fit-content;
+  gap: 10px;
+}
 .form_label {
   font-size: 20px;
+  margin-bottom: 5px;
 }
-.form_input {
-  font-size: 20px;
+.form_input_klein {
+  /* max-height: 150px; Maximale Höhe
+  max-width: 500px; Maximale Breite */
+  font-size: 18px;
   border-color: #39b797;
   border-width: 3px;
-  height: 100px;
-  width: 350px;
+  height: 40px;
+  width: 400px;
   border-radius: 10px;
   border-style: solid;
+  margin-top: -5px;
+  vertical-align: top;
 }
-
-#button_submit {
-  width: 100px;
-  height: 50px;
-  cursor: pointer;
+.form_input {
+  max-height: 150px; /* Maximale Höhe */
+  max-width: 500px; /* Maximale Breite */
+  font-size: 18px;
+  border-color: #39b797;
+  border-width: 3px;
+  height: 120px;
+  width: 400px;
+  border-radius: 10px;
+  border-style: solid;
+  margin-top: -5px;
+  vertical-align: top;
 }
 
 td {
   padding-bottom: 15px;
 }
 
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.input_bild {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
 #insert_bild {
   background-color: #39b797;
+  border: 2px solid #000000;
   color: black;
   font-size: 20px;
   font-weight: bold;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 15px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#maintitle {
+#button_submit {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #39b797;
+  border: 2px solid #000000;
+  margin: 20px auto;
+}
+
+.nichteigeloggt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
   font-weight: bold;
-  font-size: 40px;
+  margin-top: 40px;
 }
