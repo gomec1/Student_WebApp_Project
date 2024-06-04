@@ -18,3 +18,6 @@ node_modules
 
 ./frontend/.angular
 ./frontend/node_modules
+
+# Ignore cache created with the Angular CLI.
+.angular/
