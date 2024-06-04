@@ -12,6 +12,9 @@ import { IchBinTiersitterInserierenComponent } from "./ich-bin-tiersitter-inseri
 import { IchBinTierbesitzerInserierenComponent } from "./ich-bin-tierbesitzer-inserieren/ich-bin-tierbesitzer-inserieren.component";
 import { FeedbackComponent } from "./feedback/feedback.component";
 import { EditProfilComponent } from "./edit-profil/edit-profil.component";
+import { InseratTierbesitzerBearbeitenComponent } from "./inserat-tierbesitzer-bearbeiten/inserat-tierbesitzer-bearbeiten.component";
+import { InseratTiersitterBearbeitenComponent } from "./inserat-tiersitter-bearbeiten/inserat-tiersitter-bearbeiten.component";
+
 const routeConfig: Routes = [
   {
     path: "",
@@ -80,6 +83,17 @@ const routeConfig: Routes = [
     path: "Tiersitter-Inserat-Aufträge-details/:id", // :id is a route parameter
     component: TierSitterInseratAuftraegeDetailsComponent,
     title: "Tiersitter Inserat Aufträge Details",
+  },
+
+  {
+    path: "inserat-tierbesitzer-bearbeiten",
+    component: InseratTierbesitzerBearbeitenComponent,
+    title: "Inserat Tierbesitzer Bearbeiten",
+  },
+  {
+    path: "inserat-tiersitter-bearbeiten",
+    component: InseratTiersitterBearbeitenComponent,
+    title: "Inserat Tiersitter Bearbeiten",
   },
 ];
 
