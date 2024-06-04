@@ -35,6 +35,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="name"
             type="text"
             [(ngModel)]="name"
+            placeholder="Mustermann"
           />
         </div>
 
@@ -46,6 +47,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="username"
             type="text"
             [(ngModel)]="username"
+            placeholder="max_mustermann"
           />
         </div>
 
@@ -66,6 +68,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="vorname"
             type="text"
             [(ngModel)]="vorname"
+            placeholder="Max"
           />
         </div>
 
@@ -76,7 +79,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             type="text"
             id="phone"
             name="phone"
-            placeholder="077 123 45 67"
+            placeholder="+41 79 123 45 67"
             [(ngModel)]="telefonnummer"
           />
         </div>
@@ -88,6 +91,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="geburtsdatum"
             type="text"
             [(ngModel)]="geburtsdatum"
+            placeholder="dd.mm.yyyy"
           />
         </div>
 
@@ -98,6 +102,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="strasse+nr"
             type="text"
             [(ngModel)]="strasseNr"
+            placeholder="Musterstrasse 123"
           />
         </div>
 
@@ -109,6 +114,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="email"
             type="email"
             [(ngModel)]="email"
+            placeholder="max.mustermann@bfh.ch"
           />
         </div>
 
@@ -130,6 +136,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="postleitzahl"
             type="text"
             [(ngModel)]="postleitzahl"
+            placeholder="1234"
           />
         </div>
 
@@ -140,6 +147,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             name="ort"
             type="text"
             [(ngModel)]="ort"
+            placeholder="Musterstadt"
           />
         </div>
 
@@ -152,14 +160,15 @@ import { MatSnackBar } from "@angular/material/snack-bar";
             <option value="beides"></option>
           </datalist>
         </div>
+        <div></div>
+        <input id="button_submit" type="submit" value="Registrieren" />
       </form>
-      <input id="button_submit" type="submit" value="Registrieren" />
     </section>
   `,
   styleUrl: "./registrieren.component.css",
 })
 export class RegistrierenComponent implements OnInit {
-  /* Register function */
+  // Variablen für die Registrierung
   username: string = "";
   vorname: string = "";
   ort: string = "";
@@ -193,7 +202,7 @@ export class RegistrierenComponent implements OnInit {
       this.profilfoto = file;
       console.log("Ausgewählte Datei:", file);
       console.log("Dateityp:", fileType);
-
+      // // Alle von Strapi unterstützten Bildformate für das Profilfoto und den Ausweis
       const validImageTypes = [
         "image/jpeg",
         "image/png",
@@ -215,11 +224,12 @@ export class RegistrierenComponent implements OnInit {
           this.ausweis = file;
           console.log("Ausweis gesetzt:", this.ausweis);
         }
+        // Wenn der Dateiformat nicht unterstützt wird, wird eine Fehlermeldung angezeigt
       } else {
         console.log("Ungültiger Dateityp");
         alert("Bitte laden Sie eine Datei im unterstützten Format hoch.");
         this.snackBar.open(
-          "Ungültiger Dateityp, bitte lade eine Datei im unterstützten Format hoch",
+          "Ungültiger Dateiformat. Erlaubte Formate sind: JPEG, PNG, GIF, SVG, TIFF, ICO, DVU, ZIP, PDF oder JSON",
           "OK",
           {
             duration: 5000,
@@ -290,9 +300,9 @@ export class RegistrierenComponent implements OnInit {
                   ausweisFormData.append(
                     "ref",
                     "plugin::users-permissions.user"
-                  ); // the name of your content type
-                  ausweisFormData.append("refId", userId); // the id of the entry
-                  ausweisFormData.append("field", "ausweis"); // the name of your field
+                  );
+                  ausweisFormData.append("refId", userId);
+                  ausweisFormData.append("field", "ausweis");
                 }
                 // Upload Ausweis
                 this.http
@@ -308,6 +318,7 @@ export class RegistrierenComponent implements OnInit {
               },
               (error) => console.log(error)
             );
+          // Nach erfolgreicher Registrierung wird der Benutzer auf die Login-Seite weitergeleitet
           this.router.navigate(["/login"]);
         },
         (error: any) => {

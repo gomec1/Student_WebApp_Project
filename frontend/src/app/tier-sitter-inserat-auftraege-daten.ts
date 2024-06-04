@@ -15,7 +15,7 @@ export interface TierSitterInseratAuftraegeDaten {
     bild: {
       data: BildDaten[];
     };
-    users_permissions_user: {
+    user: {
       data: UserDaten;
     };
   };
@@ -31,6 +31,9 @@ interface BildDaten {
     height: number;
     formats: {
       thumbnail: BildFormat;
+      small: BildFormat;
+      medium: BildFormat;
+      large: BildFormat;
     };
     hash: string;
     ext: string;
@@ -50,7 +53,7 @@ interface BildFormat {
   hash: string;
   ext: string;
   mime: string;
-  path: string;
+  path: null;
   width: number;
   height: number;
   size: number;
