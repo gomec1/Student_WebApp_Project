@@ -14,97 +14,140 @@ import { MatDialogRef } from "@angular/material/dialog";
         (click)="closeDialog()"
       />
       <h2>Questions & Answer</h2>
-      <p>Frage 1: Wie kann ich ein Inserat aufschalten?</p>
       <p>
-        Antwort 1: Drücken sie dafür auf "Inserieren" auf der Homepage von
-        Two4Four. Anschliessend können sie wählen welche Art Inserat sie
-        aufschalten möchten.>
+        <strong
+          >Was passiert, wenn es ein Problem gibt welches hier nicht beschrieben
+          wird?</strong
+        >
       </p>
       <p>
-        Learn one way to build applications with Angular and reuse your code and
-        abilities to build apps for any deployment target. For web, mobile web,
-        native mobile and native desktop.
+        Wenn du auf ein Problem stösst, sind wir hier, um zu helfen. Bitte
+        kontaktiere uns unter
+        <a href="mailto:two4fourbfh@gmail.com">two4fourbfh&#64;gmail.com</a>
+        gmail.com, und wir werden uns umgehend um dein Anliegen kümmern.
       </p>
-
-      <h3>Speed &amp; Performance</h3>
+      <p><strong>Was ist two4four und wie funktioniert es?</strong></p>
       <p>
-        Achieve the maximum speed possible on the Web Platform today, and take
-        it further, via Web Workers and server-side rendering. Angular puts you
-        in control over scalability. Meet huge data requirements by building
-        data models on RxJS, Immutable.js or another push-model.
+        two4four ist ein Online-Marktplatz, der Haustierbesitzer mit
+        vertrauenswürdigen und zuverlässigen Betreuern verbindet.
+        Haustierbesitzer können Betreuer in ihrer Nähe finden, Profile
+        durchsehen und die richtige Person auswählen, um sich um ihre Haustiere
+        zu kümmern. Betreuer können sich registrieren, ihr Profil erstellen und
+        Jobs annehmen, um Haustiere zu betreuen und dabei Geld zu verdienen
       </p>
-
-      <h3>Incredible tooling</h3>
+      <p><strong>Wie registriere ich mich?</strong></p>
       <p>
-        Build features quickly with simple, declarative templates. Extend the
-        template language with your own components and use a wide array of
-        existing components. Get immediate Angular-specific help and feedback
-        with nearly every IDE and editor. All this comes together so you can
-        focus on building amazing apps rather than trying to make the code work.
-      </p>
-
-      <h3>Loved by millions</h3>
-      <p>
-        From prototype through global deployment, Angular delivers the
-        productivity and scalable infrastructure that supports Google's largest
-        applications.
-      </p>
-
-      <h3>What is Angular?</h3>
-
-      <p>
-        Angular is a platform that makes it easy to build applications with the
-        web. Angular combines declarative templates, dependency injection, end
-        to end tooling, and integrated best practices to solve development
-        challenges. Angular empowers developers to build applications that live
-        on the web, mobile, or the desktop
-      </p>
-
-      <h3>Architecture overview</h3>
-
-      <p>
-        Angular is a platform and framework for building client applications in
-        HTML and TypeScript. Angular is itself written in TypeScript. It
-        implements core and optional functionality as a set of TypeScript
-        libraries that you import into your apps.
+        Die Registrierung ist einfach! Klicken Sie auf der Startseite auf die
+        Schaltfläche "Login" und dann auf "Registrieren. Folgen Sie
+        anschliessend den Anweisungen. Sie können sich als Haustierbesitzer oder
+        Betreuer anmelden, oder beides, falls gewünscht. Alle Felder müssen
+        ausgewühlt werden!
       </p>
 
       <p>
-        The basic building blocks of an Angular application are NgModules, which
-        provide a compilation context for components. NgModules collect related
-        code into functional sets; an Angular app is defined by a set of
-        NgModules. An app always has at least a root module that enables
-        bootstrapping, and typically has many more feature modules.
+        <strong>
+          Warum werden bei der Registrierung so viele Informationen
+          benötigt?</strong
+        >
+      </p>
+      <p>
+        Um die Sicherheit zu erhöhen, benötigen wir alle persönlichen
+        Informationen, einschliesslich eines Ausweisdokuments und eines
+        Profilfotos. Jede Registrierung wird von uns manuell überprüft. Da wir
+        Menschen miteinander verbinden, ist es uns besonders wichtig, zu wissen,
+        mit wem wir es zu tun haben.
       </p>
 
       <p>
-        Components define views, which are sets of screen elements that Angular
-        can choose among and modify according to your program logic and data.
-        Every app has at least a root component.
+        <strong
+          >Wie finde ich einen geeigneten Betreuer für mein Haustier?</strong
+        >
+      </p>
+      <p>
+        Gehe auf "Tiersitter" und klicke dich durch. Schau dir die Profile an
+        und lese die Persönliche Beschreibung. Auch die Verfügbarkeiten sind
+        natürlich wicht, falls dir etwas passt kannst du den Betreuer direkt
+        Anfragen.
+      </p>
+      <p>
+        <strong>
+          Kann ich auf two4four auch kurzfristige Betreuungen finden?</strong
+        >
+      </p>
+      <p>
+        Ja, du kannst auch kurzfristige Betreuungsmöglichkeiten finden. Viele
+        unserer Betreuer stehen für spontane Anfragen zur Verfügung. Nutzen Sie
+        die Verfügbarkeitsangaben in den Profilen, um Betreuer zu finden, die
+        kurzfristig einspringen können.
       </p>
 
       <p>
-        Components use services, which provide specific functionality not
-        directly related to views. Service providers can be injected into
-        components as dependencies, making your code modular, reusable, and
-        efficient.
+        <strong>
+          Wie stelle ich sicher, dass mein Haustier in guten Händen ist?</strong
+        >
+      </p>
+      <p>
+        Alle Betreuer auf two4four durchlaufen einen gründlichen
+        Überprüfungsprozess, bei dem sie ihre ID einsenden müssen, um ihre
+        Vertrauenswürdigkeit und Zuverlässigkeit zu gewährleisten. Zudem
+        entscheidest du als Haustierbesitzer, wer dein Haustier betreuen darf.
+        Wenn dich jemand Anfragt erhölst du die Kontaktdaten und kannst dich mit
+        dem Betreuer in Verbindung setzen.
       </p>
 
+      <p><strong> Wie kann ich eine Anfrage einreichen?</strong></p>
       <p>
-        Both components and services are simply classes, with decorators that
-        mark their type and provide metadata that tells Angular how to use them.
+        Um eine Anfrage einzureichen, kannst du direkt unter dem gewünschten
+        Inserat eine Anfrage einreichen. Die Kontaktdaten werden dann dem
+        Inserenten übermittelt.
       </p>
 
-      <p>
-        The metadata for a component class associates it with a template that
-        defines a view. A template combines ordinary HTML with Angular
-        directives and binding markup that allow Angular to modify the HTML
-        before rendering it for display.
-      </p>
+      <p><strong> Was kann die Nachrichten Funktion?</strong></p>
 
       <p>
-        The metadata for a service class provides the information Angular needs
-        to make it available to components through Dependency Injection (DI).
+        Die Funktion "Nachrichten" ist derzeit in Entwicklung und wird in einer
+        zukünftigen Version fertiggestellt. Nach der Fertigstellung wird es
+        Ihnen ermöglicht, direkt mit anderen Benutzern auf der Plattform zu
+        chatten.
+      </p>
+
+      <p><strong>Was kann die Feedback Funktion?</strong></p>
+      <p>
+        Die Funktion "Feedback" ist derzeit in Entwicklung und wird in einer
+        zukünftigen Version fertiggestellt. Zukünftig wird es möglich sein
+        Feedback zu geben und zu erhalten.
+      </p>
+      <p><strong> Wie kann ich Inserate löschen oder bearbeiten?</strong></p>
+      <p>
+        Um Inserate zu löschen oder zu bearbeiten, navigieren Sie bitte zum
+        Register "Profil". Dort finden Sie eine Übersicht Ihrer Inserate,
+        einschliesslich derer, die Sie als Betreuer oder als Haustierbesitzer
+        veröffentlicht haben. Wählen Sie das entsprechende Inserat aus, das Sie
+        bearbeiten oder löschen möchten. Auf der Seite des Inserats finden Sie
+        Optionen zum Bearbeiten oder Löschen. Folgen Sie einfach den
+        Anweisungen, um Ihre gewünschten Änderungen vorzunehmen.
+      </p>
+      <p><strong> Was kostet die Nutzung?</strong></p>
+      <p>
+        Die Registrierung auf two4four ist kostenlos. Die Kosten für die
+        Betreuung hängen von den jeweiligen Betreuern ab und werden auf deren
+        Profilen angezeigt. Einige Betreuer bieten auch Sonderangebote oder
+        Rabatte an.
+      </p>
+      <p><strong> Wie wird die Bezahlung abgewickelt?</strong></p>
+      <p>
+        Die Bezahlung erfolgt direkt zwischen Haustierbesitzer und Betreuer
+        ausserhalb der Plattform. two4four erleichtert nur die Vermittlung und
+        übernimmt keine Verantwortung für die Zahlungsabwicklung. Bitte stelle
+        sicher, dass Sie die Zahlungsmodalitäten vor Beginn der Betreuung
+        klären.
+      </p>
+
+      <p><strong> Sind meine Informationen auf two4four sicher?</strong></p>
+      <p>
+        Ja, wir legen grossen Wert auf die Sicherheit Ihrer Daten. Die Daten von
+        two4four werden sicher in der Schweiz gespeichert und verarbeitet. Wir
+        geben dein Daten niemals an Dritte weiter.
       </p>
     </div>
   `,

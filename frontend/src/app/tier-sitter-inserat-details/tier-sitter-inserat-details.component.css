@@ -112,6 +112,7 @@
   stroke-width: 2px;
   stroke: rgba(0, 0, 0, 0.5);
   font-size: 20px;
+  cursor: pointer;
   /* BOX MODEL */
   border: 1px solid;
   margin: 0;

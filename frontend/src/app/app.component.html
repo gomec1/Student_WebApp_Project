@@ -19,6 +19,7 @@
         alt="footprint dog"
       />
     </div>
+
     <div class="profil-container">
       <img
         class="profil-zeichen"
@@ -33,8 +34,13 @@
   <section>
     <div class="hintergrundmitte">
       <div class="such-container">
-        <input type="text" placeholder="Suche nach Ort.." name="suchen" />
-        <button type="button" class="such-button"></button>
+        <input
+          type="text"
+          placeholder="Suche nach Ort..."
+          name="suchen"
+          for="suche"
+        />
+        <button name="suche" type="button" class="such-button"></button>
       </div>
       <div class="button-container">
         <button
@@ -66,6 +72,7 @@
         >
           Login
         </button>
+
         <button
           *ngIf="authService.isLoggedIn"
           type="button"
@@ -73,6 +80,14 @@
           (click)="logout()"
         >
           Logout
+        </button>
+
+        <button
+          class="notificationButton"
+          *ngIf="hasNotifications"
+          (click)="openNotificationDialog()"
+        >
+          Anfrage erhalten!
         </button>
       </div>
     </div>

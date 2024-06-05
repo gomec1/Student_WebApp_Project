@@ -5,6 +5,7 @@ import { NgIf } from "@angular/common";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { HttpClientModule } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { HostListener } from "@angular/core";
 
 @Component({
   selector: "app-registrieren",
@@ -22,6 +23,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <h1 class="schriftfotohochladen">Profilfoto hinzufügen</h1>
       </div>
       <input
+        tabindex="1"
         class="profilfoto"
         id="profilfoto"
         type="file"
@@ -31,6 +33,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="name" class="schrift">Name</label>
           <input
+            tabindex="2"
             class="eingabefelder"
             name="name"
             type="text"
@@ -42,6 +45,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="username" class="schrift">Username</label>
           <input
+            tabindex="6"
             class="eingabefelder"
             id="username"
             name="username"
@@ -54,6 +58,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="ausweis" class="schrift">Ausweis</label>
           <input
+            tabindex="10"
             class="eingabefeldausweis"
             name="ausweis"
             type="file"
@@ -64,6 +69,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="vorname" class="schrift">Vorname</label>
           <input
+            tabindex="3"
             class="eingabefelder"
             name="vorname"
             type="text"
@@ -75,6 +81,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="phone" class="schrift">Telefonnummer</label>
           <input
+            tabindex="7"
             class="eingabefelder"
             type="text"
             id="phone"
@@ -87,6 +94,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="geburtsdatum" class="schrift">Geburtstdatum</label>
           <input
+            tabindex="11"
             class="eingabefelder"
             name="geburtsdatum"
             type="text"
@@ -98,6 +106,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="strasse+nr" class="schrift">Strasse + Nr</label>
           <input
+            tabindex="4"
             class="eingabefelder"
             name="strasse+nr"
             type="text"
@@ -109,6 +118,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="email" class="schrift">Email</label>
           <input
+            tabindex="8"
             class="eingabefelder"
             id="email"
             name="email"
@@ -121,6 +131,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="password" class="schrift">Passwort</label>
           <input
+            tabindex="12"
             class="eingabefelder"
             id="password"
             name="password"
@@ -132,6 +143,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="postleitzahl" class="schrift">Postleitzahl</label>
           <input
+            tabindex="5"
             class="eingabefelder"
             name="postleitzahl"
             type="text"
@@ -143,6 +155,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
         <div class="eingabefelder-container">
           <label for="ort" class="schrift">Ort</label>
           <input
+            tabindex="9"
             class="eingabefelder"
             name="ort"
             type="text"
@@ -153,7 +166,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 
         <div class="eingabefelder-container">
           <label for="rolle" class="schrift">Rolle</label>
-          <input list="rolle" name="rolle" [(ngModel)]="rolle" />
+          <input tabindex="13" list="rolle" name="rolle" [(ngModel)]="rolle" />
           <datalist id="rolle">
             <option value="Ich bin Tiersitter"></option>
             <option value="Ich bin Tierbesitzer"></option>
@@ -161,7 +174,12 @@ import { MatSnackBar } from "@angular/material/snack-bar";
           </datalist>
         </div>
         <div></div>
-        <input id="button_submit" type="submit" value="Registrieren" />
+        <input
+          tabindex="14"
+          id="button_submit"
+          type="submit"
+          value="Registrieren"
+        />
       </form>
     </section>
   `,
@@ -199,7 +217,7 @@ export class RegistrierenComponent implements OnInit {
     if (target.files && target.files.length > 0) {
       const file = target.files[0];
       const fileType = file.type;
-      this.profilfoto = file;
+
       console.log("Ausgewählte Datei:", file);
       console.log("Dateityp:", fileType);
       // // Alle von Strapi unterstützten Bildformate für das Profilfoto und den Ausweis
@@ -227,7 +245,6 @@ export class RegistrierenComponent implements OnInit {
         // Wenn der Dateiformat nicht unterstützt wird, wird eine Fehlermeldung angezeigt
       } else {
         console.log("Ungültiger Dateityp");
-        alert("Bitte laden Sie eine Datei im unterstützten Format hoch.");
         this.snackBar.open(
           "Ungültiger Dateiformat. Erlaubte Formate sind: JPEG, PNG, GIF, SVG, TIFF, ICO, DVU, ZIP, PDF oder JSON",
           "OK",
@@ -242,9 +259,36 @@ export class RegistrierenComponent implements OnInit {
       console.log("Keine Datei ausgewählt");
     }
   }
+
   // Registrierung des Benutzers
   onSubmit() {
-    debugger;
+    // Überprüfen, ob alle Daten vorhanden sind
+    if (
+      !this.username ||
+      !this.vorname ||
+      !this.ort ||
+      !this.email ||
+      !this.password ||
+      !this.telefonnummer ||
+      !this.rolle ||
+      !this.name ||
+      !this.strasseNr ||
+      !this.postleitzahl ||
+      !this.geburtsdatum ||
+      !this.profilfoto ||
+      !this.ausweis
+    ) {
+      this.snackBar.open(
+        "Bitte fülle alle Felder aus und laden ein Profilfoto und Ausweis hoch",
+        "OK",
+        {
+          duration: 7000,
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        }
+      );
+      return;
+    }
     const formData = new FormData();
     formData.append("username", this.username);
     formData.append("vorname", this.vorname);
@@ -262,17 +306,23 @@ export class RegistrierenComponent implements OnInit {
       .post("http://localhost:1337/api/auth/local/register", formData)
       .subscribe(
         (response: any) => {
-          console.log(response);
-          this.snackBar.open("Registrierung erfolgreich", "OK", {
-            duration: 3000,
-            verticalPosition: "top",
-            horizontalPosition: "center",
-          });
-          // JWT token und user ID werde gespeichert
+          console.log("TEST", response);
+          this.snackBar
+            .open("Registrierung erfolgreich", "OK", {
+              duration: 5000,
+              verticalPosition: "top",
+              horizontalPosition: "center",
+            })
+            .afterDismissed()
+            .subscribe(() => {
+              window.location.reload();
+              window.scrollTo(0, 0);
+            });
+          // JWT token und user ID werden in variablen gespeichert
           const jwtToken = response.jwt;
           const userId = response.user.id;
-          console.log("JWT token:", jwtToken);
-          console.log("User ID:", userId);
+          console.log("Token wurde erfolgreich gespeichert:");
+          console.log("User ID wurde erfolgreich gespeichert:");
 
           // Mit der gepeicherten JWT token und user ID wird das Profilfoto und der Ausweis hochgeladen
           const profilfotoFormData = new FormData();
@@ -294,35 +344,42 @@ export class RegistrierenComponent implements OnInit {
             .subscribe(
               (response) => {
                 console.log(response);
-
-                if (this.ausweis) {
-                  ausweisFormData.append("files", this.ausweis);
-                  ausweisFormData.append(
-                    "ref",
-                    "plugin::users-permissions.user"
-                  );
-                  ausweisFormData.append("refId", userId);
-                  ausweisFormData.append("field", "ausweis");
-                }
-                // Upload Ausweis
-                this.http
-                  .post("http://localhost:1337/api/upload", ausweisFormData, {
-                    headers: new HttpHeaders({
-                      Authorization: `Bearer ${jwtToken}`,
-                    }),
-                  })
-                  .subscribe(
-                    (response) => console.log(response),
-                    (error) => console.log(error)
-                  );
               },
               (error) => console.log(error)
             );
-          // Nach erfolgreicher Registrierung wird der Benutzer auf die Login-Seite weitergeleitet
+
+          if (this.ausweis) {
+            ausweisFormData.append("files", this.ausweis);
+            ausweisFormData.append("ref", "plugin::users-permissions.user");
+            ausweisFormData.append("refId", userId);
+            ausweisFormData.append("field", "ausweis");
+          }
+
+          // Upload Ausweis
+          this.http
+            .post("http://localhost:1337/api/upload", ausweisFormData, {
+              headers: new HttpHeaders({
+                Authorization: `Bearer ${jwtToken}`,
+              }),
+            })
+            .subscribe(
+              (response) => console.log(response),
+              (error) => console.log(error)
+            );
+
           this.router.navigate(["/login"]);
         },
-        (error: any) => {
-          console.log(error);
+        (error) => {
+          console.error(error);
+          this.snackBar.open(
+            "Fehler: Ihre Email adresse oder Username existiert schon ",
+            "OK",
+            {
+              duration: 3000,
+              verticalPosition: "top",
+              horizontalPosition: "center",
+            }
+          );
         }
       );
   }

@@ -42,7 +42,7 @@ justify-content: z.b center (Mitte Horizonatl)
   width: 760px;
   height: 113px;
   padding: 0;
-  margin: 9px 0 9px 0;
+  margin: 9px 0px 9px 0px;
 }
 
 .brand-logo {
@@ -164,6 +164,7 @@ input {
 .button-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
   padding: 10px;
 }
@@ -190,4 +191,22 @@ input {
   padding: 1rem;
   background-color: #f8f9fa;
   text-align: center;
+}
+
+.notificationButton {
+  position: relative;
+  border: 2px solid #ff1100;
+  border-radius: 15px;
+  min-width: 166px;
+  height: 45px;
+  background-color: #39b797;
+  cursor: pointer;
+  /*margin: 10px auto 10px 38px;*/
+  /*SCHRIFTART BUTTONS*/
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
 }

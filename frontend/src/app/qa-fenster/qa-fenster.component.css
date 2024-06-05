@@ -1,7 +1,9 @@
 .qafenster {
   background-color: #39b797;
+  border: black 3px solid;
   width: 700px;
-  height: 500px;
+  height: 2000px;
+  padding: 20px;
 }
 
 .schliessknopf {
@@ -10,5 +12,4 @@
   cursor: pointer;
   width: 30px;
   height: 30px;
-  margin: 10px;
 }

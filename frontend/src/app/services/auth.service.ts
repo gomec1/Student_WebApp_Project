@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatSnackBarConfig } from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: "root",
@@ -33,5 +34,10 @@ export class AuthService {
         // Redirect to landing page
         window.location.href = "/";
       });
+  }
+
+  // Neue Methode zum Öffnen der Snackbar (Wird bei Details-Seiten verwendet)
+  openSnackBar(message: string, action: string, config: MatSnackBarConfig) {
+    this.snackBar.open(message, action, config);
   }
 }

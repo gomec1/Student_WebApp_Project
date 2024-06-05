@@ -4,13 +4,25 @@ import { RouterModule } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
 import { ServiceTiersitterInserateAuftraegeService } from "../services/service-tiersitter-inserate-auftraege.service";
 import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraege-daten";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import {
+  HttpClientModule,
+  HttpClient,
+  HttpHeaders,
+} from "@angular/common/http";
+import { DialogBeforeRequest } from "../confirm-dialog/confirm-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { AuthService } from "../services/auth.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-tier-sitter-inserat-auftraege-details",
   standalone: true,
   imports: [CommonModule, RouterModule, HttpClientModule],
-  providers: [HttpClient, ServiceTiersitterInserateAuftraegeService],
+  providers: [
+    HttpClient,
+    ServiceTiersitterInserateAuftraegeService,
+    DialogBeforeRequest,
+  ],
   template: `
     <article
       class="hintergrundunten"
@@ -79,7 +91,9 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
           {{ tierSitterInseratAuftraegeDaten.attributes.tiername }} Zeit
           verbringen?
         </h2>
-        <button class="primary" type="button">Buchen</button>
+        <button class="primary" type="button" (click)="openDialogToRequest()">
+          Anfragen
+        </button>
       </section>
     </article>
   `,
@@ -91,8 +105,84 @@ export class TierSitterInseratAuftraegeDetailsComponent implements OnInit {
 
   constructor(
     private serviceTiersitterInserateAuftraegeService: ServiceTiersitterInserateAuftraegeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    public dialogBeforeRequest: DialogBeforeRequest,
+    public dialog: MatDialog,
+    private authService: AuthService,
+    private snackBar: MatSnackBar
   ) {}
+
+  //Damit wird die Notification erstellt, das der eingeloggte User gerne eine Anfrage stellen möchte
+  openDialogToRequest(): void {
+    if (this.authService.isLoggedIn) {
+      const dialogRef = this.dialog.open(DialogBeforeRequest, {
+        width: "600px",
+      });
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) {
+          this.onRequestButtonClick();
+          console.log("Anfrage gesendet", result);
+          this.snackBar
+            .open(
+              "Anfrage gesendet, der Inseratersteller wird sich bei dir melden!",
+              "OK",
+              {
+                duration: 3000,
+                horizontalPosition: "center",
+                verticalPosition: "top",
+              }
+            )
+            .afterDismissed()
+            .subscribe(() => {
+              window.scrollTo(0, 0);
+            });
+        }
+      });
+    } else {
+      this.authService.openSnackBar(
+        "Bitte einloggen, um eine Anfrage zu stellen",
+        "OK",
+        {
+          duration: 3000,
+          horizontalPosition: "center",
+          verticalPosition: "top",
+        }
+      );
+    }
+  }
+
+  onRequestButtonClick() {
+    const inseratId = this.tierSitterInseratAuftraegeDaten.id;
+    const userAId = Number(localStorage.getItem("id"));
+    const userBId =
+      this.tierSitterInseratAuftraegeDaten.attributes.user.data.id;
+    const requestData = {
+      data: {
+        fromUser: userAId,
+        toUser: userBId,
+        inserat: inseratId,
+      },
+    };
+    this.http
+      .post(
+        "http://localhost:1337/api/notification-tierbesitzers",
+        requestData,
+        {
+          headers: new HttpHeaders({
+            "Content-Type": "application/json",
+          }),
+        }
+      )
+      .subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+  }
 
   ngOnInit(): void {
     const tiersitterInserateAuftraegeId = Number(

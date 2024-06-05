@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { RouterModule, Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
@@ -75,6 +75,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @HostListener("document:keydown", ["$event"])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.login();
+    }
+  }
+
   login(): void {
     const loginData = {
       identifier: this.username,
@@ -86,20 +93,26 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (response: any) => {
           console.log(response);
-          // Der Login war erfolgreich und der JWT token wurde erhalten
+          // Login war erfolgreich
           if (response.jwt) {
-            // das Token und die user id werden im LocalStorage gespeichert
-            // Und  es setzt den Login Status auf true
+            // Der Token und die UserId werden im LocalStorage gespeichert
+            // Und der User status wird auf true gesetzt
             this.authService.login(response.jwt, response.user.id);
             localStorage.setItem("token", response.jwt);
-            // Bei Erfolg wird man zur Hauptseite umgeleitet
-            this.router.navigate(["/"]);
-            console.log("Login erfolgreich");
-            this.snackBar.open("Login erfolgreich", "Schliessen", {
-              duration: 5000,
-              panelClass: ["custom-snackbar"],
-              horizontalPosition: "center",
-              verticalPosition: "top",
+            // Bei Erfolg wird der User auf die Startseite weitergeleitet
+            this.router.navigate(["/"]).then(() => {
+              console.log("Login erfolgreich");
+              this.snackBar
+                .open("Login erfolgreich", "Schliessen", {
+                  duration: 5000,
+                  panelClass: ["custom-snackbar"],
+                  horizontalPosition: "center",
+                  verticalPosition: "top",
+                })
+                .afterDismissed()
+                .subscribe(() => {
+                  window.location.reload();
+                });
             });
           }
         },

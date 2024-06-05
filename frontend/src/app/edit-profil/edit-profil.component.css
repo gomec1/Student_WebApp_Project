@@ -71,10 +71,6 @@ td {
   width: 200px; /* Breite des Bildes   */
   height: 200px; /* Höhe des Bildes  */
 }
-img {
-  max-inline-size: 100%;
-  block-size: auto;
-}
 
 .image-upload__input {
   position: absolute;

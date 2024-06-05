@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
@@ -35,4 +35,8 @@ import { RouterModule } from "@angular/router";
   `,
   styleUrl: "./landingpage.component.css",
 })
-export class LandingpageComponent {}
+export class LandingpageComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}

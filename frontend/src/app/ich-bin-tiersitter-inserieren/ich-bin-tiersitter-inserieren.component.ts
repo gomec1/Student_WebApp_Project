@@ -31,6 +31,7 @@ import { AuthService } from "../services/auth.service";
               <div class="eingabefelder-container">
                 <label for="titel" class="form_label">Titel </label>
                 <textarea
+                  tabindex="1"
                   class="form_input"
                   name="titel"
                   type="text"
@@ -41,6 +42,7 @@ import { AuthService } from "../services/auth.service";
                   >Verfügbarkeit</label
                 >
                 <textarea
+                  tabindex="2"
                   class="form_input"
                   name="verfuegbarkeit"
                   type="text"
@@ -53,6 +55,7 @@ import { AuthService } from "../services/auth.service";
               <div class="eingabefelder-container">
                 <label for="Lohnkosten" class="form_label">Lohnkosten</label>
                 <textarea
+                  tabindex="3"
                   class="form_input"
                   name="Lohnkosten"
                   type="text"
@@ -63,6 +66,7 @@ import { AuthService } from "../services/auth.service";
                   >Persönliche Beschreibung</label
                 >
                 <textarea
+                  tabindex="4"
                   class="form_input"
                   name="persoenlicheBeschreibung"
                   type="text"
@@ -74,6 +78,7 @@ import { AuthService } from "../services/auth.service";
             <table>
               <div class="buttons-container">
                 <input
+                  tabindex="5"
                   type="file"
                   id="input_bild"
                   class="input_bild"
@@ -82,7 +87,12 @@ import { AuthService } from "../services/auth.service";
                 />
                 <label for="input_bild" id="insert_bild">Bild einfügen</label>
 
-                <input id="button_submit" type="submit" value="Inserieren" />
+                <input
+                  tabindex="6"
+                  id="button_submit"
+                  type="submit"
+                  value="Inserieren"
+                />
               </div>
             </table>
           </div>
@@ -125,17 +135,26 @@ export class IchBinTiersitterInserierenComponent {
       // Überprüfen, ob das Dateiformat erlaubt ist
       const allowedFormats = [
         "image/jpeg",
+        "image/jpg",
         "image/png",
         "image/gif",
         "image/svg+xml",
         "image/tiff",
         "image/x-icon",
         "image/vnd.djvu",
+        "jpeg",
+        "jpg",
+        "png",
+        "gif",
+        "svg",
+        "tiff",
+        "x-icon",
+        "vnd.djvu",
       ];
       const fileFormat = file[0].name.split(".").pop()?.toLowerCase();
       if (fileFormat && allowedFormats.includes(fileFormat)) {
         this.bild = file[0];
-        console.log("Bild hochgeladen:");
+        console.log("Bild hochgeladen:", this.bild.name);
       } else {
         this.snackBar.open(
           "Ungültiges Dateiformat. Erlaubte Formate sind: JPEG, JPG, PNG, GIF, SVG, TIFF, ICO oder DVU",
@@ -150,6 +169,25 @@ export class IchBinTiersitterInserierenComponent {
     }
   }
   onSubmit(): void {
+    // Überprüft, ob alle Felder ausgefüllt sind und ein Bild hochgeladen wurde
+    if (
+      !this.titel ||
+      !this.persoenliche_beschreibung ||
+      !this.verfuegbarkeit ||
+      !this.lohnkosten ||
+      !this.bild
+    ) {
+      this.snackBar.open(
+        "Bitte füllen alle Felder aus und laden ein Bild hoch",
+        "OK",
+        {
+          duration: 5000,
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        }
+      );
+      return;
+    }
     const id = localStorage.getItem("id") || "";
     const data = {
       data: {
@@ -169,14 +207,14 @@ export class IchBinTiersitterInserierenComponent {
           console.log(response);
           const inseratId = response.data.id; // ID des erstellten Inserats abrufen (wird für das Bild benötigt)
           const jwtToken = localStorage.getItem("token");
-          console.log("JWT token:", jwtToken);
-          console.log("Inserat ID:", inseratId);
+          console.log("JWT token wurde erfolgreich abgerufen");
+          console.log("Inserat ID wurde erfolgreich abgerufen");
 
           // Danach hochladen des Bildes und Zuordnung zum Inserat
           const formData = new FormData();
           if (this.bild) {
-            console.log(this.bild); // Überprüfen Sie, ob this.bild definiert ist
-            console.log(this.bild.name); // Überprüfen Sie, ob this.bild.name definiert ist
+            console.log("Bild wurde erfolgreich ausgewählt", this.bild);
+            console.log("Bild name:", this.bild.name); // Überprüfen Sie, ob this.bild.name definiert ist
             formData.append("files", this.bild, this.bild.name);
             formData.append(
               "ref",
@@ -195,11 +233,17 @@ export class IchBinTiersitterInserierenComponent {
             .subscribe(
               (response) => {
                 console.log(response);
-                this.snackBar.open("Inserat erstellt", "OK", {
-                  duration: 3000,
-                  verticalPosition: "top",
-                  horizontalPosition: "center",
-                });
+                this.snackBar
+                  .open("Inserat erstellt", "OK", {
+                    duration: 5000,
+                    verticalPosition: "top",
+                    horizontalPosition: "center",
+                  })
+                  .afterDismissed()
+                  .subscribe(() => {
+                    window.location.reload();
+                    window.scrollTo(0, 0);
+                  });
                 this.router.navigate(["/"]);
               },
               (error) => {

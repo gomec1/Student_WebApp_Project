@@ -60,9 +60,11 @@ import { TierSitterInseratAuftraegeDaten } from "../tier-sitter-inserat-auftraeg
                 />
                 <p class="pb_wechseln_schrift">Profilbild wechseln ⬆️</p>
               </div>
+
               <td>
                 <p></p>
               </td>
+
               <tr>
                 <td>
                   <label class="form_label" for="username">Username </label>
@@ -453,7 +455,7 @@ export class EditProfilComponent implements OnInit {
       }
     );
   }
-
+  // Dialog das den Benutzer fragt, ob er das Profil wirklich löschen möchte
   dialogToDeleteProfile(): void {
     const dialogRef = this.dialog.open(DialogDeleteProfile, {
       width: "600px",
@@ -493,12 +495,21 @@ export class EditProfilComponent implements OnInit {
       // Alle von Strapi unterstützten Bildformate
       const validImageTypes = [
         "image/jpeg",
+        "image/jpg",
         "image/png",
         "image/gif",
         "image/svg+xml",
         "image/tiff",
         "image/x-icon",
         "image/vnd.djvu",
+        "jpeg",
+        "jpg",
+        "png",
+        "gif",
+        "svg",
+        "tiff",
+        "x-icon",
+        "vnd.djvu",
       ];
 
       if (validImageTypes.includes(fileType)) {
@@ -507,7 +518,7 @@ export class EditProfilComponent implements OnInit {
       } else {
         console.log("Ungültiger Dateityp");
         this.snackBar.open(
-          "Ungültiger Dateityp, bitte lade eine Datei im unterstützten Format hoch",
+          "Ungültiges Dateiformat. Erlaubte Formate sind: JPEG, JPG, PNG, GIF, SVG, TIFF, ICO oder DVU",
           "OK",
           {
             duration: 5000,

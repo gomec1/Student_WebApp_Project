@@ -163,12 +163,21 @@ export class IchBinTierbesitzerInserierenComponent {
       // Überprüfen, ob das Dateiformat erlaubt ist
       const allowedFormats = [
         "image/jpeg",
+        "image/jpg",
         "image/png",
         "image/gif",
         "image/svg+xml",
         "image/tiff",
         "image/x-icon",
         "image/vnd.djvu",
+        "jpeg",
+        "jpg",
+        "png",
+        "gif",
+        "svg",
+        "tiff",
+        "x-icon",
+        "vnd.djvu",
       ];
       const fileFormat = file[0].name.split(".").pop()?.toLowerCase();
       if (fileFormat && allowedFormats.includes(fileFormat)) {
@@ -188,6 +197,29 @@ export class IchBinTierbesitzerInserierenComponent {
     }
   }
   onSubmit(): void {
+    // Überprüft, ob alle Felder ausgefüllt sind und ein Bild hochgeladen wurde
+    if (
+      !this.titel ||
+      !this.tiername ||
+      !this.tierart ||
+      !this.tierrasse ||
+      !this.alter ||
+      !this.zeitdauer_von_bis ||
+      !this.beschreibung_wichtiger_infos ||
+      !this.totalbetrag_chf ||
+      !this.bild
+    ) {
+      this.snackBar.open(
+        "Bitte füllen Sie alle Felder aus und laden Sie ein Bild hoch",
+        "OK",
+        {
+          duration: 5000,
+          verticalPosition: "top",
+          horizontalPosition: "center",
+        }
+      );
+      return;
+    }
     // Hier wird der Inserat erstellt
     const id = localStorage.getItem("id") || "";
     const data = {
@@ -210,14 +242,14 @@ export class IchBinTierbesitzerInserierenComponent {
         console.log(response);
         const inseratId = response.data.id; // ID des erstellten Inserats abrufen (wird für das Bild benötigt)
         const jwtToken = localStorage.getItem("token");
-        console.log("JWT token:", jwtToken);
-        console.log("Inserat ID:", inseratId);
+        console.log("JWT token wurde erfolgreich abgerufen:");
+        console.log("Inserat ID wurde erfolgreich abgerufen");
 
         // Danach hochladen des Bildes und Zuordnung zum Inserat
         const formData = new FormData();
         if (this.bild) {
-          console.log(this.bild); // Überprüfen Sie, ob this.bild definiert ist
-          console.log(this.bild.name); // Überprüfen Sie, ob this.bild.name definiert ist
+          console.log("Bild wurde erfolgreich ausgewählt", this.bild); // Überprüfen Sie, ob this.bild definiert ist
+          console.log("Bild name:", this.bild.name); // Überprüfen Sie, ob this.bild.name definiert ist
           formData.append("files", this.bild, this.bild.name);
           formData.append(
             "ref",
@@ -236,11 +268,17 @@ export class IchBinTierbesitzerInserierenComponent {
           .subscribe(
             (response) => {
               console.log(response);
-              this.snackBar.open("Inserat erstellt", "OK", {
-                duration: 3000,
-                verticalPosition: "top",
-                horizontalPosition: "center",
-              });
+              this.snackBar
+                .open("Inserat erstellt", "OK", {
+                  duration: 3000,
+                  verticalPosition: "top",
+                  horizontalPosition: "center",
+                })
+                .afterDismissed()
+                .subscribe(() => {
+                  window.location.reload();
+                  window.scrollTo(0, 0);
+                });
               this.router.navigate(["/"]);
             },
             (error: any) => {
