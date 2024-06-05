@@ -49,6 +49,12 @@
     },
     "tiername": {
       "type": "string"
+    },
+    "notification_tierbesitzers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notification-tierbesitzer.notification-tierbesitzer",
+      "mappedBy": "inserat"
     }
   }
 }

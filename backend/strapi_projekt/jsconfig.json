@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "NodeNext", // Update the value of the "module" option to "NodeNext"
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2021",
     "checkJs": true,

@@ -135,6 +135,18 @@
       "relation": "oneToMany",
       "target": "api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer",
       "mappedBy": "user"
+    },
+    "notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notification.notification",
+      "mappedBy": "toUser"
+    },
+    "notification_tierbesitzers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notification-tierbesitzer.notification-tierbesitzer",
+      "mappedBy": "toUser"
     }
   }
 }
