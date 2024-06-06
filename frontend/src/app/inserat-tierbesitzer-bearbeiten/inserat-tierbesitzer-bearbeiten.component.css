@@ -1,0 +1,32 @@
+.hintergrundunten {
+  flex-shrink: 0;
+  background-color: #ebfffa;
+  border-radius: 15px;
+  stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.5);
+  /* BOX MODEL */
+  border: 1px solid;
+  height: 75vh;
+  margin: 0;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inProgress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center; /* Added property */
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.bild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center; /* Added property */
+  margin-right: 10px;
+}

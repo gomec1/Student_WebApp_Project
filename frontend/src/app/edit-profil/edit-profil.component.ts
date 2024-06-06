@@ -471,17 +471,30 @@ export class EditProfilComponent implements OnInit {
   // Funktion um das Profil zu löschen
   deleteProfile(): void {
     const profileId = localStorage.getItem("id");
-    this.http.delete(`http://localhost:1337/api/users/${profileId}`).subscribe(
-      () => {
+    this.http
+      .delete(`http://localhost:1337/api/users/${profileId}`)
+      .subscribe(() => {
         console.log("Profil gelöscht");
         localStorage.removeItem("id");
         localStorage.removeItem("token");
-        this.router.navigate(["/"]);
-      },
-      (error) => {
-        console.error("Fehler beim Löschen des Profils", error);
-      }
-    );
+        // Show snackbar message
+        this.snackBar
+          .open("Konto wurde erfolgreich gelöscht", "OK", {
+            duration: 5000,
+            verticalPosition: "top",
+            horizontalPosition: "center",
+          })
+          .afterDismissed()
+          .toPromise()
+          .then(() => {
+            this.router.navigate(["/"]).then(() => {
+              window.location.reload();
+            });
+          })
+          .catch((error) => {
+            console.error("Fehler beim Löschen des Profils", error);
+          });
+      });
   }
 
   // Damit wird das Profilfoto aktualisiert bzw. überprüft, ob es ein gültiges Format hat

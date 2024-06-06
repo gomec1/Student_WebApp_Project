@@ -129,8 +129,8 @@ export class DialogBeforeRequest {
       <div class="dialog-content" *ngFor="let item of data">
         <p>
           Folgender Benutzer:
-          <strong>{{ item.fromUser.attributes.vorname }}</strong>
-          <strong>{{ item.fromUser.attributes.name }}</strong
+          <strong>{{ item.fromUser.attributes.vorname }}</strong
+          >&nbsp;<strong>{{ item.fromUser.attributes.name }}</strong
           >, Email: <strong>{{ item.fromUser.attributes.email }}</strong
           >, Tel.
           <strong>{{ item.fromUser.attributes.telefonnummer }}</strong> hat eine
@@ -168,10 +168,10 @@ export class NotificationDialogComponent {
       this.http.delete(url, { headers }).subscribe(
         () => {
           console.log("Notification deleted");
-          // Entfernen Sie das gelöschte Element aus dem Array
           this.data = this.data.filter(
-            (i: NotificationItem) => i.id !== item.id // Verwenden Sie i.id hier
+            (i: NotificationItem) => i.id !== item.id
           );
+          window.location.reload();
         },
         (error: any) => {
           console.error("Error when calling the API", error);

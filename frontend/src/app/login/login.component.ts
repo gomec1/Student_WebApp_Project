@@ -119,7 +119,7 @@ export class LoginComponent implements OnInit {
         error: (error: any) => {
           console.log(error);
           this.snackBar.open(
-            "Username oder Passwort ist falsch",
+            "Username oder Passwort ist falsch oder existiert nicht!",
             "Schliessen",
             {
               duration: 5000,

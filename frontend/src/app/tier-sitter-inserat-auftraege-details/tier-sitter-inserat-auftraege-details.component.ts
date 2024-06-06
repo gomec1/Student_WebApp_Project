@@ -47,19 +47,19 @@ import { MatSnackBar } from "@angular/material/snack-bar";
           {{ tierSitterInseratAuftraegeDaten.attributes.titel }}
         </h2>
         <h2 class="listing-titel">Name</h2>
-        <p class="bescheibung1">
+        <p class="bescheibung-p">
           {{ tierSitterInseratAuftraegeDaten.attributes.tiername }}
         </p>
         <h2 class="listing-titel">Alter</h2>
-        <p class="bescheibung1">
+        <p class="bescheibung-p">
           {{ tierSitterInseratAuftraegeDaten.attributes.alter }}
         </p>
         <h2 class="listing-titel">Tierart</h2>
-        <p class="bescheibung1">
+        <p class="bescheibung-p">
           {{ tierSitterInseratAuftraegeDaten.attributes.tierart }}
         </p>
         <h2 class="listing-titel">Ort</h2>
-        <p class="bescheibung1">
+        <p class="bescheibung-p">
           {{
             tierSitterInseratAuftraegeDaten.attributes.user.data.attributes.ort
           }}
@@ -79,11 +79,11 @@ import { MatSnackBar } from "@angular/material/snack-bar";
           {{ tierSitterInseratAuftraegeDaten.attributes.zeitdauer_von_bis }}
         </p>
         <h2 class="listing-titel">Totalbetrag</h2>
-        <p class="bescheibung2">
+        <p class="bescheibung-p">
           {{ tierSitterInseratAuftraegeDaten.attributes.totalbetrag_chf }}
         </p>
         <h2 class="listing-titel">Tierrasse</h2>
-        <p class="bescheibung2">
+        <p class="bescheibung-p">
           {{ tierSitterInseratAuftraegeDaten.attributes.tierrasse }}
         </p>
         <h2 class="listing-applytitel">
@@ -92,7 +92,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
           verbringen?
         </h2>
         <button class="primary" type="button" (click)="openDialogToRequest()">
-          Anfragen
+          Anfragens
         </button>
       </section>
     </article>
