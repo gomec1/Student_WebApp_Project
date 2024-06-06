@@ -62,7 +62,7 @@ export class TierSitterInserateAuftraegeComponent implements OnInit {
     private serviceTiersitterInserateAuftraegeService: ServiceTiersitterInserateAuftraegeService,
     private http: HttpClient
   ) {}
-
+  // Methode um alle TierSitterInseratAuftraege (Als Tierbesitzer) zu bekommen
   ngOnInit(): void {
     this.serviceTiersitterInserateAuftraegeService
       .getAllTierSitterInseratAuftraege()

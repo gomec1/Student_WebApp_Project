@@ -19,10 +19,10 @@ Here you will find links to all our deliverables for this semester:
 - [deliverable 4](docs/Deliverables/Deliverable_4/Deliverable_4_Blogpost.md)
 
 Relative Link to Blogpost:
+
 1. [Open the Readme.md Page](https://dsl-student-projects.pages.ti.bfh.ch/wseg-24-fs/4o-Passionsfrucht/)
- 
+
 2. [Open the Blogpost 2 Page](Deliverable_4_Blogpost.html)
-  
 
 ## Project Description
 
@@ -63,6 +63,12 @@ Relative Link to Blogpost:
 ## Prerequisites
 
 Before you begin, make sure you have installed the following tools:
+
+## WICHTIG:
+
+Es hat noch einen Bug
+
+Wenn man beim Edit-Profil das Konto löscht und noch Inserate mit diesem Benutzer vorhanden sind, wird das Profil gelöscht, aber die Inserate bleiben bestehen. Zudem kann man danach keine neuen Inserate erstellen. Man muss dann via Backend die Inserate (des gelöschten Nutzers) manuell löschen, damit es wieder funktioniert
 
 ### For macOS:
 
@@ -125,6 +131,7 @@ cd 4o-Passionsfrucht
 ```
 
 3. Install the dependencies:
+   To install the dependencies, it is recommended to run `npm install` once in the frontend directory and once in the backend directory.
 
 ```sh
 npm install

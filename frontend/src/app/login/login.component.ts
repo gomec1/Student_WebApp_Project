@@ -74,14 +74,14 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
+  // Wenn der Benutzer die Enter-Taste drückt, wird die Methode login() aufgerufen
   @HostListener("document:keydown", ["$event"])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === "Enter") {
       this.login();
     }
   }
-
+  // Login vom Benutzer
   login(): void {
     const loginData = {
       identifier: this.username,

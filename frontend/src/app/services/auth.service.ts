@@ -31,7 +31,6 @@ export class AuthService {
       // Nutzer wird nach der Snackbar Meldung zur Landingpage weitergeleitet
       .afterDismissed()
       .subscribe(() => {
-        // Redirect to landing page
         window.location.href = "/";
       });
   }

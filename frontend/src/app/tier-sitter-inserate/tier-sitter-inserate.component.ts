@@ -61,7 +61,7 @@ export class TierSitterInserateComponent implements OnInit {
     private serviceTiersitterInserateService: ServiceTiersitterInserateService,
     private http: HttpClient
   ) {}
-
+  // Methode um alle TiersitterInserate zu bekommen
   ngOnInit() {
     this.serviceTiersitterInserateService.getAllTiersitterInserate().subscribe(
       (data) => {

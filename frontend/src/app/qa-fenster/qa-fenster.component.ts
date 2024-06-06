@@ -26,6 +26,14 @@ import { MatDialogRef } from "@angular/material/dialog";
         <a href="mailto:two4fourbfh@gmail.com">two4fourbfh&#64;gmail.com</a>
         gmail.com, und wir werden uns umgehend um dein Anliegen kümmern.
       </p>
+      <p>
+        <strong>Momentane bekannte Bugs</strong>
+      </p>
+      <p>
+        Wenn man beim Edit-Profil das Konto löscht und noch Inserate mit diesem
+        Benutzer vorhanden sind, wird das Profil gelöscht, aber die Inserate
+        bleiben bestehen. Zudem kann man danach keine neuen Inserate erstellen.
+      </p>
       <p><strong>Was ist two4four und wie funktioniert es?</strong></p>
       <p>
         two4four ist ein Online-Marktplatz, der Haustierbesitzer mit
@@ -37,11 +45,11 @@ import { MatDialogRef } from "@angular/material/dialog";
       </p>
       <p><strong>Wie registriere ich mich?</strong></p>
       <p>
-        Die Registrierung ist einfach! Klicken Sie auf der Startseite auf die
+        Die Registrierung ist einfach! Klicken auf der Startseite auf die
         Schaltfläche "Login" und dann auf "Registrieren. Folgen Sie
-        anschliessend den Anweisungen. Sie können sich als Haustierbesitzer oder
-        Betreuer anmelden, oder beides, falls gewünscht. Alle Felder müssen
-        ausgewühlt werden!
+        anschliessend den Anweisungen. Du kannst dich als Haustierbesitzer oder
+        Tiersitter anmelden, oder beides, falls gewünscht. Alle Felder müssen
+        ausgefühlt werden!
       </p>
 
       <p>

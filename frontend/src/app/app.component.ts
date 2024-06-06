@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
 
     this.dialogRef = this.dialog.open(QaFensterComponent, dialogConfig);
   }
-  // Ruft die Methode getUserAndInseratData auf, um die Daten des Benutzers (Notification: FromUser) und des Inserats (Inserat welches angefragt wurde) zu erhalten
+  // Methode um die Daten des Benutzers (Notification: FromUser) und des Inserats (Inserat welches angefragt wurde) zu erhalten
   getUserAndInseratData(
     userId: number,
     inseratId: number,
@@ -90,12 +90,10 @@ export class AppComponent implements OnInit {
 
     return forkJoin({ fromUser: fromUser$, inserat: inserat$ });
   }
-
+  // Methode um die Notification zu öffnen
   openNotificationDialog(): void {
-    // Leeren Sie zuerst die vorhandenen Benachrichtigungsdetails
     this.notificationDetails = [];
 
-    // Rufen Sie getNotificationDetails für jede Benachrichtigungs-ID auf
     this.notificationTiersitterIds.forEach((id) => {
       this.getNotificationDetails(id, "notifications");
     });
@@ -152,7 +150,7 @@ export class AppComponent implements OnInit {
           ) {
             this.hasNotifications = true;
 
-            // Speichern Sie die IDs in den entsprechenden Arrays
+            // Speichern die IDs in den entsprechenden Arrays
             response.notifications?.forEach((notification: any) => {
               idArray.push(notification.id);
               this.getNotificationDetails(notification.id, type);

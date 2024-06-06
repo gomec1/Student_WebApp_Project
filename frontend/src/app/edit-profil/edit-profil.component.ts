@@ -438,7 +438,6 @@ export class EditProfilComponent implements OnInit {
   }
   // Funktion um das Inserat zu löschen wenn der Benutzer dies bestätigt
   deleteAd(): void {
-    // Ersetzen Sie 'id' durch die tatsächliche ID des Inserats, das gelöscht werden soll
     const id = this.selectedInseratId;
     const endpoint =
       this.selectedInseratType === "tiersitter"

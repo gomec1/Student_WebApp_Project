@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class ServiceTiersitterInserateAuftraegeService {
   constructor(public http: HttpClient) {}
-
+  // Methode um alle TierSitterInseratAuftraege (Als Tierbesitzer) zu bekommen
   getAllTierSitterInseratAuftraege(): Observable<
     TierSitterInseratAuftraegeDaten[]
   > {
@@ -19,7 +19,7 @@ export class ServiceTiersitterInserateAuftraegeService {
       )
       .pipe(map((response) => response.data));
   }
-
+  // Methode um die einzelnen TierSitterInseratAuftraege (Als Tierbesitzer) zu bekommen
   getTierSitterInseratAuftraegeById(
     id: number
   ): Observable<TierSitterInseratAuftraegeDaten> {

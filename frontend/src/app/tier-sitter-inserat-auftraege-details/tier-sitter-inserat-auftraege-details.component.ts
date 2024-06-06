@@ -92,7 +92,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
           verbringen?
         </h2>
         <button class="primary" type="button" (click)="openDialogToRequest()">
-          Anfragens
+          Anfragen
         </button>
       </section>
     </article>
@@ -151,7 +151,7 @@ export class TierSitterInseratAuftraegeDetailsComponent implements OnInit {
       );
     }
   }
-
+  // Methode um die Anfrage zu senden
   onRequestButtonClick() {
     const inseratId = this.tierSitterInseratAuftraegeDaten.id;
     const userAId = Number(localStorage.getItem("id"));
@@ -183,7 +183,7 @@ export class TierSitterInseratAuftraegeDetailsComponent implements OnInit {
         }
       );
   }
-
+  // Methode um die Daten des TiersitterInseratAuftraege (Tierbesitzer) zu bekommen
   ngOnInit(): void {
     const tiersitterInserateAuftraegeId = Number(
       this.route.snapshot.params["id"]

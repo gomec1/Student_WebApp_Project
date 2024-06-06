@@ -48,7 +48,7 @@ export class ConfirmDialogComponent {
 }
 
 // Dieses Component wird in der edit-profil verwendet für das PopUp, welches fragt
-// ob man das Profil löschen möchte (Alles bestehenden Inserate werden auch gelöscht)
+// ob man das Profil löschen möchte
 @Component({
   selector: "app-dialog-delete-profile",
   standalone: true,
@@ -63,8 +63,7 @@ export class ConfirmDialogComponent {
   template: `
     <h2 mat-dialog-title>Löschen</h2>
     <mat-dialog-content>
-      Möchtest du dein Profil wirklich löschen? Alle vorhandenen Inserate werden
-      ebenfalls gelöscht.
+      Möchtest du dein Profil wirklich löschen?
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-button [mat-dialog-close]="false" cdkFocusInitial>
@@ -78,7 +77,8 @@ export class ConfirmDialogComponent {
 export class DialogDeleteProfile {
   constructor(public dialog: MatDialog) {}
 }
-
+// Dieses Component wird in der Inserat-details verwendet für das PopUp, welches fragt
+// Ob man eine Anfrage senden möchte
 @Component({
   selector: "app-dialog-before-request",
   standalone: true,
@@ -109,7 +109,7 @@ export class DialogDeleteProfile {
 export class DialogBeforeRequest {
   constructor(public dialog: MatDialog) {}
 }
-
+// Dieses Componennt ist das Notification PopUp, welches die erhaltenen Anfragen anzeigt
 @Component({
   selector: "app-notification-dialog",
   standalone: true,

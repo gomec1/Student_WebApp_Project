@@ -68,7 +68,7 @@ const routeConfig: Routes = [
     title: "Tiersitter Inserate",
   },
   {
-    path: "tiersitter-Inserat-details/:id", // :id is a route parameter
+    path: "tiersitter-Inserat-details/:id",
     component: TierSitterInseratDetailsComponent,
     title: "Tiersitter Inserat Details",
   },
@@ -80,7 +80,7 @@ const routeConfig: Routes = [
   },
 
   {
-    path: "Tiersitter-Inserat-Aufträge-details/:id", // :id is a route parameter
+    path: "Tiersitter-Inserat-Aufträge-details/:id",
     component: TierSitterInseratAuftraegeDetailsComponent,
     title: "Tiersitter Inserat Aufträge Details",
   },

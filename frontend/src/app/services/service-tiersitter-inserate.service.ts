@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class ServiceTiersitterInserateService {
   constructor(public http: HttpClient) {}
-
+  // Methode um alle TiersitterInserate zu bekommen
   getAllTiersitterInserate(): Observable<TiersitterInserateDaten[]> {
     return this.http
       .get<{ data: TiersitterInserateDaten[] }>(
@@ -17,7 +17,7 @@ export class ServiceTiersitterInserateService {
       )
       .pipe(map((response) => response.data));
   }
-
+  // Methode um die einzelnen TiersitterInserate zu bekommen
   getTiersitterInserateById(id: number): Observable<TiersitterInserateDaten> {
     const url = `http://localhost:1337/api/inserat-ich-bin-tiersitters/${id}?populate=*`;
     return this.http

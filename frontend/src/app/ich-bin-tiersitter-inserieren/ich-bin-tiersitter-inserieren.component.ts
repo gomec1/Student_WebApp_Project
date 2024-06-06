@@ -223,7 +223,7 @@ export class IchBinTiersitterInserierenComponent {
             formData.append("refId", inseratId);
             formData.append("field", "bild");
           }
-          // Senden Sie das Bild ans Backend
+          // Das Bild wird hochgeladen
           this.http
             .post("http://localhost:1337/api/upload", formData, {
               headers: new HttpHeaders({

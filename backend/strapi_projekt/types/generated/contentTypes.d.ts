@@ -362,6 +362,192 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer
+  extends Schema.CollectionType {
+  collectionName: 'inserat_ich_bin_tierbesitzers';
+  info: {
+    singularName: 'inserat-ich-bin-tierbesitzer';
+    pluralName: 'inserat-ich-bin-tierbesitzers';
+    displayName: 'Inserat: Ich bin Tierbesitzer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titel: Attribute.Text;
+    tierart: Attribute.String;
+    alter: Attribute.String;
+    zeitdauer_von_bis: Attribute.Text;
+    beschreibung_wichtiger_infos: Attribute.Text;
+    totalbetrag_chf: Attribute.String;
+    bild: Attribute.Media;
+    user: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    tierrasse: Attribute.String;
+    tiername: Attribute.String;
+    notification_tierbesitzers: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'oneToMany',
+      'api::notification-tierbesitzer.notification-tierbesitzer'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
+  extends Schema.CollectionType {
+  collectionName: 'inserat_ich_bin_tiersitters';
+  info: {
+    singularName: 'inserat-ich-bin-tiersitter';
+    pluralName: 'inserat-ich-bin-tiersitters';
+    displayName: 'Inserat: Ich bin Tiersitter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titel: Attribute.Text;
+    persoenliche_beschreibung: Attribute.Text;
+    verfuegbarkeit: Attribute.Text;
+    lohnkosten: Attribute.Text;
+    bild: Attribute.Media;
+    user: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    notifications: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'oneToMany',
+      'api::notification.notification'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNotificationNotification extends Schema.CollectionType {
+  collectionName: 'notifications';
+  info: {
+    singularName: 'notification';
+    pluralName: 'notifications';
+    displayName: 'notification_tiersitter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fromUser: Attribute.Relation<
+      'api::notification.notification',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    toUser: Attribute.Relation<
+      'api::notification.notification',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    inserat: Attribute.Relation<
+      'api::notification.notification',
+      'manyToOne',
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notification.notification',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNotificationTierbesitzerNotificationTierbesitzer
+  extends Schema.CollectionType {
+  collectionName: 'notification_tierbesitzers';
+  info: {
+    singularName: 'notification-tierbesitzer';
+    pluralName: 'notification-tierbesitzers';
+    displayName: 'notification_tierbesitzer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    inserat: Attribute.Relation<
+      'api::notification-tierbesitzer.notification-tierbesitzer',
+      'manyToOne',
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
+    >;
+    fromUser: Attribute.Relation<
+      'api::notification-tierbesitzer.notification-tierbesitzer',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    toUser: Attribute.Relation<
+      'api::notification-tierbesitzer.notification-tierbesitzer',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::notification-tierbesitzer.notification-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::notification-tierbesitzer.notification-tierbesitzer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -874,192 +1060,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer
-  extends Schema.CollectionType {
-  collectionName: 'inserat_ich_bin_tierbesitzers';
-  info: {
-    singularName: 'inserat-ich-bin-tierbesitzer';
-    pluralName: 'inserat-ich-bin-tierbesitzers';
-    displayName: 'Inserat: Ich bin Tierbesitzer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    titel: Attribute.Text;
-    tierart: Attribute.String;
-    alter: Attribute.String;
-    zeitdauer_von_bis: Attribute.Text;
-    beschreibung_wichtiger_infos: Attribute.Text;
-    totalbetrag_chf: Attribute.String;
-    bild: Attribute.Media;
-    user: Attribute.Relation<
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    tierrasse: Attribute.String;
-    tiername: Attribute.String;
-    notification_tierbesitzers: Attribute.Relation<
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
-      'oneToMany',
-      'api::notification-tierbesitzer.notification-tierbesitzer'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiInseratIchBinTiersitterInseratIchBinTiersitter
-  extends Schema.CollectionType {
-  collectionName: 'inserat_ich_bin_tiersitters';
-  info: {
-    singularName: 'inserat-ich-bin-tiersitter';
-    pluralName: 'inserat-ich-bin-tiersitters';
-    displayName: 'Inserat: Ich bin Tiersitter';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    titel: Attribute.Text;
-    persoenliche_beschreibung: Attribute.Text;
-    verfuegbarkeit: Attribute.Text;
-    lohnkosten: Attribute.Text;
-    bild: Attribute.Media;
-    user: Attribute.Relation<
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    notifications: Attribute.Relation<
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
-      'oneToMany',
-      'api::notification.notification'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNotificationNotification extends Schema.CollectionType {
-  collectionName: 'notifications';
-  info: {
-    singularName: 'notification';
-    pluralName: 'notifications';
-    displayName: 'notification_tiersitter';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    fromUser: Attribute.Relation<
-      'api::notification.notification',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    toUser: Attribute.Relation<
-      'api::notification.notification',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    inserat: Attribute.Relation<
-      'api::notification.notification',
-      'manyToOne',
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::notification.notification',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::notification.notification',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNotificationTierbesitzerNotificationTierbesitzer
-  extends Schema.CollectionType {
-  collectionName: 'notification_tierbesitzers';
-  info: {
-    singularName: 'notification-tierbesitzer';
-    pluralName: 'notification-tierbesitzers';
-    displayName: 'notification_tierbesitzer';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    inserat: Attribute.Relation<
-      'api::notification-tierbesitzer.notification-tierbesitzer',
-      'manyToOne',
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer'
-    >;
-    fromUser: Attribute.Relation<
-      'api::notification-tierbesitzer.notification-tierbesitzer',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    toUser: Attribute.Relation<
-      'api::notification-tierbesitzer.notification-tierbesitzer',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::notification-tierbesitzer.notification-tierbesitzer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::notification-tierbesitzer.notification-tierbesitzer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1070,6 +1070,10 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer': ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer;
+      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter': ApiInseratIchBinTiersitterInseratIchBinTiersitter;
+      'api::notification.notification': ApiNotificationNotification;
+      'api::notification-tierbesitzer.notification-tierbesitzer': ApiNotificationTierbesitzerNotificationTierbesitzer;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1079,10 +1083,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::inserat-ich-bin-tierbesitzer.inserat-ich-bin-tierbesitzer': ApiInseratIchBinTierbesitzerInseratIchBinTierbesitzer;
-      'api::inserat-ich-bin-tiersitter.inserat-ich-bin-tiersitter': ApiInseratIchBinTiersitterInseratIchBinTiersitter;
-      'api::notification.notification': ApiNotificationNotification;
-      'api::notification-tierbesitzer.notification-tierbesitzer': ApiNotificationTierbesitzerNotificationTierbesitzer;
     }
   }
 }

@@ -155,7 +155,7 @@ export class TierSitterInseratDetailsComponent implements OnInit {
         }
       );
   }
-
+  // Damit wird das Tiersitter Inserat geladen
   ngOnInit(): void {
     const tiersitterInserateId = Number(this.route.snapshot.params["id"]);
     this.serviceTiersitterInserateService

@@ -1,3 +1,4 @@
+// Interface für die Daten der Tier-Sitter-Inserat-Aufträge (Tierbesitzer)
 export interface TierSitterInseratAuftraegeDaten {
   id: number;
   attributes: {
