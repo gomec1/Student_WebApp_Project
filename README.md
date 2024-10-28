@@ -52,7 +52,7 @@ We were also unable to implement the following:
 
 ## 🏠
 
-[Homepage](https://gitlab.ti.bfh.ch/dsl-student-projects/wseg-24-fs/4o-Passionsfrucht)
+[Homepage](https://github.com/gomec1/Student_WebApp_Project?tab=readme-ov-file#homepage)
 
 ## How to install and run our Application?
 
