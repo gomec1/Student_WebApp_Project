@@ -7,22 +7,18 @@
   <img alt="Open Issues" src="https://img.shields.io/badge/open%20issues-2-red.svg" />
 </p>
 
-## Deliverables
+## Current Status:
 
-@Lecturers (Jörg and Markus)🇩🇪🇨🇭🤙🏼
+It still has a bug:
 
-Here you will find links to all our deliverables for this semester:
+If you delete the account in the edit profile and there are still listings with this user, the profile is deleted, but the listings remain. In addition, you can no longer view the details of the newly created listings. You then have to manually delete the listings (of the deleted user) via the backend for it to work again.
 
-- [deliverable 1](docs/Deliverables/Deliverable_1/WSEG_Pitch_Two4Four.pdf)
-- [deliverable 2](docs/Deliverables/Deliverable_2/Deliverable2-Blog.md)
-- [deliverable 3](docs/Deliverables/Deliverable_3/Two4Four_Zwischenpräsentation.pptx)
-- [deliverable 4](docs/Deliverables/Deliverable_4/Deliverable_4_Blogpost.md)
-
-Relative Link to Blogpost:
-
-1. [Open the Readme.md Page](https://dsl-student-projects.pages.ti.bfh.ch/wseg-24-fs/4o-Passionsfrucht/)
-
-2. [Open the Blogpost 2 Page](Deliverable_4_Blogpost.html)
+We were also unable to implement the following:
+- The search/filter function is not integrated
+- “Stay logged in” button does not work
+- feedback page
+- News page
+- Edit ad
 
 ## Project Description
 
@@ -152,6 +148,10 @@ ng serve
 cd backend
 npm run develop
 ```
+
+To change stuff in the backend login with:
+- gomec1@bfh.ch
+- E35RyaT8o5&cdtCpL2KqDo*kh
 
 Now, you can open and use the application in your web browser. Have fun! 😄
 
