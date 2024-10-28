@@ -60,12 +60,6 @@ We were also unable to implement the following:
 
 Before you begin, make sure you have installed the following tools:
 
-## WICHTIG:
-
-Es hat noch einen Bug
-
-Wenn man beim Edit-Profil das Konto löscht und noch Inserate mit diesem Benutzer vorhanden sind, wird das Profil gelöscht, aber die Inserate bleiben bestehen. Zudem kann man danach keine neuen Inserate erstellen. Man muss dann via Backend die Inserate (des gelöschten Nutzers) manuell löschen, damit es wieder funktioniert
-
 ### For macOS:
 
 - Node.js and npm: Install them by running the following command in your terminal:
